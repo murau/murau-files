@@ -266,9 +266,7 @@ if (zoomImages && zoomImages.length) {
     productCarouselImages += `
         <div class="carousel-item${i === 0 ? " active" : ""}">
             <a href="${img}" class="d-block">
-                <img src="${thumb}" class="img-fluid img-thumbnail" alt="${
-      document.title
-    }" title="${document.title}" />
+                <img src="${thumb}" class="img-fluid img-thumbnail" alt="${document.title}" title="${document.title}" />
             </a>
         </div>
     `;
