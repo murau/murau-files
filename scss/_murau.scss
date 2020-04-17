@@ -24,6 +24,7 @@ header a.navbar-brand {
   text-indent: -9999px;
   width: 120px;
   z-index: $zindex-fixed;
+  background-size: contain;
 }
 header.mobile a.navbar-brand {
   background-position: bottom;
