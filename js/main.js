@@ -1,3 +1,4 @@
+/* v0.0.1 */
 let maskName = Inputmask({
   clearIncomplete: true,
   clearMaskOnLostFocus: true,
