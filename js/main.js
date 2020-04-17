@@ -50,7 +50,7 @@ function alert(alertMessage, type = "warning") {
   };
   toastr[type](alertMessage);
 }
-let murau = {
+const murau = {
   updateMiniCart: (qtd) => {
     let cartqtd = document.querySelectorAll(".cartQtd");
     for (cartQtd of cartqtd) {
@@ -262,7 +262,7 @@ if (zoomImages && zoomImages.length) {
 `;
   for (i = 0; i < zoomImages.length; i++) {
     let img = zoomImages[i].getAttribute("zoom");
-    let thumb = zoomImages[i].getAttribute("zoom");
+    let thumb = zoomImages[i].getAttribute("rel");
     productCarouselImages += `
         <div class="carousel-item${i === 0 ? " active" : ""}">
             <a href="${img}" class="d-block">
@@ -306,4 +306,3 @@ document
   .addEventListener("hidden.bs.collapse", () => murau.areYouMobile());
 murau.areYouMobile();
 new SmoothScroll('a[href*="#"]');
-console.log($vtexfn.isLogged());

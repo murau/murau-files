@@ -14,7 +14,7 @@ header a {
   color: $white !important;
 }
 header a.navbar-brand {
-  background-image: url("murau-logo-001.png");
+  background-image: url("../images/logo.white.png");
   background-position: center;
   background-repeat: no-repeat;
   height: 80px;
@@ -156,10 +156,10 @@ footer a.logo-lets, footer a.logo-vtex {
   width: 100px;
 }
 footer a.logo-lets {
-  background-image: url(letsencrypt-logo.png);
+  background-image: url("../images/letsencrypt-logo.png");
 }
 footer a.logo-vtex {
-  background-image: url(vtex-logo.png);
+  background-image: url("../images/vtex-logo.png");
 }
 .bread-crumb {
   margin-top: 20px;
@@ -376,27 +376,27 @@ h3.notifymetitle {
 #TB_ajaxContent .glis-title {
   font-weight: bold;
 }
-body.produto .produto .fb {
-  left: 28px;
-  position: absolute;
-  top: 8px;
-  z-index: $zindex-tooltip;
-}
+
 .giftlist-insertsku-wrapper {
   font-size: 0;
   position: absolute;
   right: 28px;
-  top: 8px;
-  z-index: $zindex-tooltip;
+  top: 14px;
+  z-index: $zindex-dropdown;
+}
+.giftlist-insertsku-wrapper .glis-popup-link:hover, .giftlist-insertsku-wrapper .glis-link:hover {
+  text-decoration: none;
 }
 .giftlist-insertsku-wrapper .glis-popup-link:before, .giftlist-insertsku-wrapper .glis-link:before {
   color: $white;
+  background-color: $red;
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   font-size: 1.8rem;
   font-weight: 400;
   opacity: .5;
-  text-shadow: $thumbnail-box-shadow;
+  padding: 10px 10px 8px;
+  transition: all 300ms linear;
 }
 .giftlist-insertsku-wrapper .glis-popup-link:hover:before, .giftlist-insertsku-wrapper .glis-link:hover:before {
   opacity: .8;
@@ -426,7 +426,7 @@ body.produto .produto .fb {
   left: 28px;
   position: absolute;
   top: 8px;
-  z-index: $zindex-tooltip;
+  z-index: $zindex-dropdown;
 }
 #caracteristicas th, #caracteristicas td {
   display: block;
@@ -899,5 +899,8 @@ ul.pages li.page-number.pgCurrent {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
+}
+s.text-muted {
+  color: $gray-100;
 }
 /* @media (prefers-color-scheme: dark) {} */

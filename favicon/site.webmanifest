@@ -1,0 +1,20 @@
+{
+    "name": "Murau",
+    "short_name": "Murau",
+    "icons": [
+        {
+            "src": "https://cdn.jsdelivr.net/gh/murau/murau-files/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://cdn.jsdelivr.net/gh/murau/murau-files/favicon/android-chrome-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffeeee",
+    "background_color": "#ffeeee",
+    "start_url": "https://www.murau.com.br",
+    "display": "standalone"
+}
