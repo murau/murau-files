@@ -390,6 +390,7 @@ h3.notifymetitle {
 .giftlist-insertsku-wrapper .glis-popup-link:before, .giftlist-insertsku-wrapper .glis-link:before {
   color: $white;
   background-color: $red;
+  border-radius: $rounded-pill;
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   font-size: 1.8rem;
@@ -447,7 +448,7 @@ body.produto .produto .fb {
 #ajaxBusy p {
   animation: spin 1.2s linear infinite;
   border-left-color: $secondary;
-  border-radius: 50%;
+  border-radius: $rounded-pill;
   border: 8px solid rgba($secondary, 0.3);
   height: 50px;
   overflow: hidden;
@@ -794,13 +795,14 @@ ul.ui-autocomplete li.ui-menu-item:hover {
   }
 }
 [class*=prateleira] ul li img {
-  width: 100%;
-  padding: .25rem;
-  background-color: $white;
-  border: 1px solid $gray-300;
-  border-radius: .25rem;
-  max-width: 100%;
-  height: auto;
+  padding: $thumbnail-padding;
+  background-color: $thumbnail-bg;
+  border: $thumbnail-border-width solid $thumbnail-border-color;
+  @include border-radius($thumbnail-border-radius);
+  @include box-shadow($thumbnail-box-shadow);
+
+  // Keep them at most 100% wide
+  @include img-fluid();
 }
 .resultado-busca-numero .value::after {
   content: " produtos encontrados";
