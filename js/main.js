@@ -72,9 +72,9 @@ const murau = {
         "mb-3",
         "border-bottom"
       );
-      titleDropCart.innerHTML = `Ite${
+      titleDropCart.innerHTML = `<span class='badge badge-pill badge-secondary cartQtd '>${qtd}</span> Ite${
         qtd > 1 ? "ns" : "m"
-      } na sacola <span class='badge badge-pill badge-secondary cartQtd '>${qtd}</span>`;
+      } na sacola <i class="fa-fw fas fa-shopping-bag"></i>`;
       if (dropcart) newdropcart.innerHTML = dropcart.cloneNode(true).innerHTML;
       newdropcart.insertBefore(titleDropCart, newdropcart.firstChild);
     }
@@ -104,18 +104,20 @@ const murau = {
     }
   },
   areYouMobile: () => {
-    let bodyProduto = document.querySelector("body.produto");
-    if (document.querySelector("header .navbar-toggler").offsetParent) {
-      u("header").removeClass("fixed-top");
-      u("header, body").addClass("mobile");
-      if (bodyProduto) bodyProduto.style.marginTop = 0;
+    let body = document.querySelector("body");
+    let home = body.querySelector(".home");
+    let header = body.querySelector("header");
+    let toggler = header.querySelector(".navbar-toggler");
+    if (toggler.offsetParent) {
+      body.classList.add("mobile");
+      header.classList.add("mobile");
+      header.classList.remove("fixed-top");
+      if (!home) body.style.marginTop = 0;
     } else {
-      u("header").addClass("fixed-top");
-      u("header, body").removeClass("mobile");
-      if (bodyProduto)
-        bodyProduto.style.marginTop = `${
-          document.querySelector("header").offsetHeight
-        }px`;
+      body.classList.remove("mobile");
+      header.classList.remove("mobile");
+      header.classList.add("fixed-top");
+      if (!home) body.style.marginTop = `${header.offsetHeight}px`;
     }
   },
   userColorScheme: () => {
@@ -266,7 +268,9 @@ if (zoomImages && zoomImages.length) {
     productCarouselImages += `
         <div class="carousel-item${i === 0 ? " active" : ""}">
             <a href="${img}" class="d-block">
-                <img src="${thumb}" class="img-fluid img-thumbnail" alt="${document.title}" title="${document.title}" />
+                <img src="${thumb}" class="img-fluid img-thumbnail" alt="${
+      document.title
+    }" title="${document.title}" />
             </a>
         </div>
     `;
@@ -303,4 +307,4 @@ document
   .querySelector("#searchBox")
   .addEventListener("hidden.bs.collapse", () => murau.areYouMobile());
 murau.areYouMobile();
-new SmoothScroll('a[href*="#"]');
+let smooth = new SmoothScroll('a[href*="#"]');
