@@ -975,9 +975,21 @@ body.login {
   z-index: 1080 !important;
   background-position: center !important;
 }
+#vtexIdContainer {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.vtexIdUI-show-app {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  margin: 0 !important;
+}
 .vtexIdUI .btn-success {
-  background-color: $primary;
-  background-image: linear-gradient(to bottom, $primary, $secondary);
+  background-color: $primary !important;
+  background-image: linear-gradient(to bottom, $primary, $secondary) !important;
 }
 .vtexIdUI .btn-success:hover,
 .vtexIdUI .btn-success:focus,
@@ -985,11 +997,11 @@ body.login {
 .vtexIdUI .btn-success.active,
 .vtexIdUI .btn-success.disabled,
 .vtexIdUI .btn-success[disabled] {
-  background-color: $primary;
+  background-color: $primary !important;
 }
 .vtexIdUI .btn-success:not(:disabled):not(.disabled):active,
 .vtexIdUI .btn-success:not(:disabled):not(.disabled).active {
-  background-color: $primary;
-  border-color: $primary;
+  background-color: $primary !important;
+  border-color: $primary !important;
 }
 /* @media (prefers-color-scheme: dark) {} */
