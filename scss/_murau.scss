@@ -968,4 +968,7 @@ s.text-muted {
 #toast-container > div {
   @include box-shadow($dropdown-box-shadow);
 }
+#vtexIdUI-global-loader {
+  z-index: 1080 !important;
+}
 /* @media (prefers-color-scheme: dark) {} */
