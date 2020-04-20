@@ -565,7 +565,7 @@ ul.ui-autocomplete {
   list-style: none;
   padding: 0;
   position: fixed !important;
-  top: 90px !important;
+  top: 75px !important;
   width: 100% !important;
   box-shadow: 0px 5px 5px 0px rgba($secondary, 0.25);
 }
@@ -608,7 +608,6 @@ ul.ui-autocomplete li.ui-menu-item:hover {
   top: 0;
 }
 .mobile ul.ui-autocomplete {
-  top: 75px !important;
   overflow: hidden;
   position: absolute !important;
   z-index: $zindex-dropdown !important;
