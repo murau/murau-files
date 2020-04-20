@@ -971,4 +971,7 @@ s.text-muted {
 #vtexIdUI-global-loader {
   z-index: 1080 !important;
 }
+body.login {
+  overflow: hidden;
+}
 /* @media (prefers-color-scheme: dark) {} */
