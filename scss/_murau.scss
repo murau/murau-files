@@ -372,7 +372,7 @@ h3.notifymetitle {
 }
 #TB_window {
   background-color: $white !important;
-  box-shadow: $thumbnail-box-shadow;
+  @include box-shadow($dropdown-box-shadow);
 }
 #TB_ajaxContent {
   padding: 20px !important;
@@ -416,7 +416,7 @@ h3.notifymetitle {
 .giftlist-insertsku-wrapper .glis-link:before {
   color: $white;
   background-color: $red;
-  border-radius: $rounded-pill;
+  @include border-radius($rounded-pill);
   content: "\f004";
   font-family: "Font Awesome 5 Free";
   font-size: 1.8rem;
@@ -477,7 +477,7 @@ body.produto .produto .fb {
 #ajaxBusy p {
   animation: spin 1.2s linear infinite;
   border-left-color: $secondary;
-  border-radius: $rounded-pill;
+  @include border-radius($rounded-pill);
   border: 8px solid rgba($secondary, 0.3);
   height: 50px;
   overflow: hidden;
@@ -497,7 +497,7 @@ body.produto .produto .fb {
   display: none;
 }
 .scroll-btn .mouse {
-  border-radius: 24px;
+  @include border-radius(24px);
   border: 2px solid $white;
   display: inline-block;
   height: 75px;
@@ -509,7 +509,7 @@ body.produto .produto .fb {
 .scroll-btn .mouse span {
   animation: scroll 2s linear infinite;
   background: $white;
-  border-radius: 20px;
+  @include border-radius(20px);
   display: block;
   height: 12px;
   left: 50%;
@@ -578,7 +578,7 @@ ul.ui-autocomplete {
   position: fixed !important;
   top: 75px !important;
   width: 100% !important;
-  box-shadow: 0px 5px 5px 0px rgba($secondary, 0.25);
+  @include box-shadow($dropdown-box-shadow);
 }
 ul.ui-autocomplete li.ui-menu-item {
   padding: 10px 30px;
@@ -674,7 +674,7 @@ ul.ui-autocomplete li.ui-menu-item:hover {
   right: 0;
 }
 .modal-content {
-  border-radius: 0;
+  @include border-radius(0);
   border: none;
 }
 .modal-header {
@@ -752,7 +752,7 @@ ul.ui-autocomplete li.ui-menu-item:hover {
   background: #4b2e28;
   text-align: center;
   color: #fff;
-  border-radius: 50rem;
+  @include border-radius(50rem);
   padding: 0px 10px 4px;
   font-weight: 300;
 }
@@ -959,5 +959,9 @@ p.compare,
 }
 s.text-muted {
   color: $gray-100 !important;
+}
+#toast-container.toast-bottom-center>div, #toast-container.toast-top-center>div {
+  width: 100% !important;
+  @include box-shadow($dropdown-box-shadow);
 }
 /* @media (prefers-color-scheme: dark) {} */
