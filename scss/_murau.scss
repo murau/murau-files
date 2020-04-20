@@ -987,5 +987,9 @@ body.login {
 .vtexIdUI .btn-success[disabled] {
   background-color: $primary;
 }
-
+.vtexIdUI .btn-success:not(:disabled):not(.disabled):active,
+.vtexIdUI .btn-success:not(:disabled):not(.disabled).active {
+  background-color: $primary;
+  border-color: $primary;
+}
 /* @media (prefers-color-scheme: dark) {} */
