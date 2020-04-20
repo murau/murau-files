@@ -968,10 +968,24 @@ s.text-muted {
 #toast-container > div {
   @include box-shadow($dropdown-box-shadow);
 }
-#vtexIdUI-global-loader {
-  z-index: 1080 !important;
-}
 body.login {
   overflow: hidden;
 }
+#vtexIdUI-global-loader {
+  z-index: 1080 !important;
+  background-position: center !important;
+}
+.vtexIdUI .btn-success {
+  background-color: $primary;
+  background-image: linear-gradient(to bottom, $primary, $secondary);
+}
+.vtexIdUI .btn-success:hover,
+.vtexIdUI .btn-success:focus,
+.vtexIdUI .btn-success:active,
+.vtexIdUI .btn-success.active,
+.vtexIdUI .btn-success.disabled,
+.vtexIdUI .btn-success[disabled] {
+  background-color: $primary;
+}
+
 /* @media (prefers-color-scheme: dark) {} */
