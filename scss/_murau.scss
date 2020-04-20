@@ -576,8 +576,7 @@ ul.ui-autocomplete li.ui-menu-item {
 .ui-autocomplete a {
   cursor: pointer;
   display: block;
-  font-weight: lighter;
-  padding: 10px;
+  padding: 5px 0;
 }
 ul.ui-autocomplete li.ui-menu-item:hover {
   background: rgba($secondary, 0.1);
@@ -612,6 +611,7 @@ ul.ui-autocomplete li.ui-menu-item:hover {
   top: 75px !important;
   overflow: hidden;
   position: absolute !important;
+  z-index: $zindex-dropdown;
 }
 .prateleira h2 {
   font-family: "Satisfy", cursive;
