@@ -324,10 +324,12 @@ document.addEventListener("DOMContentLoaded", () => {
     new Tab(tabPills[i]);
   }
 });
-if (!("Notification" in navigator)) {
-  console.log("Esse browser não suporta notificações desktop");
-} else {
-  if (Notification.permission !== "denied") {
-    await Notification.requestPermission();
+const noty = async () => {
+  if (!("Notification" in navigator)) {
+    console.log("Esse browser não suporta notificações desktop");
+  } else {
+    if (Notification.permission !== "denied") {
+      await Notification.requestPermission();
+    }
   }
-}
+};
