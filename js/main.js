@@ -320,8 +320,8 @@ const noty = async () => {
     }
   }
 };
+murau.areYouMobile();
 document.addEventListener("DOMContentLoaded", () => {
-  murau.areYouMobile();
   murau.tipTitle();
   const modals = document.querySelectorAll("[data-toggle=modal]");
   for (i = 0; i < modals.length; i++) {
