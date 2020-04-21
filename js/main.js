@@ -72,7 +72,7 @@ const murau = {
         "mb-3",
         "border-bottom"
       );
-      titleDropCart.innerHTML = `<span class='badge badge-pill badge-secondary cartQtd '>${qtd}</span> Ite${
+      titleDropCart.innerHTML = `<span class='badge badge-pill badge-secondary cartQtd'>${qtd}</span> Ite${
         qtd > 1 ? "ns" : "m"
       } na sacola <i class="fa-fw fas fa-shopping-bag"></i>`;
       if (dropcart) newdropcart.innerHTML = dropcart.cloneNode(true).innerHTML;
@@ -307,4 +307,23 @@ document
   .querySelector("#searchBox")
   .addEventListener("hidden.bs.collapse", () => murau.areYouMobile());
 murau.areYouMobile();
-let smooth = new SmoothScroll('a[href*="#"]');
+const smooth = new SmoothScroll('a[href*="#"]');
+const modals = document.querySelectorAll('[data-toggle=modal]');
+for (i = 0; i < modals.length; i++) {
+  modals[i].addEventListener('click', (evt) => {
+    evt.preventDefault();
+    new Modal(document.querySelector(evt.target.getAttribute("href")));
+  });
+}
+let navMedidas = document.getElementById("nav-medidas");
+var medidasTabs = navMedidas.getElementsByTagName("A");
+for (var i = 0; i < medidasTabs.length; i++) {
+  new Tab(medidasTabs[i], {
+    height: true,
+  });
+}
+let lastMtab = medidasTabs[medidasTabs.length - 1];
+var lastMtabInit = lastMtab.Tab;
+lastMtabInit.show();
+/* lastMtab.addEventListener('show.bs.tab', function(event){
+}, false); */
