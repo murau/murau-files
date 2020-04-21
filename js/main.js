@@ -315,7 +315,7 @@ for (i = 0; i < modals.length; i++) {
     new Modal(document.querySelector(evt.target.getAttribute("href")));
   });
 }
-let navMedidas = document.getElementById("nav-medidas");
+/* let navMedidas = document.getElementById("nav-medidas");
 var medidasTabs = navMedidas.getElementsByTagName("A");
 for (var i = 0; i < medidasTabs.length; i++) {
   new Tab(medidasTabs[i], {
@@ -324,6 +324,6 @@ for (var i = 0; i < medidasTabs.length; i++) {
 }
 let lastMtab = medidasTabs[medidasTabs.length - 1];
 var lastMtabInit = lastMtab.Tab;
-lastMtabInit.show();
+lastMtabInit.show(); */
 /* lastMtab.addEventListener('show.bs.tab', function(event){
 }, false); */
