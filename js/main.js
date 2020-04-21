@@ -312,7 +312,9 @@ const modals = document.querySelectorAll('[data-toggle=modal]');
 for (i = 0; i < modals.length; i++) {
   modals[i].addEventListener('click', (evt) => {
     evt.preventDefault();
-    new Modal(document.querySelector(evt.target.getAttribute("href")));
+    let target = evt.target.getAttribute("href");
+    console.log(target);
+    new Modal(document.querySelector(target));
   });
 }
 /* let navMedidas = document.getElementById("nav-medidas");
