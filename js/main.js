@@ -308,15 +308,14 @@ document
   .addEventListener("hidden.bs.collapse", () => murau.areYouMobile());
 murau.areYouMobile();
 const smooth = new SmoothScroll('a[href*="#"]');
-const modals = document.querySelectorAll('[data-toggle=modal]');
+/* const modals = document.querySelectorAll("[data-toggle=modal]");
 for (i = 0; i < modals.length; i++) {
-  modals[i].addEventListener('click', (evt) => {
+  modals[i].addEventListener("click", (evt) => {
     evt.preventDefault();
-    let target = evt.target.getAttribute("href");
-    console.log(target);
-    new Modal(document.querySelector(target));
+    let target = document.querySelector(evt.target.getAttribute("href"));
+    if (target) new Modal(target).open();
   });
-}
+} */
 /* let navMedidas = document.getElementById("nav-medidas");
 var medidasTabs = navMedidas.getElementsByTagName("A");
 for (var i = 0; i < medidasTabs.length; i++) {
