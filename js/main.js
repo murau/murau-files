@@ -316,7 +316,7 @@ for (i = 0; i < modals.length; i++) {
     if (target) new Modal(target).open();
   });
 }
-const tabPills = document.querySelectorAll("data-toggle=pill");
+const tabPills = document.querySelectorAll("[data-toggle=pill]");
 for (var i = 0; i < tabPills.length; i++) {
   new Tab(tabPills[i]);
 }
