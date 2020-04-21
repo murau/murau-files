@@ -1,3 +1,4 @@
+let smooth = new SmoothScroll('a[href*="#"]');
 let maskName = Inputmask({
   clearIncomplete: true,
   clearMaskOnLostFocus: true,
@@ -305,7 +306,6 @@ document.addEventListener("readystatechange", () => {
 document
   .querySelector("#searchBox")
   .addEventListener("hidden.bs.collapse", () => murau.areYouMobile());
-const smooth = new SmoothScroll('a[href*="#"]');
 const noty = async () => {
   if (!("Notification" in navigator)) {
     console.log("Esse browser não suporta notificações desktop");
@@ -318,7 +318,6 @@ const noty = async () => {
 document.addEventListener("DOMContentLoaded", () => {
   murau.areYouMobile();
   murau.tipTitle();
-  smooth;
   const modals = document.querySelectorAll("[data-toggle=modal]");
   for (i = 0; i < modals.length; i++) {
     modals[i].addEventListener("click", (evt) => {
