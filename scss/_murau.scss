@@ -952,13 +952,27 @@ p.compare,
 .menu-departamento a:hover {
   text-decoration: underline;
 }
-.Atributos-Google {
+.Atributos-Google,
+.Informacoes-de-Medidas {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
 }
 s.text-muted {
-  color: $gray-100 !important;
+  color: $gray-200 !important;
+  position: relative;
+  text-decoration: none;
+}
+s.text-muted::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 100%;
+  top: 10px;
+  background-color: $red;
+  box-sizing: border-box;
+  transform: rotate(10deg);
 }
 #toast-container.toast-bottom-center > div,
 #toast-container.toast-top-center > div {
@@ -1003,5 +1017,9 @@ body.login {
 .vtexIdUI .btn-success:not(:disabled):not(.disabled).active {
   background-color: $primary !important;
   border-color: $primary !important;
+}
+.vtexIdUI .vtexId-link,
+.vtexIdUI a {
+  color: $primary !important;
 }
 /* @media (prefers-color-scheme: dark) {} */
