@@ -308,23 +308,16 @@ document
   .addEventListener("hidden.bs.collapse", () => murau.areYouMobile());
 murau.areYouMobile();
 const smooth = new SmoothScroll('a[href*="#"]');
-/* const modals = document.querySelectorAll("[data-toggle=modal]");
+const modals = document.querySelectorAll("[data-toggle=modal]");
 for (i = 0; i < modals.length; i++) {
   modals[i].addEventListener("click", (evt) => {
     evt.preventDefault();
-    let target = document.querySelector(evt.target.getAttribute("href"));
+    let target = document.querySelector(evt.target.getAttribute("data-target"));
     if (target) new Modal(target).open();
   });
-} */
-/* let navMedidas = document.getElementById("nav-medidas");
-var medidasTabs = navMedidas.getElementsByTagName("A");
-for (var i = 0; i < medidasTabs.length; i++) {
-  new Tab(medidasTabs[i], {
-    height: true,
-  });
 }
-let lastMtab = medidasTabs[medidasTabs.length - 1];
-var lastMtabInit = lastMtab.Tab;
-lastMtabInit.show(); */
-/* lastMtab.addEventListener('show.bs.tab', function(event){
-}, false); */
+const tabPills = document.querySelectorAll("data-toggle=pill");
+for (var i = 0; i < tabPills.length; i++) {
+  new Tab(tabPills[i]);
+}
+/* tabPills[0].Tab.show(); */
