@@ -105,7 +105,7 @@ const murau = {
   },
   areYouMobile: () => {
     let body = document.querySelector("body");
-    let home = body.querySelector(".home");
+    let home = document.querySelector("body.home");
     let header = body.querySelector("header");
     let toggler = header.querySelector(".navbar-toggler");
     if (toggler.offsetParent) {
@@ -305,10 +305,20 @@ document.addEventListener("readystatechange", () => {
 document
   .querySelector("#searchBox")
   .addEventListener("hidden.bs.collapse", () => murau.areYouMobile());
+const smooth = new SmoothScroll('a[href*="#"]');
+const noty = async () => {
+  if (!("Notification" in navigator)) {
+    console.log("Esse browser não suporta notificações desktop");
+  } else {
+    if (Notification.permission !== "denied") {
+      await Notification.requestPermission();
+    }
+  }
+};
 document.addEventListener("DOMContentLoaded", () => {
   murau.areYouMobile();
   murau.tipTitle();
-  const smooth = new SmoothScroll('a[href*="#"]');
+  smooth;
   const modals = document.querySelectorAll("[data-toggle=modal]");
   for (i = 0; i < modals.length; i++) {
     modals[i].addEventListener("click", (evt) => {
@@ -324,12 +334,3 @@ document.addEventListener("DOMContentLoaded", () => {
     new Tab(tabPills[i]);
   }
 });
-const noty = async () => {
-  if (!("Notification" in navigator)) {
-    console.log("Esse browser não suporta notificações desktop");
-  } else {
-    if (Notification.permission !== "denied") {
-      await Notification.requestPermission();
-    }
-  }
-};
