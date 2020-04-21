@@ -1,4 +1,4 @@
-let smooth = new SmoothScroll('a[href*="#"]');
+new SmoothScroll('a[href*="#"]', { updateURL: false });
 let maskName = Inputmask({
   clearIncomplete: true,
   clearMaskOnLostFocus: true,
@@ -132,6 +132,11 @@ const murau = {
       window.matchMedia("(prefers-color-scheme: light)").matches
     )
       return "light";
+  },
+  userReducedMotion: () => {
+    if (window.matchMedia)
+      return window.matchMedia("(prefers-reduced-motion)").matches;
+    return false;
   },
 };
 vtexjs.checkout.getOrderForm().done((orderForm) => {
