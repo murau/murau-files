@@ -313,7 +313,7 @@ for (i = 0; i < modals.length; i++) {
   modals[i].addEventListener("click", (evt) => {
     evt.preventDefault();
     let target = document.querySelector(evt.target.getAttribute("data-target"));
-    if (target) new Modal(target).open();
+    if (target) new Modal(target).show();
   });
 }
 const tabPills = document.querySelectorAll("[data-toggle=pill]");
