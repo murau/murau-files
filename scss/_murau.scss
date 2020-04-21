@@ -628,6 +628,9 @@ ul.ui-autocomplete li.ui-menu-item:hover {
   font-size: 2.5rem;
   margin-top: 30px;
 }
+body.home .prateleira h2 {
+  margin-top: 0;
+}
 .prateleira h2:first-letter {
   font-size: 3rem;
 }
@@ -823,6 +826,22 @@ ul.ui-autocomplete li.ui-menu-item:hover {
   flex: 0 0 100%;
   max-width: 100%;
 }
+[class*="prateleira"] ul li a {
+  transition: all 2s linear;
+}
+[class*="prateleira"] ul li a:hover {
+  transform: scale(1.05);
+}
+[class*="prateleira"] ul li img {
+  padding: $thumbnail-padding;
+  background-color: $thumbnail-bg;
+  border: $thumbnail-border-width solid $thumbnail-border-color;
+  @include border-radius($thumbnail-border-radius);
+  @include box-shadow($thumbnail-box-shadow);
+  width: 100%;
+  // Keep them at most 100% wide
+  @include img-fluid();
+}
 @media (min-width: map-get($grid-breakpoints, "md")) {
   [class*="prateleira"] ul li {
     -ms-flex: 0 0 50%;
@@ -836,16 +855,6 @@ ul.ui-autocomplete li.ui-menu-item:hover {
     flex: 0 0 25%;
     max-width: 25%;
   }
-}
-[class*="prateleira"] ul li img {
-  padding: $thumbnail-padding;
-  background-color: $thumbnail-bg;
-  border: $thumbnail-border-width solid $thumbnail-border-color;
-  @include border-radius($thumbnail-border-radius);
-  @include box-shadow($thumbnail-box-shadow);
-  width: 100%;
-  // Keep them at most 100% wide
-  @include img-fluid();
 }
 .resultado-busca-numero .value::after {
   content: " produtos encontrados";
