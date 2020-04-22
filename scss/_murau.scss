@@ -240,7 +240,6 @@ body.produto .skuBestPrice {
 }
 body.produto .skuListPrice {
   font-size: 0.8rem;
-  text-decoration: line-through;
 }
 body.produto .sku-selector-container ul {
   list-style: none !important;
@@ -968,12 +967,14 @@ p.compare,
   visibility: hidden !important;
   opacity: 0 !important;
 }
-s.text-muted {
+s.text-muted,
+body.produto .skuListPrice {
   color: $gray-200 !important;
   position: relative;
   text-decoration: none;
 }
-s.text-muted::before {
+s.text-muted::before,
+body.produto .skuListPrice::before {
   content: "";
   position: absolute;
   display: block;
