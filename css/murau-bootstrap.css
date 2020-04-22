@@ -11126,10 +11126,6 @@ body.produto .skuBestPrice {
   font-weight: bolder;
 }
 
-body.produto .skuListPrice {
-  font-size: 0.8rem;
-}
-
 body.produto .sku-selector-container ul {
   list-style: none !important;
   padding: 0;
@@ -11985,9 +11981,19 @@ body.produto .skuListPrice::before {
   height: 2px;
   width: 100%;
   top: 10px;
+  left: 0;
   background-color: #dc3545;
   box-sizing: border-box;
   transform: rotate(10deg);
+}
+
+body.produto .skuListPrice {
+  font-size: 0.8rem;
+  color: #4b2e28 !important;
+}
+
+body.produto .skuListPrice::before {
+  top: 8px;
 }
 
 #toast-container.toast-bottom-center > div,
