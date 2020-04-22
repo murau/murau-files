@@ -337,4 +337,5 @@ document.addEventListener("DOMContentLoaded", () => {
   for (var i = 0; i < tabPills.length; i++) {
     new Tab(tabPills[i]);
   }
+  console.log("Página carregada completamente.");
 });
