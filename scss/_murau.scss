@@ -1090,3 +1090,15 @@ body.login {
   -ms-transform: rotate(0);
   transform: rotate(0);
 }
+.carousel-control-prev, .carousel-control-next, .carousel-control-prev:focus, .carousel-control-next:focus {
+  opacity: .2;
+}
+.carousel-control-prev:hover, .carousel-control-next:hover {
+  opacity: .6;
+}
+.carousel-control-prev {
+  background-image: linear-gradient(to right, $primary, transparent);
+}
+.carousel-control-next {
+  background-image: linear-gradient(to left, $primary, transparent);
+}
