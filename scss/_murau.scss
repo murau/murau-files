@@ -1096,16 +1096,23 @@ body.login {
   -ms-transform: rotate(0);
   transform: rotate(0);
 }
-.carousel-control-prev, .carousel-control-next, .carousel-control-prev:focus, .carousel-control-next:focus {
-  opacity: .1;
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  opacity: 0.1;
   transition: all 300ms linear;
 }
-.carousel-control-prev:hover, .carousel-control-next:hover {
-  opacity: .2;
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 0.2;
 }
 .carousel-control-prev {
   background-image: linear-gradient(to right, $primary, transparent);
 }
 .carousel-control-next {
   background-image: linear-gradient(to left, $primary, transparent);
+}
+.no-variations .link-guia {
+  display: none;
 }

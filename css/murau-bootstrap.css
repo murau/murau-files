@@ -12116,12 +12116,16 @@ body.login {
   transform: rotate(0);
 }
 
-.carousel-control-prev, .carousel-control-next, .carousel-control-prev:focus, .carousel-control-next:focus {
+.carousel-control-prev,
+.carousel-control-next,
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
   opacity: 0.1;
   transition: all 300ms linear;
 }
 
-.carousel-control-prev:hover, .carousel-control-next:hover {
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
   opacity: 0.2;
 }
 
@@ -12131,6 +12135,10 @@ body.login {
 
 .carousel-control-next {
   background-image: linear-gradient(to left, #4b2e28, transparent);
+}
+
+.no-variations .link-guia {
+  display: none;
 }
 
 /*# sourceMappingURL=murau-bootstrap.css.map */

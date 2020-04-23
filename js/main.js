@@ -337,5 +337,6 @@ document.addEventListener("DOMContentLoaded", () => {
   for (var i = 0; i < tabPills.length; i++) {
     new Tab(tabPills[i]);
   }
-  console.log("Página carregada completamente.");
+  if (!document.querySelector("body.produto .skuList"))
+    document.body.classList.add("no-variations");
 });
