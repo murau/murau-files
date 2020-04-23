@@ -343,6 +343,12 @@ body.produto .similar img:hover {
   position: relative;
   width: 100% !important;
 }
+.notifyme {
+  padding: 25px;
+  border: 5px dotted $secondary;
+  text-align: center;
+  margin: 0 0 15px;
+}
 .notifyme-form {
   margin: 5px 0 20px;
 }

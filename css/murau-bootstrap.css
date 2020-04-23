@@ -11250,6 +11250,13 @@ body.produto .similar img:hover {
   width: 100% !important;
 }
 
+.notifyme {
+  padding: 25px;
+  border: 5px dotted #301d19;
+  text-align: center;
+  margin: 0 0 15px;
+}
+
 .notifyme-form {
   margin: 5px 0 20px;
 }
