@@ -339,4 +339,48 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (!document.querySelector("body.produto .skuList"))
     document.body.classList.add("no-variations");
+  fetch(
+    "https://www.murau.com.br/api/dataentities/LL/search?_fields=title,link,parent,category"
+  )
+    .then((res) => res.json())
+    .then((links) => {
+      links.sort();
+      let html = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase font-weight-bold">`;
+      for (menu of links) {
+        if (menu.link && !menu.parent) {
+          html += `<li class="nav-item"><a class="nav-link" href="${menu.link}">${menu.title}</a></li>`;
+        } else if (!menu.parent) {
+          let childs = links.filter((i) => {
+            return i.parent === menu.title;
+          });
+          childs.sort();
+          html += `
+              <li class="nav-item dropdown megamenu">
+                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">${menu.title}</a>
+                  <div aria-labelledby="megamenu" class="dropdown-menu">
+                      <div class="container">
+                          <div class="row w-100 bg-white rounded-0 m-0 shadow">
+                              <div class="col-12">
+                                  <div class="p-5">
+                                      <ul class="list-unstyled">
+              `;
+          for (child of childs) {
+            html += `
+                      <li class="nav-item"><a href="${child.link}" class="nav-link text-small pb-0">${child.title}</a></li>
+                  `;
+          }
+          html += `
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              `;
+        }
+      }
+      html += `</ul>`;
+      document.querySelector("#MainMenu").innerHTML = html;
+    });
 });

@@ -11610,7 +11610,7 @@ body.home .prateleira h2 {
 
 .modal.left .modal-body,
 .modal.right .modal-body {
-  padding: 15px 15px 80px;
+  padding: 15px;
 }
 
 /* Left */
@@ -11712,6 +11712,7 @@ body.home .prateleira h2 {
   line-height: 1;
   font-size: 1rem;
   color: #4b2e28;
+  margin: 0 auto;
 }
 
 #murau-mini-cart .modal-content .cartSkuUnitPrice {
