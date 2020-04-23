@@ -10837,6 +10837,14 @@ body * {
   transition: background 300ms ease-in-out 1ms;
 }
 
+body {
+  margin-top: 244px;
+}
+
+body.home {
+  margin-top: 0;
+}
+
 #made-with-love h2 {
   font-family: "Satisfy", cursive;
   font-size: 3rem;
@@ -11096,10 +11104,6 @@ body.produto #show .sku-rich-image-main {
 
 body.produto .display-4 {
   font-size: 3rem !important;
-}
-
-body.produto {
-  margin-top: 245px;
 }
 
 body.produto .productReference,
