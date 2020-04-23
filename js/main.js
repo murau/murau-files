@@ -1,4 +1,20 @@
 new SmoothScroll('a[href*="#"]', { updateURL: false });
+function compareValues(key, order = "asc") {
+  return function innerSort(a, b) {
+    if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+      return 0;
+    }
+    const varA = typeof a[key] === "string" ? a[key].toUpperCase() : a[key];
+    const varB = typeof b[key] === "string" ? b[key].toUpperCase() : b[key];
+    let comparison = 0;
+    if (varA > varB) {
+      comparison = 1;
+    } else if (varA < varB) {
+      comparison = -1;
+    }
+    return order === "desc" ? comparison * -1 : comparison;
+  };
+}
 let maskName = Inputmask({
   clearIncomplete: true,
   clearMaskOnLostFocus: true,
@@ -339,12 +355,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (!document.querySelector("body.produto .skuList"))
     document.body.classList.add("no-variations");
-  fetch(
-    "https://www.murau.com.br/api/dataentities/LL/search?_fields=title,link,parent,category"
-  )
+  fetch("/api/dataentities/LL/search?_fields=title,link,parent,category")
     .then((res) => res.json())
     .then((links) => {
-      links.sort();
+      links.sort(compareValues("title"));
       let html = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase font-weight-bold">`;
       for (menu of links) {
         if (menu.link && !menu.parent) {
@@ -353,7 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let childs = links.filter((i) => {
             return i.parent === menu.title;
           });
-          childs.sort();
+          childs.sort(compareValues("title"));
           html += `
               <li class="nav-item dropdown megamenu">
                   <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">${menu.title}</a>
