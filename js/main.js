@@ -96,7 +96,6 @@ const links = [
     url: "/sale",
   },
 ];
-new SmoothScroll('a[href*="#"]', { updateURL: false });
 function compareValues(key, order = "asc") {
   return function innerSort(a, b) {
     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
@@ -168,7 +167,7 @@ function alert(alertMessage, type = "warning") {
 const murau = {
   updateMiniCart: (qtd) => {
     let cartqtd = document.querySelectorAll(".cartQtd");
-    for (cartQtd of cartqtd) {
+    for (let cartQtd of cartqtd) {
       cartQtd.textContent = qtd;
     }
     let portalmc = document.querySelector(".portal-minicart-ref");
@@ -214,8 +213,8 @@ const murau = {
       content: (el) => el.getAttribute("title"),
     });
     let hasTitle = document.querySelectorAll("[title]");
-    for (i = 0; i < hasTitle.length; i++) {
-      hasTitle[i].removeAttribute("title");
+    for (let removeTitle of hasTitle) {
+      removeTitle.removeAttribute("title");
     }
   },
   areYouMobile: () => {
@@ -260,12 +259,12 @@ window.addEventListener("resize", () => murau.areYouMobile());
 window.addEventListener("scroll", () => {
   let bodyHeader = document.querySelectorAll("body, header");
   if (window.pageYOffset > 100) {
-    for (i = 0; i < bodyHeader.length; i++) {
-      bodyHeader[i].classList.add("scroll");
+    for (let element of bodyHeader) {
+      element.classList.add("scroll");
     }
   } else {
-    for (i = 0; i < bodyHeader.length; i++) {
-      bodyHeader[i].classList.remove("scroll");
+    for (let element of bodyHeader) {
+      element.classList.remove("scroll");
     }
     murau.areYouMobile();
   }
@@ -438,8 +437,8 @@ murau.areYouMobile();
 document.addEventListener("DOMContentLoaded", () => {
   murau.tipTitle();
   const modals = document.querySelectorAll("[data-toggle=modal]");
-  for (i = 0; i < modals.length; i++) {
-    modals[i].addEventListener("click", (evt) => {
+  for (let modal of modals) {
+    modal.addEventListener("click", (evt) => {
       evt.preventDefault();
       let target = document.querySelector(
         evt.target.getAttribute("data-target")
@@ -448,14 +447,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   const tabPills = document.querySelectorAll("[data-toggle=pill]");
-  for (var i = 0; i < tabPills.length; i++) {
-    new Tab(tabPills[i]);
+  for (let tabPill of tabPills) {
+    new Tab(tabPill);
   }
   if (!document.querySelector("body.produto .skuList"))
     document.body.classList.add("no-variations");
   links.sort(compareValues("order"));
   let HTMLmenuNavigation = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase font-weight-bold">`;
-  for (link of links) {
+  for (let link of links) {
     if (link.url && !link.childs) {
       HTMLmenuNavigation += `<li class="nav-item"><a class="nav-link" href="${link.url}">${link.title}</a></li>`;
     } else if (link.childs) {
@@ -470,7 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="p-5">
                                       <ul class="list-unstyled">
               `;
-      for (child of link.childs) {
+      for (let child of link.childs) {
         HTMLmenuNavigation += `
                       <li class="nav-item"><a href="${child.url}" class="nav-link text-small pb-0">${child.title}</a></li>
                   `;
@@ -488,4 +487,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   HTMLmenuNavigation += `</ul>`;
   document.querySelector("#MainMenu").innerHTML = HTMLmenuNavigation;
+  let anchorlinks = document.querySelectorAll('a[href^="#"]');
+  for (let item of anchorlinks) {
+    item.addEventListener("click", (e) => {
+      let hashval = item.getAttribute("href");
+      let target = document.querySelector(hashval);
+      target.scrollIntoView({
+        behavior: "smooth",
+      });
+      history.pushState(null, null, hashval);
+      e.preventDefault();
+    });
+  }
 });
