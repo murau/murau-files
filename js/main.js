@@ -1,3 +1,109 @@
+const links = [
+  {
+    order: 1,
+    title: "Novidades",
+    url: "/novidades?PS=24&O=OrderByReleaseDateDESC",
+  },
+  {
+    order: 2,
+    title: "Coleção",
+    url: "#",
+    childs: [
+      {
+        title: "Blusas",
+        url: "/roupa/blusas?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Body",
+        url: "/roupa/body?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Calça",
+        url: "/roupa/calca?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Camisas",
+        url: "/roupa/camisas?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Casacos",
+        url: "/roupa/casacos?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Coletes",
+        url: "/roupa/coletes?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Conjuntos",
+        url: "/roupa/conjuntos?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Cropped",
+        url: "/roupa/Cropped?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Jaquetas",
+        url: "/roupa/Jaquetas?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Macacão",
+        url: "/roupa/macacao?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Saias",
+        url: "/roupa/saias?PS=24&O=OrderByReleaseDateDESCC",
+      },
+      {
+        title: "Shorts",
+        url: "/roupa/shorts?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Short-saia",
+        url: "/roupa/short-saia?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "T-Shirt",
+        url: "/roupa/T-Shirt?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Vestidos",
+        url: "/roupa/vestidos?PS=24&O=OrderByReleaseDateDESC",
+      },
+      {
+        title: "Ver todos",
+        url: "/roupa?PS=24&O=OrderByReleaseDateDESC",
+      },
+    ],
+  },
+  {
+    order: 3,
+    title: "Acessórios",
+    url: "#",
+    childs: [
+      {
+        title: "Cintos",
+        url: "/acessorios/Cintos",
+      },
+      {
+        title: "Colares",
+        url: "/acessorios/Colares",
+      },
+      {
+        title: "Bolsas",
+        url: "/acessorios/Bolsas",
+      },
+      {
+        title: "Ver todos",
+        url: "/acessorios",
+      },
+    ],
+  },
+  {
+    order: 4,
+    title: "Sale",
+    url: "/sale",
+  },
+];
 new SmoothScroll('a[href*="#"]', { updateURL: false });
 function compareValues(key, order = "asc") {
   return function innerSort(a, b) {
@@ -355,22 +461,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (!document.querySelector("body.produto .skuList"))
     document.body.classList.add("no-variations");
-  fetch("/api/dataentities/LL/search?_fields=title,link,parent,category")
-    .then((res) => res.json())
-    .then((links) => {
-      links.sort(compareValues("title"));
-      let html = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase font-weight-bold">`;
-      for (menu of links) {
-        if (menu.link && !menu.parent) {
-          html += `<li class="nav-item"><a class="nav-link" href="${menu.link}">${menu.title}</a></li>`;
-        } else if (!menu.parent) {
-          let childs = links.filter((i) => {
-            return i.parent === menu.title;
-          });
-          childs.sort(compareValues("title"));
-          html += `
+  links.sort(compareValues("order"));
+  let html = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase font-weight-bold">`;
+  for (link of links) {
+    if (link.url && !link.childs) {
+      html += `<li class="nav-item"><a class="nav-link" href="${link.url}">${link.title}</a></li>`;
+    } else if (link.childs) {
+      link.childs.sort(compareValues("title"));
+      html += `
               <li class="nav-item dropdown megamenu">
-                  <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">${menu.title}</a>
+                  <a href="${link.url}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">${link.title}</a>
                   <div aria-labelledby="megamenu" class="dropdown-menu">
                       <div class="container">
                           <div class="row w-100 bg-white rounded-0 m-0 shadow">
@@ -378,12 +478,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="p-5">
                                       <ul class="list-unstyled">
               `;
-          for (child of childs) {
-            html += `
-                      <li class="nav-item"><a href="${child.link}" class="nav-link text-small pb-0">${child.title}</a></li>
+      for (child of link.childs) {
+        html += `
+                      <li class="nav-item"><a href="${child.url}" class="nav-link text-small pb-0">${child.title}</a></li>
                   `;
-          }
-          html += `
+      }
+      html += `
                                       </ul>
                                   </div>
                               </div>
@@ -392,9 +492,8 @@ document.addEventListener("DOMContentLoaded", () => {
                   </div>
               </li>
               `;
-        }
-      }
-      html += `</ul>`;
-      document.querySelector("#MainMenu").innerHTML = html;
-    });
+    }
+  }
+  html += `</ul>`;
+  document.querySelector("#MainMenu").innerHTML = html;
 });
