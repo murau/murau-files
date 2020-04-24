@@ -7,7 +7,7 @@ const links = [
   {
     order: 2,
     title: "Coleção",
-    url: "#",
+    url: "/roupa?PS=24&O=OrderByReleaseDateDESC",
     childs: [
       {
         title: "Blusas",
@@ -69,16 +69,12 @@ const links = [
         title: "Vestidos",
         url: "/roupa/vestidos?PS=24&O=OrderByReleaseDateDESC",
       },
-      {
-        title: "Ver todos",
-        url: "/roupa?PS=24&O=OrderByReleaseDateDESC",
-      },
     ],
   },
   {
     order: 3,
     title: "Acessórios",
-    url: "#",
+    url: "/acessorios",
     childs: [
       {
         title: "Cintos",
@@ -91,10 +87,6 @@ const links = [
       {
         title: "Bolsas",
         url: "/acessorios/Bolsas",
-      },
-      {
-        title: "Ver todos",
-        url: "/acessorios",
       },
     ],
   },
@@ -462,13 +454,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.querySelector("body.produto .skuList"))
     document.body.classList.add("no-variations");
   links.sort(compareValues("order"));
-  let html = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase font-weight-bold">`;
+  let HTMLmenuNavigation = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase font-weight-bold">`;
   for (link of links) {
     if (link.url && !link.childs) {
-      html += `<li class="nav-item"><a class="nav-link" href="${link.url}">${link.title}</a></li>`;
+      HTMLmenuNavigation += `<li class="nav-item"><a class="nav-link" href="${link.url}">${link.title}</a></li>`;
     } else if (link.childs) {
       link.childs.sort(compareValues("title"));
-      html += `
+      HTMLmenuNavigation += `
               <li class="nav-item dropdown megamenu">
                   <a href="${link.url}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">${link.title}</a>
                   <div aria-labelledby="megamenu" class="dropdown-menu">
@@ -479,11 +471,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                       <ul class="list-unstyled">
               `;
       for (child of link.childs) {
-        html += `
+        HTMLmenuNavigation += `
                       <li class="nav-item"><a href="${child.url}" class="nav-link text-small pb-0">${child.title}</a></li>
                   `;
       }
-      html += `
+      HTMLmenuNavigation += `
                                       </ul>
                                   </div>
                               </div>
@@ -494,6 +486,6 @@ document.addEventListener("DOMContentLoaded", () => {
               `;
     }
   }
-  html += `</ul>`;
-  document.querySelector("#MainMenu").innerHTML = html;
+  HTMLmenuNavigation += `</ul>`;
+  document.querySelector("#MainMenu").innerHTML = HTMLmenuNavigation;
 });

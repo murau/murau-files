@@ -10993,7 +10993,7 @@ header #searchBoxTop input::placeholder {
 }
 
 .megamenu .dropdown-menu ul {
-  column-count: 3;
+  column-count: 4;
 }
 
 .fixed-top .megamenu:hover .dropdown-menu {
