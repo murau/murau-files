@@ -494,7 +494,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let target = document.querySelector(hashval);
       target.scrollIntoView({
         behavior: "smooth",
-        block: "center"
+        block: "start"
       });
       history.pushState(null, null, hashval);
       e.preventDefault();
