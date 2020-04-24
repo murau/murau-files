@@ -10978,6 +10978,7 @@ header #searchBoxTop input::placeholder {
 
 .megamenu {
   position: static;
+  transition: all 300ms linear;
 }
 
 .megamenu .dropdown-menu {
@@ -10996,7 +10997,7 @@ header #searchBoxTop input::placeholder {
   column-count: 4;
 }
 
-.fixed-top .megamenu:hover .dropdown-menu {
+.megamenu:hover .dropdown-menu {
   display: block;
 }
 
