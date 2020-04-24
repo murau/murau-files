@@ -314,6 +314,9 @@ window.addEventListener("click", (e) => {
       });
     return;
   }
+  if (target.id === "login") {
+    document.body.style.overflow = "hidden";
+  }
   if (target.className && target.className.includes("cNewsletter")) {
     e.preventDefault();
     let nome = target.parentNode.querySelector("[name=nome]").value.trim();

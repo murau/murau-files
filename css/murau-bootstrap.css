@@ -12151,4 +12151,8 @@ body.login {
   height: 1.2rem;
 }
 
+.ajax-content-loader, .welcome {
+  display: none;
+}
+
 /*# sourceMappingURL=murau-bootstrap.css.map */
