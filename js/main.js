@@ -491,10 +491,11 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let item of anchorlinks) {
     item.addEventListener("click", (e) => {
       let hashval = item.getAttribute("href");
+      if (!hashval.replace("#", "").length) return;
       let target = document.querySelector(hashval);
       target.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
       history.pushState(null, null, hashval);
       e.preventDefault();
