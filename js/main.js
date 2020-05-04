@@ -316,6 +316,7 @@ window.addEventListener("click", (e) => {
   }
   if (target.id === "login") {
     document.body.style.overflow = "hidden";
+    return;
   }
   if (target.className && target.className.includes("cNewsletter")) {
     e.preventDefault();
@@ -469,7 +470,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       <div class="container">
                           <div class="row w-100 bg-white rounded-0 m-0 shadow">
                               <div class="col-12">
-                                  <div class="p-5">
+                                  <div class="p-4">
                                       <ul class="list-unstyled">
               `;
       for (let child of link.childs) {
