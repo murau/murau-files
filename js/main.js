@@ -188,7 +188,7 @@ const murau = {
       );
       titleDropCart.innerHTML = `<span class='badge badge-pill badge-secondary cartQtd'>${qtd}</span> Ite${
         qtd > 1 ? "ns" : "m"
-      } na sacola <i class="fa-fw fas fa-shopping-bag"></i>`;
+        } na sacola <i class="fa-fw fas fa-shopping-bag"></i>`;
       if (dropcart) newdropcart.innerHTML = dropcart.cloneNode(true).innerHTML;
       newdropcart.insertBefore(titleDropCart, newdropcart.firstChild);
     }
@@ -273,6 +273,7 @@ window.addEventListener("click", (e) => {
   let target = e.target;
   if (
     target.parentNode.className &&
+    typeof target.parentNode.className === "string" &&
     target.parentNode.className.includes("cartSkuRemove")
   ) {
     e.preventDefault();
@@ -296,6 +297,7 @@ window.addEventListener("click", (e) => {
   }
   if (
     target.className &&
+    typeof target.className === "string" &&
     target.className.includes("buy-button") &&
     target.getAttribute("href").includes("cart/add")
   ) {
@@ -318,7 +320,10 @@ window.addEventListener("click", (e) => {
     document.body.style.overflow = "hidden";
     return;
   }
-  if (target.className && target.className.includes("cNewsletter")) {
+  if (target.className &&
+    typeof target.className === "string" &&
+    target.className.includes("cNewsletter")
+  ) {
     e.preventDefault();
     let nome = target.parentNode.querySelector("[name=nome]").value.trim();
     if (!nome) return alert("Preencha o campo nome.");
@@ -378,7 +383,7 @@ if (zoomImages && zoomImages.length) {
     productCarouselImages += `
         <li data-target="#productImages" data-slide-to="${i}"${
       i === 0 ? '  class="active"' : ""
-    }></li>
+      }></li>
     `;
   }
   productCarouselImages += `
@@ -393,7 +398,7 @@ if (zoomImages && zoomImages.length) {
             <a href="${img}" class="d-block">
                 <img src="${thumb}" class="img-fluid img-thumbnail" alt="${
       document.title
-    }" title="${document.title}" />
+      }" title="${document.title}" />
             </a>
         </div>
     `;
