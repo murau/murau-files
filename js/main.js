@@ -262,10 +262,12 @@ window.addEventListener("scroll", () => {
     for (let element of bodyHeader) {
       element.classList.add("scroll");
     }
+    document.querySelector('header .collapse').classList.remove('show');
   } else {
     for (let element of bodyHeader) {
       element.classList.remove("scroll");
     }
+    document.querySelector('header .collapse').classList.add('show');
     murau.areYouMobile();
   }
 });
