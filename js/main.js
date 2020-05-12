@@ -230,7 +230,6 @@ const murau = {
     } else {
       body.classList.remove("mobile");
       header.classList.remove("mobile");
-      header.classList.add("fixed-top");
       if (!home) body.style.marginTop = `${header.offsetHeight}px`;
     }
   },
@@ -261,11 +260,13 @@ window.addEventListener("scroll", () => {
   if (window.pageYOffset > 100) {
     for (let element of bodyHeader) {
       element.classList.add("scroll");
+      if (element.localName === "header") element.classList.add("fixed-top");
     }
     document.querySelector('#MainMenu.collapse').classList.remove('show');
   } else {
     for (let element of bodyHeader) {
       element.classList.remove("scroll");
+      if (element.localName === "header") element.classList.remove("fixed-top");
     }
     document.querySelector('#MainMenu.collapse').classList.add('show');
     murau.areYouMobile();
@@ -461,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
   for (let tabPill of tabPills) {
     new Tab(tabPill);
   }
-  if (!document.querySelector("body.produto .skuList"))
+  if (document.querySelector('body.produto') && !document.querySelector("body.produto .skuList"))
     document.body.classList.add("no-variations");
   links.sort(compareValues("order"));
   let HTMLmenuNavigation = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase">`;
