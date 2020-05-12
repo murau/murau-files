@@ -268,7 +268,6 @@ window.addEventListener("scroll", () => {
       element.classList.remove("scroll");
       if (element.localName === "header") element.classList.remove("fixed-top");
     }
-    document.querySelector('#MainMenu.collapse').classList.add('show');
     murau.areYouMobile();
   }
 });
