@@ -24,23 +24,12 @@ header a.navbar-brand {
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   overflow: hidden;
   text-indent: -9999px;
   width: 120px;
   z-index: $zindex-fixed;
   background-size: 80%;
-}
-header.mobile a.navbar-brand {
-  background-position: bottom;
-  height: 14px;
-  width: 90px;
-  padding: 5px;
-  background-size: 90px;
-}
-header.mobile,
-body.produto header {
-  background-color: $primary;
 }
 header .main-menu {
   background-color: rgba($secondary, 0.25);
@@ -51,21 +40,8 @@ header .main-menu:hover {
   background-color: rgba($secondary, 0.95) !important;
 }
 header.fixed-top.scroll a.navbar-brand {
-  position: absolute;
-  left: -10px;
-  top: -30px;
-  background-size: 70px;
+  background-size: 50%;
   transition: all 300ms linear;
-}
-header.fixed-top.scroll a.navbar-brand:hover {
-  background-size: 112px;
-  transform: rotate(360deg);
-  height: 50px;
-  background-position: top;
-  top: -20px;
-}
-header.fixed-top.scroll .category-menu {
-  margin-top: -30px;
 }
 header .category-menu > ul > li {
   transition: background-size 2s linear;
