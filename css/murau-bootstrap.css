@@ -10870,7 +10870,7 @@ header a.navbar-brand {
   text-indent: -9999px;
   width: 120px;
   z-index: 1030;
-  background-size: 80%;
+  background-size: 60%;
 }
 
 header .main-menu {
@@ -10881,11 +10881,6 @@ header .main-menu {
 header.fixed-top.scroll,
 header .main-menu:hover {
   background-color: rgba(48, 29, 25, 0.95) !important;
-}
-
-header.fixed-top.scroll a.navbar-brand {
-  background-size: 50%;
-  transition: all 300ms linear;
 }
 
 header .category-menu > ul > li {
@@ -12118,7 +12113,7 @@ body.login {
 }
 
 .svg-top-control {
-  height: 1.2rem;
+  height: 1.4rem;
 }
 
 .ajax-content-loader, .welcome {
