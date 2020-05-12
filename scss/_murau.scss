@@ -71,6 +71,10 @@ header a.nav-link {
   font-size: 1rem;
   text-shadow: 1px 1px $primary;
 }
+header #MainMenu a.nav-link {
+  color: $primary !important;
+  text-shadow: none !important;
+}
 header #searchBoxTop {
   height: 30px;
   overflow: hidden;

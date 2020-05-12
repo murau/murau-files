@@ -10920,6 +10920,11 @@ header a.nav-link {
   text-shadow: 1px 1px #4b2e28;
 }
 
+header #MainMenu a.nav-link {
+  color: #4b2e28 !important;
+  text-shadow: none !important;
+}
+
 header #searchBoxTop {
   height: 30px;
   overflow: hidden;
