@@ -10861,26 +10861,24 @@ header a {
 }
 
 header a.navbar-brand {
-  background-image: url("../images/logo.white.png");
+  background-image: url("../images/murau.type.png");
   background-position: center;
   background-repeat: no-repeat;
-  height: 80px;
   margin: 0;
   padding: 20px;
   overflow: hidden;
   text-indent: -9999px;
   width: 120px;
   z-index: 1030;
-  background-size: contain;
+  background-size: 80%;
 }
 
 header.mobile a.navbar-brand {
   background-position: bottom;
   height: 14px;
   width: 90px;
-  padding: 0;
+  padding: 5px;
   background-size: 90px;
-  margin: 0 -10px;
 }
 
 header.mobile,

@@ -272,7 +272,7 @@ window.addEventListener("scroll", () => {
 window.addEventListener("click", (e) => {
   let target = e.target;
   if (
-    target.className &&
+    target.parentNode.className &&
     target.parentNode.className.includes("cartSkuRemove")
   ) {
     e.preventDefault();
