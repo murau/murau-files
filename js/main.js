@@ -462,7 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!document.querySelector("body.produto .skuList"))
     document.body.classList.add("no-variations");
   links.sort(compareValues("order"));
-  let HTMLmenuNavigation = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase font-weight-bold">`;
+  let HTMLmenuNavigation = `<ul class="navbar-nav m-0 m-auto text-light text-center text-uppercase">`;
   for (let link of links) {
     if (link.url && !link.childs) {
       HTMLmenuNavigation += `<li class="nav-item"><a class="nav-link" href="${link.url}">${link.title}</a></li>`;
