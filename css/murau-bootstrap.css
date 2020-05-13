@@ -10856,6 +10856,12 @@ body.home {
   content: "-";
 }
 
+.sliderDesktop img, .sliderMobile img {
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
 header a {
   color: #fff !important;
 }

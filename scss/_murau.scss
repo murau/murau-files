@@ -16,6 +16,11 @@ body.home {
 #made-with-love h2::after {
   content: "-";
 }
+.sliderDesktop img, .sliderMobile img {
+  width: 100vw;
+  height: auto;
+  display: block;
+}
 header a {
   color: $white !important;
 }
