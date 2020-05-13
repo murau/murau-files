@@ -274,6 +274,20 @@ window.addEventListener("scroll", () => {
     murau.areYouMobile();
   }
 });
+let anchorlinks = document.querySelectorAll('a[href^="#"]');
+for (let item of anchorlinks) {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    let hashval = item.getAttribute("href");
+    if (!hashval.replace("#", "").length) return;
+    let target = document.querySelector(hashval);
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    history.pushState(null, null, hashval);
+  });
+}
 window.addEventListener("click", (e) => {
   let target = e.target;
   if (
@@ -511,21 +525,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   HTMLmenuNavigation += `</ul>`;
   document.querySelector("#MainMenu").innerHTML = HTMLmenuNavigation;
-  let anchorlinks = document.querySelectorAll('a[href^="#"]');
-  for (let item of anchorlinks) {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-      let hashval = item.getAttribute("href");
-      if (!hashval.replace("#", "").length) return;
-      let target = document.querySelector(hashval);
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      //history.pushState(null, null, hashval);
-    });
-  }
-  // Sliders? Acha!
   let sliderDesk = document.querySelector('.sliderDesktop');
   let sliderMobi = document.querySelector('.sliderMobile');
   let deskBanner = sliderDesk.querySelectorAll('.box-banner');
