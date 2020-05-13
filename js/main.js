@@ -323,6 +323,10 @@ window.addEventListener("click", (e) => {
   }
   if (target.id === "login") {
     document.body.style.overflow = "hidden";
+    document.body.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
     return;
   }
   if (target.className &&
