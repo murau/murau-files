@@ -518,11 +518,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let sliderDesk = document.querySelector('.sliderDesktop');
   let sliderMobi = document.querySelector('.sliderMobile');
   let deskBanner = sliderDesk.querySelectorAll('.box-banner');
-  let HTMLhomeImages;
+  let HTMLhomeImages = "";
   for (let db of deskBanner) {
-    let link = db.querySelector("a").href ?? null;
+    let link = db.querySelector("a").href ?? "#";
     let image = db.querySelector("img").src ?? null;
-    let content = null;
+    let content = "";
     if (
       db.nextElementSibling &&
       typeof db.nextElementSibling.className === "string" &&
