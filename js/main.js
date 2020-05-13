@@ -518,7 +518,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let sliderDesk = document.querySelector('.sliderDesktop');
   let sliderMobi = document.querySelector('.sliderMobile');
   let deskBanner = sliderDesk.querySelectorAll('.box-banner');
-  let HTMLhomeImages = "";
+  let mobiBanner = sliderMobi.querySelectorAll('.box-banner');
+  let HTMLhomeDeskImages = "";
   for (let db of deskBanner) {
     let link = db.querySelector("a").href ?? "#";
     let image = db.querySelector("img").src ?? null;
@@ -530,11 +531,30 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       content = db.nextElementSibling.innerHTML;
     }
-    HTMLhomeImages += `
+    HTMLhomeDeskImages += `
     <div class="banner" style="background-image: url('${image}')">
       <a href="${link}">${content}</a>
     </div>
     `;
   }
-  sliderDesk.innerHTML = HTMLhomeImages;
+  sliderDesk.innerHTML = HTMLhomeDeskImages;
+  let HTMLhomeMobiImages = "";
+  for (let mb of mobiBanner) {
+    let link = mb.querySelector("a").href ?? "#";
+    let image = mb.querySelector("img").src ?? null;
+    let content = "";
+    if (
+      mb.nextElementSibling &&
+      typeof mb.nextElementSibling.className === "string" &&
+      mb.nextElementSibling.className.includes('content')
+    ) {
+      content = mb.nextElementSibling.innerHTML;
+    }
+    HTMLhomeMobiImages += `
+    <div class="banner" style="background-image: url('${image}')">
+      <a href="${link}">${content}</a>
+    </div>
+    `;
+  }
+  sliderMobi.innerHTML = HTMLhomeMobiImages;
 });

@@ -1146,3 +1146,17 @@ body.login {
 .ajax-content-loader, .welcome {
   display: none;
 }
+.sliderDesktop .banner, .sliderMobile .banner {
+  height: calc(100vh - 96px);
+  max-height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: 100%;
+  transition: all 500ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sliderDesktop .banner:hover, .sliderMobile .banner:hover {
+  background-size: 110% !important;
+}
