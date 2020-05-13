@@ -522,7 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
         behavior: "smooth",
         block: "start",
       });
-      history.pushState(null, null, hashval);
+      //history.pushState(null, null, hashval);
     });
   }
   // Sliders? Acha!
