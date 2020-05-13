@@ -70,7 +70,7 @@ header.mobile a.murau-logo {
   display: none;
 }
 header.mobile a.navbar-brand {
-  top: 0px;
+  top: -4px;
   left: 60px;
   background-image: url("../images/murau.typo.png") !important;
   width: 80px;
@@ -646,7 +646,7 @@ ul.ui-autocomplete li.ui-menu-item:hover {
 .mobile ul.ui-autocomplete {
   overflow: hidden;
   position: absolute !important;
-  z-index: $zindex-dropdown !important;
+  z-index: 1030 !important;
 }
 .prateleira h2 {
   font-family: "Satisfy", cursive;
@@ -1140,7 +1140,7 @@ body.login {
   display: none;
 }
 .svg-top-control {
-  height: 1.4rem;
+  height: 1rem;
 }
 .ajax-content-loader, .welcome {
   display: none;
