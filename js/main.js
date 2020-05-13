@@ -333,7 +333,7 @@ window.addEventListener("click", (e) => {
     if (!nome) return alert("Preencha o campo nome.");
     let email = target.parentNode.querySelector("[name=email]").value;
     if (!email) return alert("Preencha o campo e-mail.");
-    let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<div>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!emailRegex.test(email)) return alert("Digite um e-mail válido.");
     let disabled = (value = true) => (target.disabled = value);
     disabled(true);
@@ -518,11 +518,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let sliderDesk = document.querySelector('.sliderDesktop');
   let sliderMobi = document.querySelector('.sliderMobile');
   let deskBanner = sliderDesk.querySelectorAll('.box-banner');
+  let HTMLhomeImages;
   for (let db of deskBanner) {
-    let link = db.querySelector("a").href;
-    let image = db.querySelector("img").src;
+    let link = db.querySelector("a").href ?? null;
+    let image = db.querySelector("img").src ?? null;
     let content = null;
-    console.log(db.nextElementSibling);
     if (
       db.nextElementSibling &&
       typeof db.nextElementSibling.className === "string" &&
@@ -530,6 +530,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       content = db.nextElementSibling.innerHTML;
     }
-    console.log(link, image, content);
+    HTMLhomeImages += `
+    <div class="banner" style="background-image: url('${image}')">
+      <a href="${link}">${content}</a>
+    </div>
+    `;
   }
+  sliderDesk.innerHTML = HTMLhomeImages;
 });
