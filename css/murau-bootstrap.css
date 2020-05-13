@@ -10926,16 +10926,15 @@ header.mobile a.navbar-brand {
 }
 
 header .category-menu > ul > li {
-  transition: background-size 2s linear;
-  background-size: 0% 4px;
+  transition: background-size 200ms linear;
+  background-size: 0% 2px;
 }
 
 header .category-menu > ul > li:hover {
   background: linear-gradient(to bottom, transparent, #4b2e28 0);
-  background-size: 100% 4px;
+  background-size: 100% 2px;
   background-position: bottom;
   background-repeat: no-repeat;
-  transition: background-size 500ms linear;
 }
 
 header .main-menu i {

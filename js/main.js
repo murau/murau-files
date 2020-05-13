@@ -260,15 +260,16 @@ window.addEventListener("scroll", () => {
   if (window.pageYOffset > 100) {
     for (let element of bodyHeader) {
       element.classList.add("scroll");
-      if (element.localName === "header") element.classList.add("fixed-top");
-      //console.log(element.localName);
+      if (
+        element.localName === "header" &&
+        typeof element.className === "string" &&
+        !element.className.includes('mobile')
+      ) element.classList.add("fixed-top");
     }
-    document.querySelector('#MainMenu.collapse').classList.remove('show');
   } else {
     for (let element of bodyHeader) {
       element.classList.remove("scroll");
       if (element.localName === "header") element.classList.remove("fixed-top");
-      //console.log(element.localName);
     }
     murau.areYouMobile();
   }
