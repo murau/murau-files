@@ -326,7 +326,7 @@ window.addEventListener("click", (e) => {
     document.body.scrollIntoView({
       behavior: 'smooth',
       block: 'start'
-    })
+    });
     return;
   }
   if (target.className &&
@@ -441,7 +441,13 @@ document.addEventListener("readystatechange", () => {
 });
 document
   .querySelector("#searchBox")
-  .addEventListener("hidden.bs.collapse", () => murau.areYouMobile());
+  .addEventListener("hidden.bs.collapse", () => {
+    murau.areYouMobile();
+    document.querySelector('header').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
 const noty = async () => {
   if (!("Notification" in navigator)) {
     console.log("Esse browser não suporta notificações desktop");
