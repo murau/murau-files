@@ -493,9 +493,9 @@ body.produto .produto .fb {
 }
 #ajaxBusy p {
   animation: spin 1.2s linear infinite;
-  border-left-color: $secondary;
   @include border-radius($rounded-pill);
   border: 8px solid rgba($secondary, 0.3);
+  border-left-color: $secondary;
   height: 50px;
   overflow: hidden;
   text-indent: -9999px;

@@ -11425,9 +11425,9 @@ body.produto .produto .fb {
 
 #ajaxBusy p {
   animation: spin 1.2s linear infinite;
-  border-left-color: #301d19;
   border-radius: 50rem;
   border: 8px solid rgba(48, 29, 25, 0.3);
+  border-left-color: #301d19;
   height: 50px;
   overflow: hidden;
   text-indent: -9999px;
