@@ -261,14 +261,14 @@ window.addEventListener("scroll", () => {
     for (let element of bodyHeader) {
       element.classList.add("scroll");
       if (element.localName === "header") element.classList.add("fixed-top");
-      console.log(element.localName);
+      //console.log(element.localName);
     }
     document.querySelector('#MainMenu.collapse').classList.remove('show');
   } else {
     for (let element of bodyHeader) {
       element.classList.remove("scroll");
       if (element.localName === "header") element.classList.remove("fixed-top");
-      console.log(element.localName);
+      //console.log(element.localName);
     }
     murau.areYouMobile();
   }
@@ -513,5 +513,23 @@ document.addEventListener("DOMContentLoaded", () => {
       history.pushState(null, null, hashval);
       e.preventDefault();
     });
+  }
+  // Sliders? Acha!
+  let sliderDesk = document.querySelector('.sliderDesktop');
+  let sliderMobi = document.querySelector('.sliderMobile');
+  let deskBanner = sliderDesk.querySelectorAll('.box-banner');
+  for (let db of deskBanner) {
+    let link = db.querySelector("a").href;
+    let image = db.querySelector("img").src;
+    let content = null;
+    console.log(db.nextElementSibling);
+    if (
+      db.nextElementSibling &&
+      typeof db.nextElementSibling.className === "string" &&
+      db.nextElementSibling.className.includes('content')
+    ) {
+      content = db.nextElementSibling.innerHTML;
+    }
+    console.log(link, image, content);
   }
 });
