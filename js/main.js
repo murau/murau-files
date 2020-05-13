@@ -532,9 +532,11 @@ document.addEventListener("DOMContentLoaded", () => {
       content = db.nextElementSibling.innerHTML;
     }
     HTMLhomeDeskImages += `
+    <a href="${link}" class="d-block">
     <div class="banner" style="background-image: url('${image}')">
-      <a href="${link}">${content}</a>
+      ${content}
     </div>
+    </a>
     `;
   }
   sliderDesk.innerHTML = HTMLhomeDeskImages;
@@ -551,9 +553,11 @@ document.addEventListener("DOMContentLoaded", () => {
       content = mb.nextElementSibling.innerHTML;
     }
     HTMLhomeMobiImages += `
+    <a href="${link}" class="d-block">
     <div class="banner" style="background-image: url('${image}')">
-      <a href="${link}">${content}</a>
+      ${content}
     </div>
+    </a>
     `;
   }
   sliderMobi.innerHTML = HTMLhomeMobiImages;
