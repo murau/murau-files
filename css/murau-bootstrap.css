@@ -12182,7 +12182,8 @@ body.login {
   background-size: 100%;
   transition: all 500ms linear;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
