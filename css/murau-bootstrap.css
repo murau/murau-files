@@ -12191,4 +12191,13 @@ body.login {
   background-size: 110% !important;
 }
 
+.sliderDesktop .banner a, .sliderMobile .banner a {
+  color: #f0eae8;
+  font-size: 1.5rem;
+}
+
+.sliderDesktop .banner a:hover, .sliderMobile .banner a:hover {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=murau-bootstrap.css.map */
