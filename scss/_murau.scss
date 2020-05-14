@@ -1160,10 +1160,10 @@ body.login {
 .sliderDesktop .banner:hover, .sliderMobile .banner:hover {
   background-size: 110% !important;
 }
-.sliderDesktop .banner a, .sliderMobile .banner a {
+.sliderDesktop a, .sliderMobile a {
   color: $light;
   font-size: 1.5rem;
 }
-.sliderDesktop .banner a:hover, .sliderMobile .banner a:hover {
+.sliderDesktop a:hover, .sliderMobile a:hover {
   text-decoration: none;
 }
