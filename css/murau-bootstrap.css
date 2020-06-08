@@ -12179,7 +12179,8 @@ body.login {
   max-height: 100%;
   width: 100%;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
   transition: all 500ms linear;
   display: flex;
   flex-direction: column;
@@ -12187,10 +12188,9 @@ body.login {
   align-items: center;
 }
 
-.sliderDesktop .banner:hover, .sliderMobile .banner:hover {
+/* .sliderDesktop .banner:hover, .sliderMobile .banner:hover {
   background-size: 110% !important;
-}
-
+} */
 .sliderDesktop a, .sliderMobile a {
   color: #f0eae8;
   font-size: 1.5rem;
