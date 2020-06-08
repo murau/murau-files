@@ -12179,7 +12179,8 @@ body.login {
   max-height: 100%;
   width: 100%;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
   transition: all 500ms linear;
   display: flex;
   flex-direction: column;
