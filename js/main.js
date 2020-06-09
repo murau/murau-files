@@ -527,8 +527,8 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#MainMenu").innerHTML = HTMLmenuNavigation;
   let sliderDesk = document.querySelector('.sliderDesktop');
   let sliderMobi = document.querySelector('.sliderMobile');
-  let deskBanner = sliderDesk.querySelectorAll('.box-banner');
-  let mobiBanner = sliderMobi.querySelectorAll('.box-banner');
+  let deskBanner = sliderDesk ? sliderDesk.querySelectorAll('.box-banner') : [];
+  let mobiBanner = sliderMobi ? sliderMobi.querySelectorAll('.box-banner') : [];
   let HTMLhomeDeskImages = "";
   for (let db of deskBanner) {
     let link = db.querySelector("a").href ?? "#";
@@ -549,7 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </a>
     `;
   }
-  sliderDesk.innerHTML = HTMLhomeDeskImages;
+  if (sliderDesk) sliderDesk.innerHTML = HTMLhomeDeskImages;
   let HTMLhomeMobiImages = "";
   for (let mb of mobiBanner) {
     let link = mb.querySelector("a").href ?? "#";
@@ -570,5 +570,5 @@ document.addEventListener("DOMContentLoaded", () => {
     </a>
     `;
   }
-  sliderMobi.innerHTML = HTMLhomeMobiImages;
+  if (sliderMobi) sliderMobi.innerHTML = HTMLhomeMobiImages;
 });
