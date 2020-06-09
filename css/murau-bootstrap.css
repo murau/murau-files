@@ -11431,7 +11431,7 @@ body.produto .produto .fb {
   left: 28px;
   position: absolute;
   top: 8px;
-  z-index: 1030;
+  z-index: 1;
 }
 
 #caracteristicas th,
