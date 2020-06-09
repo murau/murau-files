@@ -57,9 +57,7 @@ header a.murau-logo {
   transform: translate(0, 0);
 }
 header.fixed-top.scroll a.murau-logo {
-  opacity: 0;
-  height: 0;
-  transform: translate(0, 100%);
+  animation: heartbeat 1s linear 5;
 }
 header a.murau-logo:hover {
   animation: heartbeat 1s linear infinite;
@@ -657,7 +655,8 @@ body.home .prateleira h2 {
 .modal.right .modal-dialog {
   position: fixed;
   margin: auto;
-  width: 360px;
+  width: 90%;
+  min-width: 360px;
   height: 100%;
   -webkit-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
