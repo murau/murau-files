@@ -1,6 +1,9 @@
+body {
+  overflow-x: hidden;
+}
+
 body * {
   transition: background 300ms ease-in-out 1ms;
-  overflow-x: hidden;
 }
 
 [data-tippy-root] .tippy-box {
