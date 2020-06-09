@@ -10862,6 +10862,10 @@ body * {
   fill: #4b2e28 !important;
 }
 
+section.container-fluid, section.container-sm, section.container-md, section.container-lg, section.container-xl, section.container-xo {
+  color: #4b2e28;
+}
+
 #made-with-love h2 {
   font-family: "Satisfy", cursive;
   font-size: 3rem;

@@ -27,6 +27,10 @@ body * {
   fill: $primary !important;
 }
 
+section.container-fluid {
+  color: $primary;
+}
+
 #made-with-love h2 {
   font-family: "Satisfy", cursive;
   font-size: 3rem;
