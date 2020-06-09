@@ -1069,6 +1069,17 @@ body.home .prateleira h2 {
   }
 }
 
+@media (min-width: map-get($grid-breakpoints, "lg")) {
+  [class*="prateleira"] ul li {
+    -ms-flex: 0 0 33.333%;
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+  [class*="prateleira"] ul li:nth-of-type(3) {
+    display: none;
+  }
+}
+
 .resultado-busca-numero .value::after {
   content: " produtos encontrados";
 }
