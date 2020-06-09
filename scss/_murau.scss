@@ -1,6 +1,30 @@
 body * {
   transition: background 300ms ease-in-out 1ms;
-  color: $primary;
+}
+
+[data-tippy-root] .tippy-box {
+  color: $light !important;
+  background-color: $primary !important;
+}
+
+[data-tippy-root] .tippy-box[data-placement^='top']>.tippy-arrow::before {
+  border-top-color: $primary !important;
+}
+
+[data-tippy-root] .tippy-box[data-placement^='bottom']>.tippy-arrow::before {
+  border-bottom-color: $primary !important;
+}
+
+[data-tippy-root] .tippy-box[data-placement^='left']>.tippy-arrow::before {
+  border-left-color: $primary !important;
+}
+
+[data-tippy-root] .tippy-box[data-placement^='right']>.tippy-arrow::before {
+  border-right-color: $primary !important;
+}
+
+[data-tippy-root] .tippy-box > .tippy-svg-arrow {
+  fill: $primary !important;
 }
 
 #made-with-love h2 {
@@ -1179,6 +1203,8 @@ p.compare,
 s.text-muted,
 body.produto .skuListPrice {
   position: relative;
+  text-decoration: none;
+  transform: scale(.8);
 }
 
 s.text-muted::before,
