@@ -12000,9 +12000,7 @@ p.compare,
 
 s.text-muted,
 body.produto .skuListPrice {
-  color: #e9ecef !important;
   position: relative;
-  text-decoration: none;
 }
 
 s.text-muted::before,
