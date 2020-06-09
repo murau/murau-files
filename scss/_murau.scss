@@ -25,9 +25,9 @@ header a {
   color: $white !important;
 }
 header a.navbar-brand {
-  background-image: url("../images/murau.typo.brown.png");
-  background-position: center;
+  background-image: url("../images/murau.typo.png");
   background-repeat: no-repeat;
+  background-position: center;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -35,8 +35,6 @@ header a.navbar-brand {
   width: 120px;
   z-index: $zindex-fixed;
   background-size: contain;
-  position: absolute;
-  top: 45px;
 }
 header.fixed-top.scroll a.navbar-brand {
   background-image: url("../images/murau.typo.png");
@@ -70,11 +68,7 @@ header.mobile a.murau-logo {
   display: none;
 }
 header.mobile a.navbar-brand {
-  top: -4px;
-  left: 60px;
-  background-image: url("../images/murau.typo.png") !important;
   width: 80px;
-  background-size: contain;
 }
 header .category-menu > ul > li {
   transition: background-size 200ms linear;

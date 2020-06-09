@@ -405,7 +405,7 @@ if (zoomImages && zoomImages.length) {
   for (i = 0; i < zoomImages.length; i++) {
     productCarouselImages += `
         <li data-target="#productImages" data-slide-to="${i}"${
-      i === 0 ? '  class="active"' : ""
+      i === 0 ? ' class="active"' : ""
       }></li>
     `;
   }
