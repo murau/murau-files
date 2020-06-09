@@ -27,7 +27,7 @@ body * {
   border-right-color: $primary !important;
 }
 
-[data-tippy-root] .tippy-box > .tippy-svg-arrow {
+[data-tippy-root] .tippy-box>.tippy-svg-arrow {
   fill: $primary !important;
 }
 
@@ -1069,14 +1069,6 @@ body.home .prateleira h2 {
   }
 }
 
-@media (min-width: map-get($grid-breakpoints, "xl")) {
-  [class*="prateleira"] ul li {
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
-}
-
 .resultado-busca-numero .value::after {
   content: " produtos encontrados";
 }
@@ -1390,7 +1382,7 @@ body.login {
 
 .sliderDesktop .banner,
 .sliderMobile .banner {
-  height: calc(100vh);
+  height: 100vh;
   max-height: 100%;
   width: 100%;
   background-position: center;
@@ -1415,4 +1407,8 @@ body.login {
 .sliderDesktop a:hover,
 .sliderMobile a:hover {
   text-decoration: none;
+}
+
+.modal table {
+  color: inherit !important;
 }
