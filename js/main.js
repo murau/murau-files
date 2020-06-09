@@ -219,18 +219,15 @@ const murau = {
   },
   areYouMobile: () => {
     let body = document.querySelector("body");
-    let home = document.querySelector("body.home");
     let header = body.querySelector("header");
     let toggler = header.querySelector(".navbar-toggler");
     if (toggler.offsetParent) {
       body.classList.add("mobile");
       header.classList.add("mobile");
       header.classList.remove("fixed-top");
-      if (!home) body.style.marginTop = 0;
     } else {
       body.classList.remove("mobile");
       header.classList.remove("mobile");
-      if (!home) body.style.marginTop = `${header.offsetHeight}px`;
     }
   },
   userColorScheme: () => {
