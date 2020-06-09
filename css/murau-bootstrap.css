@@ -10856,7 +10856,8 @@ body.home {
   content: "-";
 }
 
-.sliderDesktop img, .sliderMobile img {
+.sliderDesktop img,
+.sliderMobile img {
   width: 100vw;
   height: auto;
   display: block;
@@ -11213,6 +11214,14 @@ body.produto .similar img {
   width: 70px;
   height: auto;
   border: 1px solid #e9ecef;
+}
+
+h2.titulo-sessao,
+.bread-crumb {
+  font-family: "Novecento sans wide Normal";
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
 }
 
 body.produto .similar img:hover {
@@ -12167,11 +12176,13 @@ body.login {
   height: 1rem;
 }
 
-.ajax-content-loader, .welcome {
+.ajax-content-loader,
+.welcome {
   display: none;
 }
 
-.sliderDesktop .banner, .sliderMobile .banner {
+.sliderDesktop .banner,
+.sliderMobile .banner {
   height: calc(100vh);
   max-height: 100%;
   width: 100%;
@@ -12188,12 +12199,14 @@ body.login {
 /* .sliderDesktop .banner:hover, .sliderMobile .banner:hover {
   background-size: 110% !important;
 } */
-.sliderDesktop a, .sliderMobile a {
+.sliderDesktop a,
+.sliderMobile a {
   color: #f0eae8;
   font-size: 1.5rem;
 }
 
-.sliderDesktop a:hover, .sliderMobile a:hover {
+.sliderDesktop a:hover,
+.sliderMobile a:hover {
   text-decoration: none;
 }
 
