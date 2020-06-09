@@ -10837,14 +10837,6 @@ body * {
   transition: background 300ms ease-in-out 1ms;
 }
 
-body {
-  margin-top: 244px;
-}
-
-body.home {
-  margin-top: 0;
-}
-
 #made-with-love h2 {
   font-family: "Satisfy", cursive;
   font-size: 3rem;
