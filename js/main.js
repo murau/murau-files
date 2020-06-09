@@ -113,11 +113,11 @@ function compareValues(key, order = "asc") {
   };
 }
 let maskName = Inputmask({
-  clearIncomplete: true,
   clearMaskOnLostFocus: true,
   regex: "[A-Za-z \u00C0-\u017F.-]*",
   showMaskOnFocus: false,
   showMaskOnHover: false,
+  clearIncomplete: true,
 });
 let maskEmail = Inputmask({
   mask:

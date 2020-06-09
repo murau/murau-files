@@ -10943,6 +10943,10 @@ header #MainMenu a.nav-link {
   text-shadow: none !important;
 }
 
+header #MainMenu .dropdown-menu a.nav-link:hover {
+  text-decoration: underline;
+}
+
 header #searchBoxTop {
   height: 30px;
   overflow: hidden;
