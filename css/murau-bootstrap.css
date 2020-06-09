@@ -11863,6 +11863,7 @@ body.home .prateleira h2 {
   list-style: none;
   padding: 0;
   justify-content: center;
+  width: 100%;
 }
 
 [class*=prateleira] ul li {
