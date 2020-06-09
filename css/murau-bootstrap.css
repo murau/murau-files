@@ -11137,7 +11137,7 @@ body.produto #show .sku-rich-image-main {
 }
 
 body.produto .display-4 {
-  font-size: 3rem !important;
+  font-size: 2rem !important;
 }
 
 body.produto .productReference,
@@ -11431,7 +11431,7 @@ body.produto .produto .fb {
   left: 28px;
   position: absolute;
   top: 8px;
-  z-index: 1000;
+  z-index: 1030;
 }
 
 #caracteristicas th,
