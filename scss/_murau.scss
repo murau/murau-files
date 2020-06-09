@@ -1,5 +1,6 @@
 body * {
   transition: background 300ms ease-in-out 1ms;
+  overflow-x: hidden;
 }
 
 [data-tippy-root] .tippy-box {
@@ -402,7 +403,7 @@ body.produto .similar img {
   border: 1px solid $gray-200;
 }
 
-h2.titulo-sessao,
+.titulo-sessao,
 .bread-crumb {
   font-family: 'Novecento sans wide Normal';
   font-weight: normal;
@@ -1208,7 +1209,6 @@ s.text-muted,
 body.produto .skuListPrice {
   position: relative;
   text-decoration: none;
-  transform: scale(.8);
 }
 
 s.text-muted::before,
