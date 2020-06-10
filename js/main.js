@@ -593,7 +593,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((response) => response.json().then((suggestions) => {
             if (suggestions && suggestions.length) {
               let buyTogetherHTML = `
-                <h2>Aproveite e compre junto</h2>
+                <h2 style="font-family: "Satisfy",cursive;font-size: 2.5rem;margin-top: 30px;">Aproveite e compre junto</h2>
               `;
               suggestions
                 .forEach(suggestion => {
@@ -606,7 +606,14 @@ document.addEventListener("DOMContentLoaded", () => {
                       <div class="col-8">
                           <div class="row">
                               <div class="col-5" id="var${suggestion.productId}-item1">
-                                  <div class="itemImage" style="background-image: url(${activeProduct[0].image})">
+                                  <div class="itemImage" style="
+                                  background-image: url(${activeProduct[0].image});
+                                  position: relative;
+                                  display: inline-block;
+                                  width: 200px;
+                                  height: 200px;
+                                  background-size: contain;
+                                  background-position: center;">
                                       <div class="btn-toolbar">
                                           <div class="btn-group"></div>
                                       </div>
@@ -621,9 +628,17 @@ document.addEventListener("DOMContentLoaded", () => {
                                       </p>
                                   </div>
                               </div>
-                              <div class="col-1 d-flex justify-align-center align-items-center">+</div>
+                              <div class="col-1 d-flex justify-align-center align-items-center">
+                                <h4>+</h4>
+                              </div>
                               <div class="col-5" id="var${suggestion.productId}-item2">
-                                  <div class="itemImage">
+                                  <div class="itemImage" style="
+                                  position: relative;
+                                  display: inline-block;
+                                  width: 200px;
+                                  height: 200px;
+                                  background-size: contain;
+                                  background-position: center;">
                                       <div class="btn-toolbar">
                                           <div class="btn-group"></div>
                                       </div>
@@ -638,7 +653,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                       </p>
                                   </div>
                               </div>
-                              <div class="col-1 d-flex justify-align-center align-items-center">=</div>
+                              <div class="col-1 d-flex justify-align-center align-items-center">
+                                <h4>=</h4>
+                              </div>
                           </div>
                       </div>
                       <div class="col-4 d-flex justify-align-center align-items-center box-compre">
@@ -654,7 +671,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               </span>
                           </p>
                           <p>
-                              <button class="compre-junto btn btn-primary">Comprar junto</button>
+                              <button class="compre-junto btn btn-outline-primary text-wrap">Comprar junto</button>
                           </p>
                       </div>
                   </div>
@@ -664,15 +681,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         const item = thisProduct[loop];
                         if (!item.available) return;
                         const tamanho = item.dimensions.Tamanho;
+                        let btnHTML = '';
                         if (tamanho) {
-                          document.querySelector(`#var${suggestion.productId}-item1 .itemImage .btn-group`)
-                            .innerHTML = `
+                          btnHTML += `
                                 <button class="btn btn-warning pdt1 ${loop === 0 ? 'disabled' : ''}" data-variationof="${suggestion.productId}" data-sku="${item.sku}">
                                 ${tamanho}
                                 </button>
                                 `;
                         }
                       };
+                      document
+                        .querySelector(`#var${suggestion.productId}-item1 .itemImage .btn-group`)
+                        .innerHTML = btnHTML;
                       for (let loop = 0; loop < variations.skus.length; loop++) {
                         const item = variations.skus[loop];
                         if (!item.available) return;
@@ -707,9 +727,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             });
                         }
                         let tamanho = item.dimensions.Tamanho;
+                        let btnHTML = '';
                         if (tamanho) {
-                          document.querySelector(`#var${suggestion.productId}-item2 .itemImage .btn-group`)
-                            .innerHTML = `
+                          btnHTML += `
                                 <button class="btn btn-warning pdt2 ${loop === 0 ? 'disabled' : ''}" data-variationof="${suggestion.productId}" data-sku="${item.sku}">
                                 ${tamanho}
                                 </button>
@@ -717,6 +737,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                         productData[suggestion.productId].push(item);
                       }
+                      document
+                        .querySelector(`#var${suggestion.productId}-item2 .itemImage .btn-group`)
+                        .innerHTML = btnHTML;
                     });
                 });
             } else {
