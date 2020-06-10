@@ -600,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((response) => response.json().then((suggestions) => {
             if (suggestions && suggestions.length) {
               let buyTogetherHTML = `
-                <h2 style="font-family: "Satisfy",cursive;font-size: 2.5rem;margin-top: 30px;">Aproveite e compre junto</h2>
+                <h2 style="font-family: 'Satisfy',cursive;font-size: 2.5rem;margin-top: 30px;">Aproveite e compre junto</h2>
               `;
               let btnHTML = '';
               suggestions
@@ -679,7 +679,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               </span>
                           </p>
                           <p>
-                              <button class="compre-junto btn btn-outline-primary text-wrap">Comprar junto</button>
+                              <button class="compre-junto btn btn-light text-primary text-nowrap">Comprar junto</button>
                           </p>
                       </div>
                   </div>
@@ -837,6 +837,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         skuEventDispatcher.addListener(skuDataReceivedEventName, btMurauListener);
         for (let compre of document.querySelectorAll('.compre-junto')) {
+          console.log(compre);
           compre.addEventListener('click', (e) => {
             e.preventDefault();
             let items = [{
