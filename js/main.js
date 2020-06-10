@@ -602,6 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
               let buyTogetherHTML = `
                 <h2 style="font-family: "Satisfy",cursive;font-size: 2.5rem;margin-top: 30px;">Aproveite e compre junto</h2>
               `;
+              let btnHTML = '';
               suggestions
                 .forEach(suggestion => {
                   if (suggestionsId.includes(suggestion.productId)) return;
@@ -688,7 +689,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         const item = thisProduct[loop];
                         if (!item.available) return;
                         const tamanho = item.dimensions.Tamanho;
-                        let btnHTML = '';
                         if (tamanho) {
                           btnHTML += `
                                 <button class="btn btn-warning pdt1 ${loop === 0 ? 'disabled' : ''}" data-variationof="${suggestion.productId}" data-sku="${item.sku}">
@@ -700,6 +700,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       document
                         .querySelector(`#var${suggestion.productId}-item1 .itemImage .btn-group`)
                         .innerHTML = btnHTML;
+                        btnHTML = '';
                       for (let loop = 0; loop < variations.skus.length; loop++) {
                         const item = variations.skus[loop];
                         if (!item.available) return;
@@ -734,7 +735,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             });
                         }
                         let tamanho = item.dimensions.Tamanho;
-                        let btnHTML = '';
                         if (tamanho) {
                           btnHTML += `
                                 <button class="btn btn-warning pdt2 ${loop === 0 ? 'disabled' : ''}" data-variationof="${suggestion.productId}" data-sku="${item.sku}">
