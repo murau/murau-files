@@ -644,10 +644,10 @@ document.addEventListener("DOMContentLoaded", () => {
               Compre os 2 por
           </em>
           <em class="valor-por" style="display: block;">
-              <strong class="btValorTotal"></strong>
+              <strong class="btValorTotal">0</strong>
           </em>
           <span style="display: block;">
-              ou apenas <strong class="btParcelas"></strong> de <strong class="btParcelasValor"></strong>
+              ou apenas <strong class="btParcelas">0</strong> de <strong class="btParcelasValor">0</strong>
           </span>
       </p>
       <p>
