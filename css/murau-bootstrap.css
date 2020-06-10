@@ -11907,7 +11907,7 @@ body.home .prateleira h2 {
     max-width: 33.333%;
   }
 
-  [class*=prateleira] ul li:nth-of-type(3) {
+  [class*=prateleira] ul li:nth-of-type(4) {
     display: none;
   }
 }
