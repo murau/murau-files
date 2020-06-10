@@ -602,7 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
               let buyTogetherHTML = `
                 <h2 style="font-family: 'Satisfy',cursive;font-size: 2.5rem;margin-top: 30px;">Aproveite e compre junto</h2>
               `;
-              let btnHTML = '';
+              let btnHTML = '<option>Selecione</option>';
               suggestions
                 .forEach(suggestion => {
                   if (suggestionsId.includes(suggestion.productId)) return;
@@ -622,9 +622,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                   height: 200px;
                                   background-size: contain;
                                   background-position: center;">
-                                      <div class="btn-toolbar">
-                                          <div class="btn-group"></div>
-                                      </div>
                                   </div>
                                   <div class="itemName">${activeProduct[0].skuname}</div>
                                   <div class="productPrice">
@@ -634,6 +631,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                           <em class="valor-por price-best-price text-nowrap">Por: <strong
                                                   class="skuBestPrice">${activeProduct[0].bestPriceFormated}</strong></em>
                                       </p>
+                                  </div>
+                                  <div class="selectItem">
+                                    <label>Tamanho:
+                                      <select id="${suggestion.productId}"></select>
+                                    </label>
                                   </div>
                               </div>
                               <div class="col-1 d-flex justify-align-center align-items-center">
@@ -647,9 +649,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                   height: 200px;
                                   background-size: contain;
                                   background-position: center;">
-                                      <div class="btn-toolbar">
-                                          <div class="btn-group"></div>
-                                      </div>
                                   </div>
                                   <div class="itemName"></div>
                                   <div class="productPrice">
@@ -659,6 +658,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                         <em class="valor-por price-best-price text-nowrap">Por: <strong
                                           class="skuBestPrice"></strong></em>
                                       </p>
+                                  </div>
+                                  <div class="selectItem">
+                                    <label>Tamanho:
+                                      <select id="${suggestion.productId}"></select>
+                                    </label>
                                   </div>
                               </div>
                               <div class="col-1 d-flex justify-align-center align-items-center">
@@ -688,16 +692,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         const tamanho = item.dimensions.Tamanho;
                         if (tamanho) {
                           btnHTML += `
-                                <button class="btn btn-warning pdt1 ${loop === 0 ? 'disabled' : ''}" data-variationof="${suggestion.productId}" data-sku="${item.sku}">
+                                <option value="${item.sku}">
                                 ${tamanho}
-                                </button>
+                                </option>
                                 `;
                         }
                       };
                       document
-                        .querySelector(`#var${suggestion.productId}-item1 .itemImage .btn-group`)
+                        .querySelector(`#var${suggestion.productId}-item1 select`)
                         .innerHTML = btnHTML;
-                        btnHTML = '';
+                        btnHTML = '<option>Selecione</option>';
                       for (let loop = 0; loop < variations.skus.length; loop++) {
                         const item = variations.skus[loop];
                         if (!item.available) return;
@@ -734,19 +738,18 @@ document.addEventListener("DOMContentLoaded", () => {
                         let tamanho = item.dimensions.Tamanho;
                         if (tamanho) {
                           btnHTML += `
-                                <button class="btn btn-warning pdt2 ${loop === 0 ? 'disabled' : ''}" data-variationof="${suggestion.productId}" data-sku="${item.sku}">
+                                <option data-variationof="${suggestion.productId}" value="${item.sku}">
                                 ${tamanho}
-                                </button>
+                                </option>
                                 `;
                         }
                         productData[suggestion.productId].push(item);
                       }
                       document
-                        .querySelector(`#var${suggestion.productId}-item2 .itemImage .btn-group`)
+                        .querySelector(`#var${suggestion.productId}-item2 select`)
                         .innerHTML = btnHTML;
                     });
                 });
-                console.log(buyTogether.querySelectorAll('.pdt1'));
                 for (let pdt1 of buyTogether.querySelectorAll('.pdt1')) {
                   pdt1.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -848,8 +851,6 @@ document.addEventListener("DOMContentLoaded", () => {
                       });
                   });
                 }
-            } else {
-              buyTogether.classList.add('d-none');
             }
           }));
       });
