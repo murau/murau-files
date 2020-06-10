@@ -162,9 +162,11 @@ function alert(alertMessage, type = "warning") {
   toastr[type](alertMessage);
 }
 const murau = {
-  buyTogether: (e, t) => {
-    console.log(t, e.target);
-    console.log(t.parentNode);
+  buyTogether: (el) => {
+    let parent = el.offsetParent.parentNode;
+    let sku1 = parent.querySelector('item1');
+    let sku2 = parent.querySelector('item2');
+    console.log(sku1, sku2);
     /* let items = [{
       id: '',
       quantity: 1,
@@ -652,7 +654,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       <div class="row w-100" id="var${suggestion.productId}">
                       <div class="col-8">
                           <div class="row">
-                              <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item1">
+                              <div class="col-5 d-flex flex-column justify-align-center align-items-center item1">
                                   <div style="
                                   background-image: url(${activeProduct[0].image});
                                   position: relative;
@@ -665,8 +667,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="display-5">${product.name}</div>
                                   <div class="productPrice">
                                       <p class="d-flex flex-column justify-align-center align-items-center">
-                                          <em class="text-nowrap">De: <s class="text-muted">${activeProduct[0].listPriceFormated}</s></em>
-                                          <em class="text-nowrap">Por: <strong>${activeProduct[0].bestPriceFormated}</strong></em>
+                                          <s class="text-nowrap text-muted d-block">${activeProduct[0].listPriceFormated}</s>
+                                          <em class="text-nowrap d-block">Por: <strong>${activeProduct[0].bestPriceFormated}</strong></em>
                                       </p>
                                   </div>
                                   <div class="selectItem">
@@ -682,7 +684,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               <div class="col-1 d-flex justify-align-center align-items-center">
                                 <span class="display-1">+</span>
                               </div>
-                              <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item2">
+                              <div class="col-5 d-flex flex-column justify-align-center align-items-center item2">
                                   <div style="
                                     background-image: url(${variations.skus[0].image});
                                     width: 200px;
@@ -696,8 +698,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="display-5">${suggestion.productName}</div>
                                   <div class="productPrice">
                                       <p class="d-flex flex-column justify-align-center align-items-center">
-                                        <em class="text-nowrap">De: <s class="text-muted">${variations.skus[0].listPriceFormated}</s></em>
-                                        <em class="text-nowrap">Por: <strong>${variations.skus[0].bestPriceFormated}</strong></em>
+                                        <s class="text-nowrap text-muted d-block">${variations.skus[0].listPriceFormated}</s>
+                                        <em class="text-nowrap d-block">Por: <strong>${variations.skus[0].bestPriceFormated}</strong></em>
                                       </p>
                                   </div>
                                   <div class="selectItem">
@@ -746,7 +748,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               </span>
                           </p>
                           <p>
-                              <button class="btn-block btn-lg btn btn-primary text-nowrap" onclick="event.preventDefault();murau.buyTogether(event, this)">Comprar junto</button>
+                              <button class="btn-block btn-lg btn btn-primary text-nowrap" onclick="event.preventDefault();murau.buyTogether(this)">Comprar junto</button>
                           </p>
                       </div>
                   </div>
