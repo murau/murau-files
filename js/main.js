@@ -720,107 +720,107 @@ document.addEventListener("DOMContentLoaded", () => {
               buyTogether.classList.add('d-none');
             }
           }));
-      });
-    for(let pdt1 of document.querySelectorAll('.pdt1')) {
-      pdt1.addEventListener('click', (e) => {
-        e.preventDefault();
-        let btn = this;
-        let sku = btn.attributes["data-sku"].value;
-        let activeProduct = thisProduct.filter(function (i) {
-          return i.sku == sku && i.available;
-        });
-        let select = document.querySelector('.select.skuList input[type=radio]');
-        select.value = activeProduct[0].dimensions.Tamanho;
-        select.dispatchEvent(new Event('change'));
-      });
-    }
-    for(let pdt2 of document.querySelectorAll('.pdt2')) {
-      pdt2.addEventListener('click', (e) => {
-        e.preventDefault();
-        let btn = this;
-        let vOf = btn.attributes.variationof.value;
-        let sku = btn.attributes["data-sku"].value;
-        let activeProduct = thisProduct.filter(function (i) {
-          return i.sku == activeSku && i.available;
-        });
-        let items = productData[vOf].filter(function (i) {
-          return i.sku == sku && i.available;
-        });
-        let item = items[0];
-        activeSKUs[1] = sku;
-        let q0 = document.querySelector(`#var${vOf}`);
-        let q2 = document.querySelector(`#var${vOf}-item2`);
-        q0.querySelector('.compre-junto')
-          .attributes["data-skub"].value = sku;
-        q2.querySelector('.itemName')
-          .text(item.skuname);
-        q2.querySelector('.itemImage')
-          .css('background-image', `url(${item.image})`);
-        q2.querySelector('skuListPrice')
-          .textContent = item.listPriceFormated;
-        q2.querySelector('.skuBestPrice')
-          .textContent = item.bestPriceFormated;
-        q0.querySelector('.btParcelas')
-          .textContent = `${item.installments}x`;
-        q0.querySelector('.btParcelasValor')
-          .text((murau.parseValues(item.installmentsValue) + murau.parseValues(activeProduct[0].installmentsValue))
-            .toLocaleString('pt-BR', {
-              minimumFractionDigits: 2,
-              style: 'currency',
-              currency: 'BRL'
-            }));
-        q0.querySelector('.btValorTotal')
-          .text((murau.parseValues(item.bestPrice) + murau.parseValues(activeProduct[0].bestPrice))
-            .toLocaleString('pt-BR', {
-              minimumFractionDigits: 2,
-              style: 'currency',
-              currency: 'BRL'
-            }));
-        for (let el of q0.querySelector('.ptd2')) {
-          if (el.attributes["data-skub"].value === sku) return el.classList.add('disabled');
-          if (el.classList.includes('disabled')) el.classList.remove('disabled');
-        };
-      });
-    }
-    let btMurauListener = new Vtex.JSEvents.Listener('batchBuyListener', function (evt) {
-      activeSKUs[0] = evt.skuData.id;
-      let q0 = document.querySelector(`#var${vOf}`);
-      let q1 = document.querySelector(`#var${vOf}-item1`);
-      let activeProduct = thisProduct.filter(function (i) {
-        return i.sku == evt.skuData.id && i.available;
-      });
-      if (!activeProduct.length) return;
-      q1.querySelector('.itemImage')
-        .style.backgroundImage = `url(${activeProduct[0].image})`;
-      q1.querySelector('.itemName')
-        .textContent = activeProduct[0].skuname;
-      q1.querySelector('.skuListPrice')
-        .textContent = activeProduct[0].listPriceFormated;
-      q1.querySelector('.skuBestPrice')
-        .textContent = activeProduct[0].bestPriceFormated;
-      for (let el of q0.querySelector('.ptd1')) {
-        if (el.attributes["data-sku"].value === evt.skuData.id) return el.classList.add('disabled');
-        if (el.classList.includes('disabled')) el.classList.remove('disabled');
-      };
-    });
-    skuEventDispatcher.addListener(skuDataReceivedEventName, btMurauListener);
-    for(let compre of document.querySelectorAll('.compre-junto')) {
-      compre.addEventListener('click', (e) => {
-        e.preventDefault();
-        let items = [{
-          id: activeSKUs[0],
-          quantity: 1,
-          seller: '1'
-        }, {
-          id: activeSKUs[1],
-          quantity: 1,
-          seller: '1'
-        }];
-        vtexjs.checkout.addToCart(items)
-          .done(function (orderForm) {
-            murau.updateMiniCart(orderForm.items.length);
+        for (let pdt1 of document.querySelectorAll('.pdt1')) {
+          pdt1.addEventListener('click', (e) => {
+            e.preventDefault();
+            let btn = this;
+            let sku = btn.attributes["data-sku"].value;
+            let activeProduct = thisProduct.filter(function (i) {
+              return i.sku == sku && i.available;
+            });
+            let select = document.querySelector('.select.skuList input[type=radio]');
+            select.value = activeProduct[0].dimensions.Tamanho;
+            select.dispatchEvent(new Event('change'));
           });
+        }
+        for (let pdt2 of document.querySelectorAll('.pdt2')) {
+          pdt2.addEventListener('click', (e) => {
+            e.preventDefault();
+            let btn = this;
+            let vOf = btn.attributes.variationof.value;
+            let sku = btn.attributes["data-sku"].value;
+            let activeProduct = thisProduct.filter(function (i) {
+              return i.sku == activeSku && i.available;
+            });
+            let items = productData[vOf].filter(function (i) {
+              return i.sku == sku && i.available;
+            });
+            let item = items[0];
+            activeSKUs[1] = sku;
+            let q0 = document.querySelector(`#var${vOf}`);
+            let q2 = document.querySelector(`#var${vOf}-item2`);
+            q0.querySelector('.compre-junto')
+              .attributes["data-skub"].value = sku;
+            q2.querySelector('.itemName')
+              .text(item.skuname);
+            q2.querySelector('.itemImage')
+              .css('background-image', `url(${item.image})`);
+            q2.querySelector('skuListPrice')
+              .textContent = item.listPriceFormated;
+            q2.querySelector('.skuBestPrice')
+              .textContent = item.bestPriceFormated;
+            q0.querySelector('.btParcelas')
+              .textContent = `${item.installments}x`;
+            q0.querySelector('.btParcelasValor')
+              .text((murau.parseValues(item.installmentsValue) + murau.parseValues(activeProduct[0].installmentsValue))
+                .toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                  style: 'currency',
+                  currency: 'BRL'
+                }));
+            q0.querySelector('.btValorTotal')
+              .text((murau.parseValues(item.bestPrice) + murau.parseValues(activeProduct[0].bestPrice))
+                .toLocaleString('pt-BR', {
+                  minimumFractionDigits: 2,
+                  style: 'currency',
+                  currency: 'BRL'
+                }));
+            for (let el of q0.querySelector('.ptd2')) {
+              if (el.attributes["data-skub"].value === sku) return el.classList.add('disabled');
+              if (el.classList.includes('disabled')) el.classList.remove('disabled');
+            };
+          });
+        }
+        let btMurauListener = new Vtex.JSEvents.Listener('batchBuyListener', function (evt) {
+          activeSKUs[0] = evt.skuData.id;
+          let q0 = document.querySelector(`#var${vOf}`);
+          let q1 = document.querySelector(`#var${vOf}-item1`);
+          let activeProduct = thisProduct.filter(function (i) {
+            return i.sku == evt.skuData.id && i.available;
+          });
+          if (!activeProduct.length) return;
+          q1.querySelector('.itemImage')
+            .style.backgroundImage = `url(${activeProduct[0].image})`;
+          q1.querySelector('.itemName')
+            .textContent = activeProduct[0].skuname;
+          q1.querySelector('.skuListPrice')
+            .textContent = activeProduct[0].listPriceFormated;
+          q1.querySelector('.skuBestPrice')
+            .textContent = activeProduct[0].bestPriceFormated;
+          for (let el of q0.querySelector('.ptd1')) {
+            if (el.attributes["data-sku"].value === evt.skuData.id) return el.classList.add('disabled');
+            if (el.classList.includes('disabled')) el.classList.remove('disabled');
+          };
+        });
+        skuEventDispatcher.addListener(skuDataReceivedEventName, btMurauListener);
+        for (let compre of document.querySelectorAll('.compre-junto')) {
+          compre.addEventListener('click', (e) => {
+            e.preventDefault();
+            let items = [{
+              id: activeSKUs[0],
+              quantity: 1,
+              seller: '1'
+            }, {
+              id: activeSKUs[1],
+              quantity: 1,
+              seller: '1'
+            }];
+            vtexjs.checkout.addToCart(items)
+              .done(function (orderForm) {
+                murau.updateMiniCart(orderForm.items.length);
+              });
+          });
+        }
       });
-    }
   }
 });
