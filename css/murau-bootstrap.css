@@ -11908,7 +11908,7 @@ body.home .prateleira h2 {
   }
 
   [class*=prateleira] ul li:nth-of-type(4) {
-    display: none;
+    display: none !important;
   }
 }
 .resultado-busca-numero .value::after {
