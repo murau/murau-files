@@ -162,6 +162,22 @@ function alert(alertMessage, type = "warning") {
   toastr[type](alertMessage);
 }
 const murau = {
+  buyTogether: (t) => {
+    console.log(t);
+    /* let items = [{
+      id: '',
+      quantity: 1,
+      seller: '1'
+    }, {
+      id: '',
+      quantity: 1,
+      seller: '1'
+    }];
+    vtexjs.checkout.addToCart(items)
+      .done(function (orderForm) {
+        murau.updateMiniCart(orderForm.items.length);
+    }); */
+  },
   parseValues: (v) => {
     return parseInt(v) / 100;
   },
@@ -733,34 +749,13 @@ document.addEventListener("DOMContentLoaded", () => {
                               </span>
                           </p>
                           <p>
-                              <button class="compre-junto btn-block btn-lg btn btn-primary text-nowrap">Comprar junto</button>
+                              <button class="compre-junto btn-block btn-lg btn btn-primary text-nowrap" onclick="event.preventDefault();murau.buyTogether(this)">Comprar junto</button>
                           </p>
                       </div>
                   </div>
                       `;
                     });
                 });
-              let btnCompre = buyTogether.querySelectorAll('.compre-junto');
-              for (let compre of btnCompre) {
-                compre.addEventListener('click', (e) => {
-                  e.preventDefault();
-                  console.log(e.target);
-                  console.log(this);
-                  /* let items = [{
-                    id: '',
-                    quantity: 1,
-                    seller: '1'
-                  }, {
-                    id: '',
-                    quantity: 1,
-                    seller: '1'
-                  }];
-                  vtexjs.checkout.addToCart(items)
-                    .done(function (orderForm) {
-                      murau.updateMiniCart(orderForm.items.length);
-                    }); */
-                });
-              }
             }
           }));
       });
