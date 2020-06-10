@@ -164,24 +164,25 @@ function alert(alertMessage, type = "warning") {
 const murau = {
   buyTogether: (el) => {
     let parent = el.offsetParent.parentNode;
-    let itemSKU1 = parent.querySelector('.item1 select');
-    let itemSKU2 = parent.querySelector('.item2 select');
-    let sku1value = itemSKU1.options[itemSKU1.selectedIndex].value;
-    let sku2value = itemSKU2.options[itemSKU2.selectedIndex].value;
-    console.log(sku1value, sku2value);
-    /* let items = [{
-      id: '',
-      quantity: 1,
-      seller: '1'
-    }, {
-      id: '',
-      quantity: 1,
-      seller: '1'
-    }];
-    vtexjs.checkout.addToCart(items)
-      .done(function (orderForm) {
-        murau.updateMiniCart(orderForm.items.length);
-    }); */
+    let sku1value = parent.querySelector('.item1 select').value;
+    let sku2value = parent.querySelector('.item2 select').value;
+    if (Number(sku1value) > 0 && Number(sku2value) > 0) {
+      let items = [{
+        id: sku1value,
+        quantity: 1,
+        seller: '1'
+      }, {
+        id: sku2value,
+        quantity: 1,
+        seller: '1'
+      }];
+      vtexjs.checkout.addToCart(items)
+        .done(function (orderForm) {
+          murau.updateMiniCart(orderForm.items.length);
+      });
+    } else {
+      alert('Selecione o tamanho.');
+    }
   },
   parseValues: (v) => {
     return parseInt(v) / 100;
