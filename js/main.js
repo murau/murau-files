@@ -614,6 +614,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </option>
                                 `;
                         }
+                        productData[product.productId] = [];
                         productData[product.productId].push(item);
                       };
                       for (let i = 0; i < variations.skus.length; i++) {
@@ -627,6 +628,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </option>
                                 `;
                         }
+                        productData[suggestion.productId] = [];
                         productData[suggestion.productId].push(item);
                       }
                       buyTogether.innerHTML = `
