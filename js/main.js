@@ -613,7 +613,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   <div class="row" id="var${suggestion.productId}">
                       <div class="col-8">
                           <div class="row">
-                              <div class="col-5" id="var${suggestion.productId}-item1">
+                              <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item1">
                                   <div class="itemImage" style="
                                   background-image: url(${activeProduct[0].image});
                                   position: relative;
@@ -628,7 +628,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   </div>
                                   <div class="itemName">${activeProduct[0].skuname}</div>
                                   <div class="productPrice">
-                                      <p class="descricao-preco">
+                                      <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
                                           <em class="valor-de price-list-price" style="display: block;">De: <strong
                                                   class="skuListPrice">${activeProduct[0].listPriceFormated}</strong></em>
                                           <em class="valor-por price-best-price" style="display: block;">Por: <strong
@@ -639,7 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               <div class="col-1 d-flex justify-align-center align-items-center">
                                 <h4>+</h4>
                               </div>
-                              <div class="col-5" id="var${suggestion.productId}-item2">
+                              <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item2">
                                   <div class="itemImage" style="
                                   position: relative;
                                   display: inline-block;
@@ -653,7 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   </div>
                                   <div class="itemName"></div>
                                   <div class="productPrice">
-                                      <p class="descricao-preco">
+                                      <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
                                           <em class="valor-de price-list-price">De: <strong
                                                   class="skuListPrice"></strong></em>
                                           <em class="valor-por price-best-price">Por: <strong
@@ -667,19 +667,16 @@ document.addEventListener("DOMContentLoaded", () => {
                           </div>
                       </div>
                       <div class="col-4 d-flex justify-content-center align-items-center flex-column box-compre">
-                          <p class="descricao-preco">
+                          <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
                               <em>
-                                  Compre os 2 por
-                              </em>
-                              <em class="valor-por">
-                                  <strong class="btValorTotal"></strong>
+                                  Compre os 2 por <h3 class="btValorTotal font-weight-bold"></h3>
                               </em>
                               <span>
                                   ou apenas <strong class="btParcelas"></strong> de <strong class="btParcelasValor"></strong>
                               </span>
                           </p>
                           <p>
-                              <button class="compre-junto btn btn-light text-primary text-nowrap">Comprar junto</button>
+                              <button class="compre-junto btn-block btn-lg btn btn-light text-primary text-nowrap">Comprar junto</button>
                           </p>
                       </div>
                   </div>
