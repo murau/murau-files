@@ -605,7 +605,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="row" id="var${suggestion.productId}">
   <div class="col-8">
     <div class="row">
-      <div class="col-5" id="var${suggestion.productId}|">
+      <div class="col-5" id="var${suggestion.productId}-item1">
         <div class="itemImage" style="background-image: url(${activeProduct[0].image})">
           <div class="btn-toolbar">
             <div class="btn-group"></div>
@@ -620,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
       <div class="col-1 d-flex justify-align-center align-items-center">+</div>
-      <div class="col-5" id="var${suggestion.productId}||">
+      <div class="col-5" id="var${suggestion.productId}-item1">
         <div class="itemImage">
           <div class="btn-toolbar">
             <div class="btn-group"></div>
@@ -662,7 +662,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         if (!item.available) return;
                         const tamanho = item.dimensions.Tamanho;
                         if (tamanho) {
-                          document.querySelector(`#var${suggestion.productId}| .itemImage .btn-group`)
+                          document.querySelector(`#var${suggestion.productId}-item1 .itemImage .btn-group`)
                             .innerHTML = `
                                 <button class="btn btn-warning pdt1 ${loop === 0 ? 'disabled' : ''}" data-variationof="${suggestion.productId}" data-sku="${item.sku}">
                                 ${tamanho}
@@ -677,7 +677,7 @@ document.addEventListener("DOMContentLoaded", () => {
                           activeSKUs[1] = item.sku;
                           productData[suggestion.productId] = [];
                           let q0 = document.querySelector(`#var${suggestion.productId}`);
-                          let q2 = document.querySelector(`#var${suggestion.productId}||`);
+                          let q2 = document.querySelector(`#var${suggestion.productId}-item2`);
                           q0.querySelector('.compre-junto').attributes['data-skub'].value = item.sku;
                           q2.querySelector('.itemName')
                             .textContent = item.skuname;
@@ -747,7 +747,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let item = items[0];
       activeSKUs[1] = sku;
       let q0 = document.querySelector(`#var${vOf}`);
-      let q2 = document.querySelector(`#var${vOf}||`);
+      let q2 = document.querySelector(`#var${vOf}-item2`);
       q0.querySelector('.compre-junto')
         .attributes["data-skub"].value = sku;
       q2.querySelector('.itemName')
@@ -782,7 +782,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let btMurauListener = new Vtex.JSEvents.Listener('batchBuyListener', function (evt) {
       activeSKUs[0] = evt.skuData.id;
       let q0 = document.querySelector(`#var${vOf}`);
-      let q1 = document.querySelector(`#var${vOf}|`);
+      let q1 = document.querySelector(`#var${vOf}-item1`);
       let activeProduct = thisProduct.filter(function (i) {
         return i.sku == evt.skuData.id && i.available;
       });
