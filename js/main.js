@@ -746,7 +746,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         .innerHTML = btnHTML;
                     });
                 });
-                console.log(document.querySelectorAll('.pdt1'));
+                console.log(buyTogether.querySelectorAll('.pdt1'));
                 for (let pdt1 of buyTogether.querySelectorAll('.pdt1')) {
                   pdt1.addEventListener('click', (e) => {
                     e.preventDefault();
