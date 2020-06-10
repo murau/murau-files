@@ -620,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
       <div class="col-1 d-flex justify-align-center align-items-center">+</div>
-      <div class="col-5" id="var${suggestion.productId}-item1">
+      <div class="col-5" id="var${suggestion.productId}-item2">
         <div class="itemImage">
           <div class="btn-toolbar">
             <div class="btn-group"></div>
