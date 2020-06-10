@@ -164,9 +164,11 @@ function alert(alertMessage, type = "warning") {
 const murau = {
   buyTogether: (el) => {
     let parent = el.offsetParent.parentNode;
-    let sku1 = parent.querySelector('item1');
-    let sku2 = parent.querySelector('item2');
-    console.log(sku1, sku2);
+    let itemSKU1 = parent.querySelector('.item1 select');
+    let itemSKU2 = parent.querySelector('.item2 select');
+    let sku1value = itemSKU1.options[itemSKU1.selectedIndex].value;
+    let sku2value = itemSKU2.options[itemSKU2.selectedIndex].value;
+    console.log(sku1value, sku2value);
     /* let items = [{
       id: '',
       quantity: 1,
