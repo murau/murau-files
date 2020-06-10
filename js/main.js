@@ -633,22 +633,24 @@ document.addEventListener("DOMContentLoaded", () => {
                                       </p>
                                   </div>
                                   <div class="selectItem">
-                                    <label>Tamanho:
+                                    <label>
+                                      Tamanho:
                                       <select class="select${suggestion.productId}"></select>
                                     </label>
                                   </div>
                               </div>
                               <div class="col-1 d-flex justify-align-center align-items-center">
-                                <h4>+</h4>
+                                <span class="display-1">+</span>
                               </div>
                               <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item2">
                                   <div class="itemImage" style="
-                                  position: relative;
-                                  display: inline-block;
-                                  width: 200px;
-                                  height: 200px;
-                                  background-size: contain;
-                                  background-position: center;">
+                                    width: 200px;
+                                    height: 200px;
+                                    display: inline-block;
+                                    position: relative;
+                                    background-size: contain;
+                                    background-position: center;
+                                  ">
                                   </div>
                                   <div class="itemName"></div>
                                   <div class="productPrice">
@@ -660,13 +662,14 @@ document.addEventListener("DOMContentLoaded", () => {
                                       </p>
                                   </div>
                                   <div class="selectItem">
-                                    <label>Tamanho:
+                                    <label>
+                                      Tamanho:
                                       <select class="select${suggestion.productId}"></select>
                                     </label>
                                   </div>
                               </div>
                               <div class="col-1 d-flex justify-align-center align-items-center">
-                                <h4>=</h4>
+                                <span class="display-1">=</span>
                               </div>
                           </div>
                       </div>

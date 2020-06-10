@@ -11220,10 +11220,15 @@ body.produto .buy-button:focus {
 
 body.produto .produto a {
   font-weight: normal !important;
+  display: inline-block;
+}
+
+body.produto .similar h2::after, body.produto li.specification::after {
+  content: ":";
 }
 
 body.produto .similar h2 {
-  display: none;
+  font-size: 1rem;
 }
 
 body.produto .similar ul {
