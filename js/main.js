@@ -583,6 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (buyTogether) {
     vtexjs.catalog.getCurrentProductWithVariations()
       .done(function (product) {
+        console.log(product);
         thisProduct = product.skus;
         let activeProduct = thisProduct.filter(function (i) {
           return i.available;
@@ -605,12 +606,13 @@ document.addEventListener("DOMContentLoaded", () => {
               let btnHTML = '<option>Selecione</option>';
               suggestions
                 .forEach(suggestion => {
+                  console.log(suggestion);
                   if (suggestionsId.includes(suggestion.productId)) return;
                   suggestionsId.push(suggestion.productId);
                   vtexjs.catalog.getProductWithVariations(suggestion.productId)
                     .done(function (variations) {
                       buyTogetherHTML += `
-                  <div class="row" id="var${suggestion.productId}">
+                  <div class="row w-100" id="var${suggestion.productId}">
                       <div class="col-8">
                           <div class="row">
                               <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item1">
