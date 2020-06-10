@@ -603,6 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     .done(function (variations) {
                       let item1Select = '',
                         item2Select = '';
+                      productData[product.productId] = [];
                       for (let i = 0; i < product.skus.length; i++) {
                         const item = product.skus[i];
                         if (!item.available) return;
@@ -614,9 +615,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </option>
                                 `;
                         }
-                        productData[product.productId] = [];
                         productData[product.productId].push(item);
                       };
+                      productData[suggestion.productId] = [];
                       for (let i = 0; i < variations.skus.length; i++) {
                         const item = variations.skus[i];
                         if (!item.available) return;
@@ -628,7 +629,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </option>
                                 `;
                         }
-                        productData[suggestion.productId] = [];
                         productData[suggestion.productId].push(item);
                       }
                       buyTogether.innerHTML = `
@@ -645,11 +645,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                   background-size: contain;
                                   background-position: center;">
                                   </div>
-                                  <div class="itemName">${product.name}</div>
+                                  <div class="itemName display-5">${product.name}</div>
                                   <div class="productPrice">
                                       <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
-                                          <em class="valor-de price-list-price text-nowrap">De: <strong
-                                                  class="skuListPrice">${activeProduct[0].listPriceFormated}</strong></em>
+                                          <em class="valor-de price-list-price text-nowrap">De: <s
+                                                  class="skuListPrice old-price text-muted">${activeProduct[0].listPriceFormated}</s></em>
                                           <em class="valor-por price-best-price text-nowrap">Por: <strong
                                                   class="skuBestPrice">${activeProduct[0].bestPriceFormated}</strong></em>
                                       </p>
@@ -740,7 +740,8 @@ document.addEventListener("DOMContentLoaded", () => {
                       `;
                     });
                 });
-              for (let compre of buyTogether.querySelectorAll('.compre-junto')) {
+              let btnCompre = buyTogether.querySelectorAll('.compre-junto');
+              for (let compre of btnCompre) {
                 compre.addEventListener('click', (e) => {
                   e.preventDefault();
                   console.log(e.target);
