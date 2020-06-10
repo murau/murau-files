@@ -804,21 +804,23 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     });
     skuEventDispatcher.addListener(skuDataReceivedEventName, btMurauListener);
-    document.querySelector('.compre-junto').addEventListener('click', (e) => {
-      e.preventDefault();
-      let items = [{
-        id: activeSKUs[0],
-        quantity: 1,
-        seller: '1'
-      }, {
-        id: activeSKUs[1],
-        quantity: 1,
-        seller: '1'
-      }];
-      vtexjs.checkout.addToCart(items)
-        .done(function (orderForm) {
-          murau.updateMiniCart(orderForm.items.length);
-        });
-    });
+    for(let compre of document.querySelectorAll('.compre-junto')) {
+      compre.addEventListener('click', (e) => {
+        e.preventDefault();
+        let items = [{
+          id: activeSKUs[0],
+          quantity: 1,
+          seller: '1'
+        }, {
+          id: activeSKUs[1],
+          quantity: 1,
+          seller: '1'
+        }];
+        vtexjs.checkout.addToCart(items)
+          .done(function (orderForm) {
+            murau.updateMiniCart(orderForm.items.length);
+          });
+      });
+    }
   }
 });
