@@ -162,8 +162,9 @@ function alert(alertMessage, type = "warning") {
   toastr[type](alertMessage);
 }
 const murau = {
-  buyTogether: (t) => {
-    console.log(t);
+  buyTogether: (e, t) => {
+    console.log(t, e.target);
+    console.log(t.parentNode);
     /* let items = [{
       id: '',
       quantity: 1,
