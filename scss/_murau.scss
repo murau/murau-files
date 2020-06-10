@@ -1083,7 +1083,7 @@ body.home .prateleira h2 {
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }
-  [class*="prateleira"] ul li:nth-of-type(4) {
+  [class*="prateleira"] ul li.last {
     display: none !important;
   }
 }

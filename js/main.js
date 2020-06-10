@@ -581,13 +581,6 @@ document.addEventListener("DOMContentLoaded", () => {
     activeSKUs = [];
 
   if (buyTogether) {
-    buyTogether.classList.add(
-      'd-flex',
-      'align-items-center',
-      'flex-column',
-      'py-3',
-      'mt-3'
-    )
     vtexjs.catalog.getCurrentProductWithVariations()
       .done(function (product) {
         thisProduct = product.skus;
@@ -595,6 +588,13 @@ document.addEventListener("DOMContentLoaded", () => {
           return i.available;
         });
         if (!activeProduct.length) return;
+        buyTogether.classList.add(
+          'd-flex',
+          'align-items-center',
+          'flex-column',
+          'py-3',
+          'mt-3'
+        )
         activeSKUs[0] = activeProduct[0].sku;
         fetch(`/api/catalog_system/pub/products/crossselling/suggestions/${product.productId}`)
           .then((response) => response.json().then((suggestions) => {
@@ -676,7 +676,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               </span>
                           </p>
                           <p>
-                              <button class="compre-junto btn-block btn-lg btn btn-light text-primary text-nowrap">Comprar junto</button>
+                              <button class="compre-junto btn-block btn-lg btn btn-primary text-nowrap">Comprar junto</button>
                           </p>
                       </div>
                   </div>
