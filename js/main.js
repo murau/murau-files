@@ -629,9 +629,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="itemName">${activeProduct[0].skuname}</div>
                                   <div class="productPrice">
                                       <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
-                                          <em class="valor-de price-list-price" style="display: block;">De: <strong
+                                          <em class="valor-de price-list-price text-nowrap">De: <strong
                                                   class="skuListPrice">${activeProduct[0].listPriceFormated}</strong></em>
-                                          <em class="valor-por price-best-price" style="display: block;">Por: <strong
+                                          <em class="valor-por price-best-price text-nowrap">Por: <strong
                                                   class="skuBestPrice">${activeProduct[0].bestPriceFormated}</strong></em>
                                       </p>
                                   </div>
@@ -654,10 +654,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="itemName"></div>
                                   <div class="productPrice">
                                       <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
-                                          <em class="valor-de price-list-price">De: <strong
-                                                  class="skuListPrice"></strong></em>
-                                          <em class="valor-por price-best-price">Por: <strong
-                                                  class="skuBestPrice"></strong></em>
+                                        <em class="valor-de price-list-price text-nowrap">De: <strong
+                                          class="skuListPrice"></strong></em>
+                                        <em class="valor-por price-best-price text-nowrap">Por: <strong
+                                          class="skuBestPrice"></strong></em>
                                       </p>
                                   </div>
                               </div>
@@ -667,11 +667,11 @@ document.addEventListener("DOMContentLoaded", () => {
                           </div>
                       </div>
                       <div class="col-4 d-flex justify-content-center align-items-center flex-column box-compre">
-                          <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
+                          <p class="descricao-preco d-flex flex-column justify-align-center align-items-center m-0">
                               <em>
                                   Compre os 2 por <h3 class="btValorTotal font-weight-bold"></h3>
                               </em>
-                              <span>
+                              <span class="font-weight-light">
                                   ou apenas <strong class="btParcelas"></strong> de <strong class="btParcelasValor"></strong>
                               </span>
                           </p>
