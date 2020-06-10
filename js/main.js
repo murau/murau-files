@@ -836,8 +836,8 @@ document.addEventListener("DOMContentLoaded", () => {
           };
         });
         skuEventDispatcher.addListener(skuDataReceivedEventName, btMurauListener);
+        console.log(document.querySelectorAll('.compre-junto'));
         for (let compre of document.querySelectorAll('.compre-junto')) {
-          console.log(compre);
           compre.addEventListener('click', (e) => {
             e.preventDefault();
             let items = [{
