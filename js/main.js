@@ -580,7 +580,7 @@ document.addEventListener("DOMContentLoaded", () => {
     thisProduct = [],
     activeSKUs = [];
 
-  if (buyTogether && buyTogether.length) {
+  if (buyTogether) {
     vtexjs.catalog.getCurrentProductWithVariations()
       .done(function (product) {
         thisProduct = product.skus;
