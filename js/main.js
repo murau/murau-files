@@ -602,59 +602,62 @@ document.addEventListener("DOMContentLoaded", () => {
                   vtexjs.catalog.getProductWithVariations(suggestion.productId)
                     .done(function (variations) {
                       buyTogetherHTML += `
-<div class="row" id="var${suggestion.productId}">
-  <div class="col-8">
-    <div class="row">
-      <div class="col-5" id="var${suggestion.productId}-item1">
-        <div class="itemImage" style="background-image: url(${activeProduct[0].image})">
-          <div class="btn-toolbar">
-            <div class="btn-group"></div>
-          </div>
-        </div>
-        <div class="itemName">${activeProduct[0].skuname}</div>
-        <div class="productPrice">
-          <p class="descricao-preco">
-            <em class="valor-de price-list-price" style="display: block;">De: <strong class="skuListPrice">${activeProduct[0].listPriceFormated}</strong></em>
-            <em class="valor-por price-best-price" style="display: block;">Por: <strong class="skuBestPrice">${activeProduct[0].bestPriceFormated}</strong></em>
-          </p>
-        </div>
-      </div>
-      <div class="col-1 d-flex justify-align-center align-items-center">+</div>
-      <div class="col-5" id="var${suggestion.productId}-item2">
-        <div class="itemImage">
-          <div class="btn-toolbar">
-            <div class="btn-group"></div>
-          </div>
-        </div>
-        <div class="itemName"></div>
-          <div class="productPrice">
-              <p class="descricao-preco">
-                  <em class="valor-de price-list-price" style="display: block;">De: <strong class="skuListPrice"></strong></em>
-                  <em class="valor-por price-best-price" style="display: block;">Por: <strong class="skuBestPrice"></strong></em>
-              </p>
-          </div>
-        </div>
-        <div class="col-1 d-flex justify-align-center align-items-center">=</div>
-      </div>
-    </div>
-  </div>
-  <div class="col-4 d-flex justify-align-center align-items-center box-compre">
-      <p class="descricao-preco">
-          <em style="display: block;">
-              Compre os 2 por
-          </em>
-          <em class="valor-por" style="display: block;">
-              <strong class="btValorTotal">0</strong>
-          </em>
-          <span style="display: block;">
-              ou apenas <strong class="btParcelas">0</strong> de <strong class="btParcelasValor">0</strong>
-          </span>
-      </p>
-      <p>
-          <button class="compre-junto">Comprar junto</button>
-      </p>
-  </div>
-</div>
+                  <div class="row" id="var${suggestion.productId}">
+                      <div class="col-8">
+                          <div class="row">
+                              <div class="col-5" id="var${suggestion.productId}-item1">
+                                  <div class="itemImage" style="background-image: url(${activeProduct[0].image})">
+                                      <div class="btn-toolbar">
+                                          <div class="btn-group"></div>
+                                      </div>
+                                  </div>
+                                  <div class="itemName">${activeProduct[0].skuname}</div>
+                                  <div class="productPrice">
+                                      <p class="descricao-preco">
+                                          <em class="valor-de price-list-price" style="display: block;">De: <strong
+                                                  class="skuListPrice">${activeProduct[0].listPriceFormated}</strong></em>
+                                          <em class="valor-por price-best-price" style="display: block;">Por: <strong
+                                                  class="skuBestPrice">${activeProduct[0].bestPriceFormated}</strong></em>
+                                      </p>
+                                  </div>
+                              </div>
+                              <div class="col-1 d-flex justify-align-center align-items-center">+</div>
+                              <div class="col-5" id="var${suggestion.productId}-item2">
+                                  <div class="itemImage">
+                                      <div class="btn-toolbar">
+                                          <div class="btn-group"></div>
+                                      </div>
+                                  </div>
+                                  <div class="itemName"></div>
+                                  <div class="productPrice">
+                                      <p class="descricao-preco">
+                                          <em class="valor-de price-list-price" style="display: block;">De: <strong
+                                                  class="skuListPrice"></strong></em>
+                                          <em class="valor-por price-best-price" style="display: block;">Por: <strong
+                                                  class="skuBestPrice"></strong></em>
+                                      </p>
+                                  </div>
+                              </div>
+                              <div class="col-1 d-flex justify-align-center align-items-center">=</div>
+                          </div>
+                      </div>
+                      <div class="col-4 d-flex justify-align-center align-items-center box-compre">
+                          <p class="descricao-preco">
+                              <em style="display: block;">
+                                  Compre os 2 por
+                              </em>
+                              <em class="valor-por" style="display: block;">
+                                  <strong class="btValorTotal"></strong>
+                              </em>
+                              <span style="display: block;">
+                                  ou apenas <strong class="btParcelas"></strong> de <strong class="btParcelasValor"></strong>
+                              </span>
+                          </p>
+                          <p>
+                              <button class="compre-junto btn btn-primary">Comprar junto</button>
+                          </p>
+                      </div>
+                  </div>
                       `;
                       buyTogether.innerHTML = buyTogetherHTML;
                       for (let loop = 0; loop < thisProduct.length; loop++) {
