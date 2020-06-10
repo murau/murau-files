@@ -581,6 +581,13 @@ document.addEventListener("DOMContentLoaded", () => {
     activeSKUs = [];
 
   if (buyTogether) {
+    buyTogether.classList.add(
+      'd-flex',
+      'align-items-center',
+      'flex-column',
+      'py-3',
+      'mt-3'
+    )
     vtexjs.catalog.getCurrentProductWithVariations()
       .done(function (product) {
         thisProduct = product.skus;
