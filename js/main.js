@@ -583,7 +583,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (buyTogether) {
     vtexjs.catalog.getCurrentProductWithVariations()
       .done(function (product) {
-        console.log(product);
         thisProduct = product.skus;
         let activeProduct = thisProduct.filter(function (i) {
           return i.available;
@@ -625,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   background-size: contain;
                                   background-position: center;">
                                   </div>
-                                  <div class="itemName">${activeProduct[0].skuname}</div>
+                                  <div class="itemName">${product.name}</div>
                                   <div class="productPrice">
                                       <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
                                           <em class="valor-de price-list-price text-nowrap">De: <strong
@@ -716,7 +715,7 @@ document.addEventListener("DOMContentLoaded", () => {
                           let q0 = document.querySelector(`#var${suggestion.productId}`);
                           let q2 = document.querySelector(`#var${suggestion.productId}-item2`);
                           q2.querySelector('.itemName')
-                            .textContent = item.skuname;
+                            .textContent = suggestion.productName;
                           q2.querySelector('.itemImage')
                             .style.backgroundImage = `url(${item.image})`;
                           q2.querySelector('.skuListPrice')
