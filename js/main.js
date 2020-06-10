@@ -634,7 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   </div>
                                   <div class="selectItem">
                                     <label>Tamanho:
-                                      <select id="${suggestion.productId}"></select>
+                                      <select class="select${suggestion.productId}"></select>
                                     </label>
                                   </div>
                               </div>
@@ -661,7 +661,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   </div>
                                   <div class="selectItem">
                                     <label>Tamanho:
-                                      <select id="${suggestion.productId}"></select>
+                                      <select class="select${suggestion.productId}"></select>
                                     </label>
                                   </div>
                               </div>
