@@ -653,7 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       <div class="col-8">
                           <div class="row">
                               <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item1">
-                                  <div class="itemImage" style="
+                                  <div style="
                                   background-image: url(${activeProduct[0].image});
                                   position: relative;
                                   display: inline-block;
@@ -662,20 +662,18 @@ document.addEventListener("DOMContentLoaded", () => {
                                   background-size: contain;
                                   background-position: center;">
                                   </div>
-                                  <div class="itemName display-5">${product.name}</div>
+                                  <div class="display-5">${product.name}</div>
                                   <div class="productPrice">
-                                      <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
-                                          <em class="valor-de price-list-price text-nowrap">De: <s
-                                                  class="skuListPrice old-price text-muted">${activeProduct[0].listPriceFormated}</s></em>
-                                          <em class="valor-por price-best-price text-nowrap">Por: <strong
-                                                  class="skuBestPrice">${activeProduct[0].bestPriceFormated}</strong></em>
+                                      <p class="d-flex flex-column justify-align-center align-items-center">
+                                          <em class="text-nowrap">De: <s class="text-muted">${activeProduct[0].listPriceFormated}</s></em>
+                                          <em class="text-nowrap">Por: <strong>${activeProduct[0].bestPriceFormated}</strong></em>
                                       </p>
                                   </div>
                                   <div class="selectItem">
                                     <label>
                                       Tamanho:
                                       <select name="variations">
-                                      <option></option>
+                                      <option>Selecione</option>
                                       ${item1Select}
                                       </select>
                                     </label>
@@ -685,7 +683,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <span class="display-1">+</span>
                               </div>
                               <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item2">
-                                  <div class="itemImage" style="
+                                  <div style="
                                     background-image: url(${variations.skus[0].image});
                                     width: 200px;
                                     height: 200px;
@@ -695,20 +693,18 @@ document.addEventListener("DOMContentLoaded", () => {
                                     background-position: center;
                                   ">
                                   </div>
-                                  <div class="itemName">${suggestion.productName}</div>
+                                  <div class="display-5">${suggestion.productName}</div>
                                   <div class="productPrice">
-                                      <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
-                                        <em class="valor-de price-list-price text-nowrap">De: <strong
-                                          class="skuListPrice">${variations.skus[0].listPriceFormated}</strong></em>
-                                        <em class="valor-por price-best-price text-nowrap">Por: <strong
-                                          class="skuBestPrice">${variations.skus[0].bestPriceFormated}</strong></em>
+                                      <p class="d-flex flex-column justify-align-center align-items-center">
+                                        <em class="text-nowrap">De: <s class="text-muted">${variations.skus[0].listPriceFormated}</s></em>
+                                        <em class="text-nowrap">Por: <strong>${variations.skus[0].bestPriceFormated}</strong></em>
                                       </p>
                                   </div>
                                   <div class="selectItem">
                                     <label>
                                       Tamanho:
                                       <select name="variations">
-                                      <option></option>
+                                      <option>Selecione</option>
                                       ${item2Select}
                                       </select>
                                     </label>
@@ -720,9 +716,9 @@ document.addEventListener("DOMContentLoaded", () => {
                           </div>
                       </div>
                       <div class="col-4 d-flex justify-content-center align-items-center flex-column box-compre">
-                          <p class="descricao-preco d-flex flex-column justify-align-center align-items-center m-0">
+                          <p class="d-flex flex-column justify-align-center align-items-center m-0">
                               <em>
-                                  Compre os 2 por <h3 class="btValorTotal font-weight-bold">
+                                  Compre os 2 por <h3 class="font-weight-bold">
                                   ${(murau
                                     .parseValues(variations.skus[0].bestPrice)
                                     +
@@ -736,7 +732,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   </h3>
                               </em>
                               <span class="font-weight-light">
-                                  ou apenas <strong class="btParcelas">${variations.skus[0].installments}x</strong> de <strong class="btParcelasValor">
+                                  ou apenas <strong>${variations.skus[0].installments}x</strong> de <strong>
                                   ${(murau
                                       .parseValues(variations.skus[0].installmentsValue)
                                       +
@@ -750,7 +746,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               </span>
                           </p>
                           <p>
-                              <button class="compre-junto btn-block btn-lg btn btn-primary text-nowrap" onclick="event.preventDefault();murau.buyTogether(this)">Comprar junto</button>
+                              <button class="btn-block btn-lg btn btn-primary text-nowrap" onclick="event.preventDefault();murau.buyTogether(event, this)">Comprar junto</button>
                           </p>
                       </div>
                   </div>
