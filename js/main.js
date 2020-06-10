@@ -654,9 +654,9 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="itemName"></div>
                                   <div class="productPrice">
                                       <p class="descricao-preco">
-                                          <em class="valor-de price-list-price" style="display: block;">De: <strong
+                                          <em class="valor-de price-list-price">De: <strong
                                                   class="skuListPrice"></strong></em>
-                                          <em class="valor-por price-best-price" style="display: block;">Por: <strong
+                                          <em class="valor-por price-best-price">Por: <strong
                                                   class="skuBestPrice"></strong></em>
                                       </p>
                                   </div>
@@ -666,15 +666,15 @@ document.addEventListener("DOMContentLoaded", () => {
                               </div>
                           </div>
                       </div>
-                      <div class="col-4 d-flex justify-align-center align-items-center box-compre">
+                      <div class="col-4 d-flex justify-content-center align-items-center flex-column box-compre">
                           <p class="descricao-preco">
-                              <em style="display: block;">
+                              <em>
                                   Compre os 2 por
                               </em>
-                              <em class="valor-por" style="display: block;">
+                              <em class="valor-por">
                                   <strong class="btValorTotal"></strong>
                               </em>
-                              <span style="display: block;">
+                              <span>
                                   ou apenas <strong class="btParcelas"></strong> de <strong class="btParcelasValor"></strong>
                               </span>
                           </p>
