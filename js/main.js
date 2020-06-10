@@ -708,7 +708,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                         let tamanho = item.dimensions.Tamanho;
                         if (tamanho) {
-                          q2.querySelector(`.btn-group`)
+                          document.querySelector(`#var${suggestion.productId}-item2 .itemImage .btn-group`)
                             .innerHTML = `
                                 <button class="btn btn-warning pdt2 ${loop === 0 ? 'disabled' : ''}" data-variationof="${suggestion.productId}" data-sku="${item.sku}">
                                 ${tamanho}
