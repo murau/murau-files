@@ -576,15 +576,12 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Buy together */
   let buyTogether = document.querySelector('section.buy-together'),
     suggestionsId = [],
-    productData = [],
-    thisProduct = [],
-    activeSKUs = [];
+    productData = [];
 
   if (buyTogether) {
     vtexjs.catalog.getCurrentProductWithVariations()
       .done(function (product) {
-        thisProduct = product.skus;
-        let activeProduct = thisProduct.filter(function (i) {
+        let activeProduct = product.skus.filter((i) => {
           return i.available;
         });
         if (!activeProduct.length) return;
@@ -595,23 +592,45 @@ document.addEventListener("DOMContentLoaded", () => {
           'py-3',
           'mt-3'
         )
-        activeSKUs[0] = activeProduct[0].sku;
         fetch(`/api/catalog_system/pub/products/crossselling/suggestions/${product.productId}`)
           .then((response) => response.json().then((suggestions) => {
             if (suggestions && suggestions.length) {
-              let buyTogetherHTML = `
-                <h2 style="font-family: 'Satisfy',cursive;font-size: 2.5rem;margin-top: 30px;">Aproveite e compre junto</h2>
-              `;
-              let btnHTML = '<option>Selecione</option>';
               suggestions
                 .forEach(suggestion => {
-                  console.log(suggestion);
                   if (suggestionsId.includes(suggestion.productId)) return;
                   suggestionsId.push(suggestion.productId);
                   vtexjs.catalog.getProductWithVariations(suggestion.productId)
                     .done(function (variations) {
-                      buyTogetherHTML += `
-                  <div class="row w-100" id="var${suggestion.productId}">
+                      let item1Select = '',
+                        item2Select = '';
+                      for (let i = 0; i < product.skus.length; i++) {
+                        const item = product.skus[i];
+                        if (!item.available) return;
+                        const tamanho = item.dimensions.Tamanho;
+                        if (tamanho) {
+                          item1Select += `
+                                <option value="${item.sku}">
+                                ${tamanho}
+                                </option>
+                                `;
+                        }
+                        productData[product.productId].push(item);
+                      };
+                      for (let i = 0; i < variations.skus.length; i++) {
+                        const item = variations.skus[i];
+                        if (!item.available) return;
+                        const tamanho = item.dimensions.Tamanho;
+                        if (tamanho) {
+                          item2Select += `
+                                <option value="${item.sku}">
+                                ${tamanho}
+                                </option>
+                                `;
+                        }
+                        productData[suggestion.productId].push(item);
+                      }
+                      buyTogether.innerHTML = `
+                      <div class="row w-100" id="var${suggestion.productId}">
                       <div class="col-8">
                           <div class="row">
                               <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item1">
@@ -636,7 +655,10 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="selectItem">
                                     <label>
                                       Tamanho:
-                                      <select class="select${suggestion.productId}"></select>
+                                      <select name="variations">
+                                      <option></option>
+                                      ${item1Select}
+                                      </select>
                                     </label>
                                   </div>
                               </div>
@@ -645,6 +667,7 @@ document.addEventListener("DOMContentLoaded", () => {
                               </div>
                               <div class="col-5 d-flex flex-column justify-align-center align-items-center" id="var${suggestion.productId}-item2">
                                   <div class="itemImage" style="
+                                    background-image: url(${variations.skus[0].image});
                                     width: 200px;
                                     height: 200px;
                                     display: inline-block;
@@ -653,19 +676,22 @@ document.addEventListener("DOMContentLoaded", () => {
                                     background-position: center;
                                   ">
                                   </div>
-                                  <div class="itemName"></div>
+                                  <div class="itemName">${suggestion.productName}</div>
                                   <div class="productPrice">
                                       <p class="descricao-preco d-flex flex-column justify-align-center align-items-center">
                                         <em class="valor-de price-list-price text-nowrap">De: <strong
-                                          class="skuListPrice"></strong></em>
+                                          class="skuListPrice">${variations.skus[0].listPriceFormated}</strong></em>
                                         <em class="valor-por price-best-price text-nowrap">Por: <strong
-                                          class="skuBestPrice"></strong></em>
+                                          class="skuBestPrice">${variations.skus[0].bestPriceFormated}</strong></em>
                                       </p>
                                   </div>
                                   <div class="selectItem">
                                     <label>
                                       Tamanho:
-                                      <select class="select${suggestion.productId}"></select>
+                                      <select name="variations">
+                                      <option></option>
+                                      ${item2Select}
+                                      </select>
                                     </label>
                                   </div>
                               </div>
@@ -677,10 +703,31 @@ document.addEventListener("DOMContentLoaded", () => {
                       <div class="col-4 d-flex justify-content-center align-items-center flex-column box-compre">
                           <p class="descricao-preco d-flex flex-column justify-align-center align-items-center m-0">
                               <em>
-                                  Compre os 2 por <h3 class="btValorTotal font-weight-bold"></h3>
+                                  Compre os 2 por <h3 class="btValorTotal font-weight-bold">
+                                  ${(murau
+                                    .parseValues(variations.skus[0].bestPrice)
+                                    +
+                                    murau
+                                    .parseValues(activeProduct[0].bestPrice))
+                                    .toLocaleString('pt-BR', {
+                                      minimumFractionDigits: 2,
+                                      style: 'currency',
+                                      currency: 'BRL'
+                                    })}
+                                  </h3>
                               </em>
                               <span class="font-weight-light">
-                                  ou apenas <strong class="btParcelas"></strong> de <strong class="btParcelasValor"></strong>
+                                  ou apenas <strong class="btParcelas">${variations.skus[0].installments}x</strong> de <strong class="btParcelasValor">
+                                  ${(murau
+                                      .parseValues(variations.skus[0].installmentsValue)
+                                      +
+                                    murau
+                                      .parseValues(activeProduct[0].installmentsValue))
+                                      .toLocaleString('pt-BR', {
+                                      minimumFractionDigits: 2,
+                                      style: 'currency',
+                                      currency: 'BRL'
+                                    })}</strong>
                               </span>
                           </p>
                           <p>
@@ -689,172 +736,28 @@ document.addEventListener("DOMContentLoaded", () => {
                       </div>
                   </div>
                       `;
-                      buyTogether.innerHTML = buyTogetherHTML;
-                      for (let loop = 0; loop < thisProduct.length; loop++) {
-                        const item = thisProduct[loop];
-                        if (!item.available) return;
-                        const tamanho = item.dimensions.Tamanho;
-                        if (tamanho) {
-                          btnHTML += `
-                                <option value="${item.sku}">
-                                ${tamanho}
-                                </option>
-                                `;
-                        }
-                      };
-                      document
-                        .querySelector(`#var${suggestion.productId}-item1 select`)
-                        .innerHTML = btnHTML;
-                        btnHTML = '<option>Selecione</option>';
-                      for (let loop = 0; loop < variations.skus.length; loop++) {
-                        const item = variations.skus[loop];
-                        if (!item.available) return;
-                        if (loop === 0) {
-                          activeSKUs[1] = item.sku;
-                          productData[suggestion.productId] = [];
-                          let q0 = document.querySelector(`#var${suggestion.productId}`);
-                          let q2 = document.querySelector(`#var${suggestion.productId}-item2`);
-                          q2.querySelector('.itemName')
-                            .textContent = suggestion.productName;
-                          q2.querySelector('.itemImage')
-                            .style.backgroundImage = `url(${item.image})`;
-                          q2.querySelector('.skuListPrice')
-                            .textContent = item.listPriceFormated;
-                          q2.querySelector('.skuBestPrice')
-                            .textContent = item.bestPriceFormated;
-                          q0.querySelector('.btParcelas')
-                            .textContent = `${item.installments}x`;
-                          q0.querySelector('.btParcelasValor')
-                            .textContent = (murau.parseValues(item.installmentsValue) + murau.parseValues(activeProduct[0].installmentsValue))
-                            .toLocaleString('pt-BR', {
-                              minimumFractionDigits: 2,
-                              style: 'currency',
-                              currency: 'BRL'
-                            });
-                          q0.querySelector('.btValorTotal')
-                            .textContent = (murau.parseValues(item.bestPrice) + murau.parseValues(activeProduct[0].bestPrice))
-                            .toLocaleString('pt-BR', {
-                              minimumFractionDigits: 2,
-                              style: 'currency',
-                              currency: 'BRL'
-                            });
-                        }
-                        let tamanho = item.dimensions.Tamanho;
-                        if (tamanho) {
-                          btnHTML += `
-                                <option data-variationof="${suggestion.productId}" value="${item.sku}">
-                                ${tamanho}
-                                </option>
-                                `;
-                        }
-                        productData[suggestion.productId].push(item);
-                      }
-                      document
-                        .querySelector(`#var${suggestion.productId}-item2 select`)
-                        .innerHTML = btnHTML;
                     });
                 });
-                for (let pdt1 of buyTogether.querySelectorAll('.pdt1')) {
-                  pdt1.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    let btn = this;
-                    let sku = btn.attributes["data-sku"].value;
-                    let activeProduct = thisProduct.filter(function (i) {
-                      return i.sku == sku && i.available;
-                    });
-                    let select = document.querySelector('.select.skuList input[type=radio]');
-                    select.value = activeProduct[0].dimensions.Tamanho;
-                    select.dispatchEvent(new Event('change'));
-                  });
-                }
-                for (let pdt2 of buyTogether.querySelectorAll('.pdt2')) {
-                  pdt2.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    let btn = this;
-                    let vOf = btn.attributes.variationof.value;
-                    let sku = btn.attributes["data-sku"].value;
-                    let activeProduct = thisProduct.filter(function (i) {
-                      return i.sku == activeSku && i.available;
-                    });
-                    let items = productData[vOf].filter(function (i) {
-                      return i.sku == sku && i.available;
-                    });
-                    let item = items[0];
-                    activeSKUs[1] = sku;
-                    let q0 = document.querySelector(`#var${vOf}`);
-                    let q2 = document.querySelector(`#var${vOf}-item2`);
-                    q0.querySelector('.compre-junto')
-                      .attributes["data-skub"].value = sku;
-                    q2.querySelector('.itemName')
-                      .text(item.skuname);
-                    q2.querySelector('.itemImage')
-                      .css('background-image', `url(${item.image})`);
-                    q2.querySelector('skuListPrice')
-                      .textContent = item.listPriceFormated;
-                    q2.querySelector('.skuBestPrice')
-                      .textContent = item.bestPriceFormated;
-                    q0.querySelector('.btParcelas')
-                      .textContent = `${item.installments}x`;
-                    q0.querySelector('.btParcelasValor')
-                      .text((murau.parseValues(item.installmentsValue) + murau.parseValues(activeProduct[0].installmentsValue))
-                        .toLocaleString('pt-BR', {
-                          minimumFractionDigits: 2,
-                          style: 'currency',
-                          currency: 'BRL'
-                        }));
-                    q0.querySelector('.btValorTotal')
-                      .text((murau.parseValues(item.bestPrice) + murau.parseValues(activeProduct[0].bestPrice))
-                        .toLocaleString('pt-BR', {
-                          minimumFractionDigits: 2,
-                          style: 'currency',
-                          currency: 'BRL'
-                        }));
-                    for (let el of q0.querySelector('.ptd2')) {
-                      if (el.attributes["data-skub"].value === sku) return el.classList.add('disabled');
-                      if (el.classList.includes('disabled')) el.classList.remove('disabled');
-                    };
-                  });
-                }
-                let btMurauListener = new Vtex.JSEvents.Listener('batchBuyListener', function (evt) {
-                  activeSKUs[0] = evt.skuData.id;
-                  let q0 = document.querySelector(`#var${vOf}`);
-                  let q1 = document.querySelector(`#var${vOf}-item1`);
-                  let activeProduct = thisProduct.filter(function (i) {
-                    return i.sku == evt.skuData.id && i.available;
-                  });
-                  if (!activeProduct.length) return;
-                  q1.querySelector('.itemImage')
-                    .style.backgroundImage = `url(${activeProduct[0].image})`;
-                  q1.querySelector('.itemName')
-                    .textContent = activeProduct[0].skuname;
-                  q1.querySelector('.skuListPrice')
-                    .textContent = activeProduct[0].listPriceFormated;
-                  q1.querySelector('.skuBestPrice')
-                    .textContent = activeProduct[0].bestPriceFormated;
-                  for (let el of q0.querySelector('.ptd1')) {
-                    if (el.attributes["data-sku"].value === evt.skuData.id) return el.classList.add('disabled');
-                    if (el.classList.includes('disabled')) el.classList.remove('disabled');
-                  };
+              for (let compre of buyTogether.querySelectorAll('.compre-junto')) {
+                compre.addEventListener('click', (e) => {
+                  e.preventDefault();
+                  console.log(e.target);
+                  console.log(this);
+                  /* let items = [{
+                    id: '',
+                    quantity: 1,
+                    seller: '1'
+                  }, {
+                    id: '',
+                    quantity: 1,
+                    seller: '1'
+                  }];
+                  vtexjs.checkout.addToCart(items)
+                    .done(function (orderForm) {
+                      murau.updateMiniCart(orderForm.items.length);
+                    }); */
                 });
-                skuEventDispatcher.addListener(skuDataReceivedEventName, btMurauListener);
-                for (let compre of buyTogether.querySelectorAll('.compre-junto')) {
-                  compre.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    let items = [{
-                      id: activeSKUs[0],
-                      quantity: 1,
-                      seller: '1'
-                    }, {
-                      id: activeSKUs[1],
-                      quantity: 1,
-                      seller: '1'
-                    }];
-                    vtexjs.checkout.addToCart(items)
-                      .done(function (orderForm) {
-                        murau.updateMiniCart(orderForm.items.length);
-                      });
-                  });
-                }
+              }
             }
           }));
       });
