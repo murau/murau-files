@@ -749,7 +749,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         .innerHTML = btnHTML;
                     });
                 });
-                for (let pdt1 of document.querySelectorAll('.pdt1')) {
+                console.log(document.querySelectorAll('.pdt1'));
+                for (let pdt1 of buyTogether.querySelectorAll('.pdt1')) {
                   pdt1.addEventListener('click', (e) => {
                     e.preventDefault();
                     let btn = this;
@@ -762,7 +763,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     select.dispatchEvent(new Event('change'));
                   });
                 }
-                for (let pdt2 of document.querySelectorAll('.pdt2')) {
+                for (let pdt2 of buyTogether.querySelectorAll('.pdt2')) {
                   pdt2.addEventListener('click', (e) => {
                     e.preventDefault();
                     let btn = this;
@@ -832,8 +833,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   };
                 });
                 skuEventDispatcher.addListener(skuDataReceivedEventName, btMurauListener);
-                console.log(document.querySelectorAll('.compre-junto'));
-                for (let compre of document.querySelectorAll('.compre-junto')) {
+                for (let compre of buyTogether.querySelectorAll('.compre-junto')) {
                   compre.addEventListener('click', (e) => {
                     e.preventDefault();
                     let items = [{
