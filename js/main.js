@@ -179,6 +179,7 @@ const murau = {
       vtexjs.checkout.addToCart(items)
         .done(function (orderForm) {
           murau.updateMiniCart(orderForm.items.length);
+          new Modal(document.querySelector("#murau-mini-cart")).show();
       });
     } else {
       alert('Selecione o tamanho.');
@@ -595,22 +596,20 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
   if (sliderMobi) sliderMobi.innerHTML = HTMLhomeMobiImages;
-  /* Animate on scroll library */
-  let aosCss = document.createElement('link');
-  aosCss.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
-  aosCss.rel = 'stylesheet';
-  document.body.append(aosCss);
 
+  /* Animate on scroll library */
   let aosJs = document.createElement('script');
   aosJs.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
   document.body.append(aosJs);
 
   aosJs.onload = () => {
+    let aosCss = document.createElement('link');
+    aosCss.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+    aosCss.rel = 'stylesheet';
+    document.head.append(aosCss);
+
     let aosInit = document.createElement('script');
-    aosInit.defer = true;
-    aosInit.innerHTML = `
-      AOS.init();
-    `;
+    aosInit.innerHTML = `AOS.init();`;
     document.body.append(aosInit);
   }
 
