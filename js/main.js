@@ -609,6 +609,7 @@ document.addEventListener("DOMContentLoaded", () => {
   aosInit.defer = true;
   aosInit.innerHTML = `
   document.onload = () => {
+    console.log('Onload.');
     AOS.init();
   };
   `;
