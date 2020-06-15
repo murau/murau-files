@@ -605,15 +605,14 @@ document.addEventListener("DOMContentLoaded", () => {
   aosJs.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
   document.body.append(aosJs);
 
-  let aosInit = document.createElement('script');
-  aosInit.defer = true;
-  aosInit.innerHTML = `
-  document.onload = () => {
-    console.log('Onload.');
-    AOS.init();
-  };
-  `;
-  document.body.append(aosInit);
+  aosJs.onload = () => {
+    let aosInit = document.createElement('script');
+    aosInit.defer = true;
+    aosInit.innerHTML = `
+      AOS.init();
+    `;
+    document.body.append(aosInit);
+  }
 
   /* Buy together */
   let buyTogether = document.querySelector('section.buy-together'),
