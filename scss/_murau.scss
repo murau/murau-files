@@ -963,9 +963,9 @@ body.home .prateleira h2 {
   text-indent: 0;
   display: block;
   font-size: 1rem;
-  background: #4b2e28;
+  background: $secondary;
   text-align: center;
-  color: #fff;
+  color: $white;
   @include border-radius(50rem);
   padding: 0px 10px 4px;
   font-weight: 300;
