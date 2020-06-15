@@ -9,27 +9,27 @@ body * {
 
 [data-tippy-root] .tippy-box {
   color: $light !important;
-  background-color: $primary !important;
+  background-color: $secondary !important;
 }
 
 [data-tippy-root] .tippy-box[data-placement^='top']>.tippy-arrow::before {
-  border-top-color: $primary !important;
+  border-top-color: $secondary !important;
 }
 
 [data-tippy-root] .tippy-box[data-placement^='bottom']>.tippy-arrow::before {
-  border-bottom-color: $primary !important;
+  border-bottom-color: $secondary !important;
 }
 
 [data-tippy-root] .tippy-box[data-placement^='left']>.tippy-arrow::before {
-  border-left-color: $primary !important;
+  border-left-color: $secondary !important;
 }
 
 [data-tippy-root] .tippy-box[data-placement^='right']>.tippy-arrow::before {
-  border-right-color: $primary !important;
+  border-right-color: $secondary !important;
 }
 
 [data-tippy-root] .tippy-box>.tippy-svg-arrow {
-  fill: $primary !important;
+  fill: $secondary !important;
 }
 
 section.container-fluid {
