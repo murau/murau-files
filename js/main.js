@@ -566,7 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
       content = db.nextElementSibling.innerHTML;
     }
     HTMLhomeDeskImages += `
-    <a href="${link}" class="d-block">
+    <a href="${link}" class="d-block" data-aos="fade-up" data-aos-anchor-placement="center-center">
     <div class="banner" style="background-image: url('${image}')">
       ${content}
     </div>
@@ -587,7 +587,7 @@ document.addEventListener("DOMContentLoaded", () => {
       content = mb.nextElementSibling.innerHTML;
     }
     HTMLhomeMobiImages += `
-    <a href="${link}" class="d-block">
+    <a href="${link}" class="d-block" data-aos="fade-up" data-aos-anchor-placement="center-center">
     <div class="banner" style="background-image: url('${image}')">
       ${content}
     </div>
@@ -595,6 +595,18 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
   if (sliderMobi) sliderMobi.innerHTML = HTMLhomeMobiImages;
+  /* Animate on scroll library */
+  let aosCss = document.createElement('link');
+  aosCss.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+  aosCss.rel = 'stylesheet';
+  document.head.append(aosCss);
+
+  let aosJs = document.createElement('script');
+  aosJs.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
+  document.head.append(aosJs);
+
+  AOS.init();
+
   /* Buy together */
   let buyTogether = document.querySelector('section.buy-together'),
     suggestionsId = [],
