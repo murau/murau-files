@@ -606,6 +606,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.head.append(aosJs);
 
   let aosInit = document.createElement('script');
+  aosInit.defer = true;
   aosInit.innerHTML = `AOS.init();`;
   document.head.append(aosInit);
 
