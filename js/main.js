@@ -182,7 +182,7 @@ const murau = {
           new Modal(document.querySelector("#murau-mini-cart")).show();
       });
     } else {
-      alert('Selecione o tamanho.');
+      alert('Selecione os tamanhos desejados.');
     }
   },
   parseValues: (v) => {
@@ -672,6 +672,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         productData[suggestion.productId].push(item);
                       }
                       buyTogether.innerHTML = `
+                      <h2 style="font-family: 'Satisfy',cursive; font-size: 2.5rem; margin-top: 30px;">Aproveite e compre junto</h2>
                       <div class="row w-100" id="var${suggestion.productId}">
                       <div class="col-8">
                           <div class="row">
