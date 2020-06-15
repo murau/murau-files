@@ -566,7 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
       content = db.nextElementSibling.innerHTML;
     }
     HTMLhomeDeskImages += `
-    <a href="${link}" class="d-block" data-aos="fade-up" data-aos-anchor-placement="center-center">
+    <a href="${link}" class="d-block" data-aos="fade-up">
     <div class="banner" style="background-image: url('${image}')">
       ${content}
     </div>
@@ -587,7 +587,7 @@ document.addEventListener("DOMContentLoaded", () => {
       content = mb.nextElementSibling.innerHTML;
     }
     HTMLhomeMobiImages += `
-    <a href="${link}" class="d-block" data-aos="fade-up" data-aos-anchor-placement="center-center">
+    <a href="${link}" class="d-block" data-aos="fade-up">
     <div class="banner" style="background-image: url('${image}')">
       ${content}
     </div>
@@ -605,7 +605,9 @@ document.addEventListener("DOMContentLoaded", () => {
   aosJs.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
   document.head.append(aosJs);
 
-  AOS.init();
+  let aosInit = document.createElement('script');
+  aosInit.innerHTML = `AOS.init();`;
+  document.head.append(aosInit);
 
   /* Buy together */
   let buyTogether = document.querySelector('section.buy-together'),
