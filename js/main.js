@@ -599,16 +599,20 @@ document.addEventListener("DOMContentLoaded", () => {
   let aosCss = document.createElement('link');
   aosCss.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
   aosCss.rel = 'stylesheet';
-  document.head.append(aosCss);
+  document.body.append(aosCss);
 
   let aosJs = document.createElement('script');
   aosJs.src = 'https://unpkg.com/aos@2.3.1/dist/aos.js';
-  document.head.append(aosJs);
+  document.body.append(aosJs);
 
   let aosInit = document.createElement('script');
   aosInit.defer = true;
-  aosInit.innerHTML = `AOS.init();`;
-  document.head.append(aosInit);
+  aosInit.innerHTML = `
+  document.onload = () => {
+    AOS.init();
+  };
+  `;
+  document.body.append(aosInit);
 
   /* Buy together */
   let buyTogether = document.querySelector('section.buy-together'),
