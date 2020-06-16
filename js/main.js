@@ -644,6 +644,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
           if (response.ok) {
             const html = await response.text();
+            console.log(html.length, html);
             if (!html.length) {
               moreResults = false;
               return window.dispatchEvent(new Event('murau.noMoreResults'));
