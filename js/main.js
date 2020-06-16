@@ -632,29 +632,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let
-      items = document.querySelector('.resultItemsWrapper [id*="ResultItems"]'),
+      resultItems = document.querySelector('.resultItemsWrapper [id*="ResultItems"]'),
       searchUrl = getSearchUrl(),
       currentPage = 1,
-      moreResults = true,
-      loading = false;
+      moreResults = true;
 
     isLoadMore = () => {
-      if (!items) return;
+      if (!resultItems) return;
       let
-        lastDiv = document
-        .querySelector('.resultItemsWrapper [id*="ResultItems"]')
+        lastDiv = resultItems
         .querySelectorAll('.last')[
-          document
-          .querySelector('.resultItemsWrapper [id*="ResultItems"]')
+          resultItems
           .querySelectorAll('.last')
           .length - 1
         ],
         lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
         pageOffset = window.pageYOffset + window.innerHeight;
-      console.log(pageOffset > lastDivOffset, pageOffset, lastDivOffset)
-      if (pageOffset > lastDivOffset - 20 && moreResults && !loading) {
+
+      if (pageOffset > lastDivOffset - 20 && moreResults) {
         let next = currentPage + 1;
-        loading = true;
+        console.log(next);
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
           if (response.ok) {
             let html = await response.text();
@@ -667,11 +664,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let htmlObj = document.createElement('div');
             htmlObj.innerHTML = html;
-            htmlObj.firstElementChild.remove();
-            html = htmlObj.querySelector('ul');
-            items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
-
-            items.appendChild(html);
+            if (htmlObj.firstElementChild.nodeName === "META")
+              htmlObj.firstElementChild.remove();
+              
+            resultItems.firstChild.appendChild(htmlObj.querySelector('ul'));
 
             return window.dispatchEvent(new Event('murau.isLoaded'));
           }
