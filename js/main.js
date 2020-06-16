@@ -646,15 +646,17 @@ document.addEventListener("DOMContentLoaded", () => {
     isLoadMore = () => {
       fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then((response) => {
         if (response.ok)
-          response.blob().then((blob) => {
-            /* if (blob.trim().length < 1) {
+          response.text().then((text) => {
+            console.log(text);
+            if (text.trim().length < 1) {
               moreResults = false;
               return window.dispatchEvent(new Event('murau.noMoreResults'));
-            } */
-            console.log(blob);
+            }
             window.dispatchEvent(new Event('murau.isLoaded'));
           });
-      }).catch(() => console.log('Houve um erro na requisição da nova página.'));
+
+        console.log('Erro ao tentar requisitar nova página.');
+      }).catch((err) => console.log(err.message));
       currentPage++;
     }
     isLoadMore();
