@@ -659,7 +659,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     isLoadMore();
     window.addEventListener("scroll", () => {
-      if (window.scrollY >= items.offsetHeight && moreResults) return isLoadMore();
+      console.log(window.scrollY >= items.offsetHeight);
+      console.log(window.scrollY, item.offsetHeight);
+      if (items && window.scrollY >= items.offsetHeight && moreResults) return isLoadMore();
     });
   }
 
