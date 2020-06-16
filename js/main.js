@@ -640,9 +640,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     isLoadMore = () => {
       if (!items) return;
-      console.log(items);
       let
-        lastDiv = items.querySelector('ul li:last-child'),
+        lastDiv = items.querySelector('.last')[items.querySelector('.last').length - 1],
         lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
         pageOffset = window.pageYOffset + window.innerHeight;
       console.log(pageOffset > lastDivOffset, pageOffset, lastDivOffset)
@@ -665,7 +664,7 @@ document.addEventListener("DOMContentLoaded", () => {
             html = htmlObj.querySelector('ul');
             items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
 
-            if (items) items.appendChild(html);
+            items.appendChild(html);
 
             return window.dispatchEvent(new Event('murau.isLoaded'));
           }
