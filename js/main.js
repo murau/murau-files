@@ -652,10 +652,15 @@ document.addEventListener("DOMContentLoaded", () => {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
           }
+          console.log(response);
           window.dispatchEvent(new Event('murau.isLoaded'));
         })
       }).catch(() => console.log('Houve um erro na requisição da nova página.'));
       currentPage++;
+    }
+
+    while (moreResults) {
+      isLoadMore();
     }
   }
 

@@ -1090,8 +1090,12 @@ body.home .prateleira h2 {
     max-width: 33.333%;
   }
 
-  [class*="prateleira"]:not(.n24colunas) ul li.last {
+  [class*="prateleira"] ul li.last {
     display: none !important;
+  }
+
+  [class*="prateleira"].n24colunas ul li.last {
+    display: block !important;
   }
 }
 
