@@ -613,8 +613,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.append(aosInit);
   }
 
-  /* Ifinite Scrolling */
-  if (querySelector('body.busca')) {
+  /* Infinite Scrolling */
+  if (document.querySelector('body.busca')) {
     let getSearchUrl = () => {
       let url, preg = /\/buscapagina\?.+&PageNumber=/i,
         pregCollection = /\/paginaprateleira\?.+PageNumber=/i;
