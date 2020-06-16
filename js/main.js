@@ -631,7 +631,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return "";
     }
 
-    let items;
+    let
+      items,
       searchUrl = getSearchUrl(),
       currentPage = 0,
       moreResults = true;
@@ -656,7 +657,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }).catch((err) => console.log(err.message));
       currentPage++;
     }
-
+    isLoadMore();
     window.addEventListener("scroll", () => {
       if (window.scrollY >= items.offsetHeight && moreResults) return isLoadMore();
     });
