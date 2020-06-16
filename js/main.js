@@ -660,7 +660,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isLoadMore();
     window.addEventListener("scroll", () => {
       console.log(window.scrollY >= items.offsetHeight);
-      console.log(window.scrollY, item.offsetHeight);
+      console.log(window.scrollY, items.offsetHeight);
       if (items && window.scrollY >= items.offsetHeight && moreResults) return isLoadMore();
     });
   }
