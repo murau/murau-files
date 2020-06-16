@@ -647,7 +647,7 @@ document.addEventListener("DOMContentLoaded", () => {
       fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then((response) => {
         if (response.ok) return response.text().then((html) => {
           htmlObj = document.createElement('div');
-          htmlObj.outerHTML = html;
+          htmlObj.innerHTML = html;
           items = htmlObj.querySelector('body').firstChild;
           html = htmlObj.querySelector('body ul');
           console.log(html, items);
