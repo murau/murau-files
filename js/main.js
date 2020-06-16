@@ -650,8 +650,9 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
           if (response.ok) {
             const html = await response.text();
+            console.log(html);
             loading = false;
-            
+
             if (!html.length) {
               moreResults = false;
 
