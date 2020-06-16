@@ -621,13 +621,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       for (el of document.querySelectorAll('script:not([src])')) {
         const content = el.innerHTML;
-        if (content.includes('buscapagina')) {
-          url = preg.exec(content);
-          return false;
-        } else if (content.includes('paginaprateleira')) {
-          url = pregCollection.exec(content);
-          return false;
-        }
+        if (content.includes('buscapagina')) url = preg.exec(content);
+        if (content.includes('paginaprateleira')) url = pregCollection.exec(content);
       }
 
       if (typeof url === "object" && typeof url[0] !== "undefined")
