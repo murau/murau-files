@@ -644,17 +644,16 @@ document.addEventListener("DOMContentLoaded", () => {
     elemLoading.innerHTML = "Carregando...";
 
     isLoadMore = () => {
-      fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then(({
-        blob
-      }) => {
-        blob().then((response) => {
-          if (response.trim().length < 1) {
-            moreResults = false;
-            return window.dispatchEvent(new Event('murau.noMoreResults'));
-          }
-          console.log(response);
-          window.dispatchEvent(new Event('murau.isLoaded'));
-        })
+      fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then((response) => {
+        if (response.ok)
+          response.blob().then((blob) => {
+            /* if (blob.trim().length < 1) {
+              moreResults = false;
+              return window.dispatchEvent(new Event('murau.noMoreResults'));
+            } */
+            console.log(blob);
+            window.dispatchEvent(new Event('murau.isLoaded'));
+          });
       }).catch(() => console.log('Houve um erro na requisição da nova página.'));
       currentPage++;
     }
