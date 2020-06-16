@@ -640,8 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isLoadMore = () => {
       fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then((response) => {
         if (response.ok) return response.text().then((html) => {
-          console.log(html);
-          if (!html) {
+          if (!html.length) {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
           }
@@ -659,7 +658,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currentPage++;
     }
     window.addEventListener("scroll", () => {
-      if (items && window.scrollY >= (items.offsetHeight - 100) && moreResults) return isLoadMore();
+      if (items && window.scrollY >= (items.offsetHeight - 200) && moreResults) return isLoadMore();
     });
   }
 
