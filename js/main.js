@@ -649,13 +649,13 @@ document.addEventListener("DOMContentLoaded", () => {
           let htmlObj = document.createElement('div');
           htmlObj.innerHTML = html;
           htmlObj.firstElementChild.remove();
-          let items = [...htmlObj.firstElementChild.classList].join(' .');
           html = htmlObj.querySelector('ul');
           console.log(html, items);
-          if (html.trim().length < 1) {
+          if (html) {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
           }
+          let items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
           window.dispatchEvent(new Event('murau.isLoaded'));
         });
 
