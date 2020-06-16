@@ -11913,7 +11913,7 @@ body.home .prateleira h2 {
     max-width: 33.333%;
   }
 
-  [class*=prateleira] ul li.last {
+  [class*=prateleira]:not(.n24colunas) ul li.last {
     display: none !important;
   }
 }

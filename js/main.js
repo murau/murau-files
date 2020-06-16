@@ -613,6 +613,57 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.append(aosInit);
   }
 
+  /* Ifinite Scrolling */
+  if (querySelector('body.busca')) {
+    let getSearchUrl = () => {
+      let url, preg = /\/buscapagina\?.+&PageNumber=/i,
+        pregCollection = /\/paginaprateleira\?.+PageNumber=/i;
+
+      for (el of document.querySelectorAll('script:not([src])')) {
+        const content = this.innerHTML;
+        if (content.includes('buscapagina')) {
+          url = preg.exec(content);
+          return false;
+        } else if (content.includes('paginaprateleira')) {
+          url = pregCollection.exec(content);
+          return false;
+        }
+      }
+
+      if (typeof url === "object" && typeof url[0] !== "undefined")
+        return url[0].replace("paginaprateleira", "buscapagina");
+
+      return "";
+    }
+
+    let
+      searchUrl = getSearchUrl(),
+      currentPage = 0,
+      elemLoading = window.createElement('div'),
+      moreResults = true;
+
+      console.log(searchUrl);
+
+    elemLoading.id = "scrollLoading";
+    elemLoading.classList.add("loading");
+    elemLoading.innerHTML = "Carregando...";
+
+    isLoadMore = () => {
+      fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then(({
+        blob
+      }) => {
+        blob().then((response) => {
+          if (response.trim().length < 1) {
+            moreResults = false;
+            return window.dispatchEvent(new Event('murau.noMoreResults'));
+          }
+          window.dispatchEvent(new Event('murau.isLoaded'));
+        })
+      }).catch(() => console.log('Houve um erro na requisição da nova página.'));
+      currentPage++;
+    }
+  }
+
   /* Buy together */
   let buyTogether = document.querySelector('section.buy-together'),
     suggestionsId = [],
