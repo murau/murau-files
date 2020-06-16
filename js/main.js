@@ -638,27 +638,29 @@ document.addEventListener("DOMContentLoaded", () => {
       moreResults = true;
 
     isLoadMore = () => {
-      let next = currentPage++;
-      console.log(next);
-      fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
-        if (response.ok) {
-          const html = await response.text();
-          if (!html.length) {
-            moreResults = false;
-            return window.dispatchEvent(new Event('murau.noMoreResults'));
+      if (items && window.scrollY >= (items.offsetHeight/2) && moreResults) {
+        let next = currentPage++ + 1;
+        console.log(next);
+        fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
+          if (response.ok) {
+            const html = await response.text();
+            if (!html.length) {
+              moreResults = false;
+              return window.dispatchEvent(new Event('murau.noMoreResults'));
+            }
+            let htmlObj = document.createElement('div');
+            htmlObj.innerHTML = html;
+            htmlObj.firstElementChild.remove();
+            html = htmlObj.querySelector('ul');
+            items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
+            if (items) items.append(html);
+            return window.dispatchEvent(new Event('murau.isLoaded'));
           }
-          let htmlObj = document.createElement('div');
-          htmlObj.innerHTML = html;
-          htmlObj.firstElementChild.remove();
-          html = htmlObj.querySelector('ul');
-          items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
-          if (items && items.length) items.append(html);
-          return window.dispatchEvent(new Event('murau.isLoaded'));
-        }
-      }).catch((err) => console.log(err.message));
+        }).catch((err) => console.log(err.message));
+      }
     }
     window.addEventListener("scroll", () => {
-      if (items && window.scrollY >= (items.offsetHeight - 200) && moreResults) return isLoadMore();
+      isLoadMore();
     });
   }
 
