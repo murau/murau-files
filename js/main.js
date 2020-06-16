@@ -650,7 +650,7 @@ document.addEventListener("DOMContentLoaded", () => {
           htmlObj.innerHTML = html;
           /* items = htmlObj.querySelector('body').firstChild;
           html = htmlObj.querySelector('body ul'); */
-          console.log(html);
+          console.log(htmlObj);
           if (html.trim().length < 1) {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
