@@ -641,7 +641,14 @@ document.addEventListener("DOMContentLoaded", () => {
     isLoadMore = () => {
       if (!items) return;
       let
-        lastDiv = items.querySelector('.last')[items.querySelector('.last').length - 1],
+        lastDiv = document
+        .querySelector('.resultItemsWrapper [id*="ResultItems"]')
+        .querySelectorAll('.last')[
+          document
+          .querySelector('.resultItemsWrapper [id*="ResultItems"]')
+          .querySelectorAll('.last')
+          .length - 1
+        ],
         lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
         pageOffset = window.pageYOffset + window.innerHeight;
       console.log(pageOffset > lastDivOffset, pageOffset, lastDivOffset)
