@@ -639,7 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let
       searchUrl = getSearchUrl(),
       currentPage = 0,
-      elemLoading = window.createElement('div'),
+      elemLoading = document.createElement('div'),
       moreResults = true;
 
       console.log(searchUrl);
