@@ -640,6 +640,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     isLoadMore = () => {
       if (!items) return;
+      console.log(items);
       let
         lastDiv = items.querySelector('ul li:last-child'),
         lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
