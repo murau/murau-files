@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let
-      items,
+      items = document.querySelector('.resultItemsWrapper'),
       searchUrl = getSearchUrl(),
       currentPage = 0,
       moreResults = true;
@@ -640,14 +640,15 @@ document.addEventListener("DOMContentLoaded", () => {
     isLoadMore = () => {
       fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then((response) => {
         if (response.ok) return response.text().then((html) => {
-          let htmlObj = document.createElement('div');
-          htmlObj.innerHTML = html;
-          htmlObj.firstElementChild.remove();
-          html = htmlObj.querySelector('ul');
+          console.log(html);
           if (!html) {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
           }
+          let htmlObj = document.createElement('div');
+          htmlObj.innerHTML = html;
+          htmlObj.firstElementChild.remove();
+          html = htmlObj.querySelector('ul');
           items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
           items.append(html);
           return window.dispatchEvent(new Event('murau.isLoaded'));
@@ -657,11 +658,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }).catch((err) => console.log(err.message));
       currentPage++;
     }
-    isLoadMore();
     window.addEventListener("scroll", () => {
-      console.log(window.scrollY >= items.offsetHeight);
-      console.log(window.scrollY, items.offsetHeight);
-      if (items && window.scrollY >= items.offsetHeight && moreResults) return isLoadMore();
+      if (items && window.scrollY >= (items.offsetHeight - 100) && moreResults) return isLoadMore();
     });
   }
 
