@@ -631,17 +631,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return "";
     }
 
-    let
+    let items;
       searchUrl = getSearchUrl(),
       currentPage = 0,
-      elemLoading = document.createElement('div'),
       moreResults = true;
-
-      console.log(searchUrl);
-
-    elemLoading.id = "scrollLoading";
-    elemLoading.classList.add("loading");
-    elemLoading.innerHTML = "Carregando...";
 
     isLoadMore = () => {
       fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then((response) => {
@@ -654,21 +647,19 @@ document.addEventListener("DOMContentLoaded", () => {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
           }
-          let items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
+          items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
           items.append(html);
-          console.log(html, items);
-          window.dispatchEvent(new Event('murau.isLoaded'));
+          return window.dispatchEvent(new Event('murau.isLoaded'));
         });
 
         console.log('Erro ao tentar requisitar nova página.');
       }).catch((err) => console.log(err.message));
       currentPage++;
     }
-    isLoadMore();
 
-    /* while (moreResults) {
-      isLoadMore();
-    } */
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= items.offsetHeight && moreResults) return isLoadMore();
+    });
   }
 
   /* Buy together */
