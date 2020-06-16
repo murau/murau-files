@@ -651,13 +651,13 @@ document.addEventListener("DOMContentLoaded", () => {
           if (response.ok) {
             const html = await response.text();
             console.log(html);
-            loading = false;
 
             if (!html.length) {
               moreResults = false;
 
               return window.dispatchEvent(new Event('murau.noMoreResults'));
             }
+            loading = false;
 
             let htmlObj = document.createElement('div');
             htmlObj.innerHTML = html;
