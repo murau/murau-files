@@ -638,26 +638,37 @@ document.addEventListener("DOMContentLoaded", () => {
       moreResults = true;
 
     isLoadMore = () => {
-      if (items && window.scrollY >= (items.offsetHeight/2) && moreResults) {
-        let next = currentPage++ + 1;
-        console.log(next);
+      let
+        lastDiv = items.querySelector('ul li:last-child'),
+        lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
+        pageOffset = window.pageYOffset + window.innerHeight;
+
+      if (pageOffset > lastDivOffset - 20 && moreResults) {
+        let next = currentPage + 1;
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
           if (response.ok) {
             const html = await response.text();
             console.log(html.length, html);
+
             if (!html.length) {
               moreResults = false;
+
               return window.dispatchEvent(new Event('murau.noMoreResults'));
             }
+
             let htmlObj = document.createElement('div');
             htmlObj.innerHTML = html;
             htmlObj.firstElementChild.remove();
             html = htmlObj.querySelector('ul');
             items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
-            if (items) items.append(html);
+
+            if (items) items.appendChild(html);
+
             return window.dispatchEvent(new Event('murau.isLoaded'));
           }
         }).catch((err) => console.log(err.message));
+        currentPage++;
+        isLoadMore();
       }
     }
     window.addEventListener("scroll", () => {
