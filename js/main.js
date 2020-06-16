@@ -646,11 +646,12 @@ document.addEventListener("DOMContentLoaded", () => {
     isLoadMore = () => {
       fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then((response) => {
         if (response.ok) return response.text().then((html) => {
-          htmlObj = document.createElement('div');
+          let htmlObj = document.createElement('div');
           htmlObj.innerHTML = html;
-          /* items = htmlObj.querySelector('body').firstChild;
-          html = htmlObj.querySelector('body ul'); */
-          console.log(htmlObj);
+          htmlObj.firstElementChild.remove();
+          let items = htmlObj.firstElementChild.classList.join(' .');
+          html = htmlObj.querySelector('ul');
+          console.log(html, items);
           if (html.trim().length < 1) {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
