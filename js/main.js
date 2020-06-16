@@ -620,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pregCollection = /\/paginaprateleira\?.+PageNumber=/i;
 
       for (el of document.querySelectorAll('script:not([src])')) {
-        const content = this.innerHTML;
+        const content = el.innerHTML;
         if (content.includes('buscapagina')) {
           url = preg.exec(content);
           return false;
