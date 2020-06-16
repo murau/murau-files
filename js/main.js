@@ -650,7 +650,7 @@ document.addEventListener("DOMContentLoaded", () => {
           htmlObj.innerHTML = html;
           htmlObj.firstElementChild.remove();
           html = htmlObj.querySelector('ul');
-          if (html) {
+          if (!html) {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
           }
