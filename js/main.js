@@ -642,7 +642,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lastDiv = items.querySelector('ul li:last-child'),
         lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
         pageOffset = window.pageYOffset + window.innerHeight;
-
+      console.log(pageOffset > lastDivOffset, pageOffset, lastDivOffset)
       if (pageOffset > lastDivOffset - 20 && moreResults) {
         let next = currentPage + 1;
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
