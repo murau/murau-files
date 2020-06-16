@@ -651,13 +651,13 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
           if (response.ok) {
             let html = await response.text();
+            loading = false;
 
             if (!html.length) {
               moreResults = false;
 
               return window.dispatchEvent(new Event('murau.noMoreResults'));
             }
-            loading = false;
 
             let htmlObj = document.createElement('div');
             htmlObj.innerHTML = html;
