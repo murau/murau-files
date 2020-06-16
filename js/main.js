@@ -634,12 +634,15 @@ document.addEventListener("DOMContentLoaded", () => {
     let
       items = document.querySelector('.resultItemsWrapper'),
       searchUrl = getSearchUrl(),
-      currentPage = 0,
+      currentPage = 1,
       moreResults = true;
 
     isLoadMore = () => {
-      fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${currentPage}`)).then((response) => {
-        if (response.ok) return response.text().then((html) => {
+      let next = currentPage++;
+      console.log(next);
+      fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
+        if (response.ok) {
+          const html = await response.text();
           if (!html.length) {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
@@ -649,13 +652,10 @@ document.addEventListener("DOMContentLoaded", () => {
           htmlObj.firstElementChild.remove();
           html = htmlObj.querySelector('ul');
           items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
-          items.append(html);
+          if (items && items.length) items.append(html);
           return window.dispatchEvent(new Event('murau.isLoaded'));
-        });
-
-        console.log('Erro ao tentar requisitar nova página.');
+        }
       }).catch((err) => console.log(err.message));
-      currentPage++;
     }
     window.addEventListener("scroll", () => {
       if (items && window.scrollY >= (items.offsetHeight - 200) && moreResults) return isLoadMore();
