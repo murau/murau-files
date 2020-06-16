@@ -649,7 +649,7 @@ document.addEventListener("DOMContentLoaded", () => {
           let htmlObj = document.createElement('div');
           htmlObj.innerHTML = html;
           htmlObj.firstElementChild.remove();
-          let items = htmlObj.firstElementChild.classList.join(' .');
+          let items = [...htmlObj.firstElementChild.classList].join(' .');
           html = htmlObj.querySelector('ul');
           console.log(html, items);
           if (html.trim().length < 1) {
