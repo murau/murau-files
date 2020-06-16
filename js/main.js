@@ -650,12 +650,13 @@ document.addEventListener("DOMContentLoaded", () => {
           htmlObj.innerHTML = html;
           htmlObj.firstElementChild.remove();
           html = htmlObj.querySelector('ul');
-          console.log(html, items);
           if (html) {
             moreResults = false;
             return window.dispatchEvent(new Event('murau.noMoreResults'));
           }
           let items = document.querySelector(`.${[...htmlObj.firstElementChild.classList].join('.')}`);
+          items.append(html);
+          console.log(html, items);
           window.dispatchEvent(new Event('murau.isLoaded'));
         });
 
