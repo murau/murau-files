@@ -658,10 +658,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }).catch(() => console.log('Houve um erro na requisição da nova página.'));
       currentPage++;
     }
+    isLoadMore();
 
-    while (moreResults) {
+    /* while (moreResults) {
       isLoadMore();
-    }
+    } */
   }
 
   /* Buy together */
