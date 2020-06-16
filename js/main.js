@@ -652,7 +652,6 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
           if (response.ok) {
             let html = await response.text();
-            loading = false;
 
             if (!html.length) {
               moreResults = false;
@@ -670,7 +669,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             return window.dispatchEvent(new Event('murau.isLoaded'));
           }
-        }).catch((err) => console.log(err.message));
+        }).then(() => loading = false).catch((err) => console.log(err.message));
         currentPage++;
         isLoadMore();
       }
