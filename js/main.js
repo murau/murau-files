@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let
-      items = document.querySelector('.resultItemsWrapper'),
+      items = document.querySelector('.resultItemsWrapper [id*="ResultItems"]'),
       searchUrl = getSearchUrl(),
       currentPage = 1,
       moreResults = true,
