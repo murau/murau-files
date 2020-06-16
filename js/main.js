@@ -635,7 +635,8 @@ document.addEventListener("DOMContentLoaded", () => {
       items = document.querySelector('.resultItemsWrapper'),
       searchUrl = getSearchUrl(),
       currentPage = 1,
-      moreResults = true;
+      moreResults = true,
+      loading = false;
 
     isLoadMore = () => {
       let
@@ -643,13 +644,14 @@ document.addEventListener("DOMContentLoaded", () => {
         lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
         pageOffset = window.pageYOffset + window.innerHeight;
       console.log(pageOffset > lastDivOffset, pageOffset, lastDivOffset)
-      if (pageOffset > lastDivOffset - 20 && moreResults) {
+      if (pageOffset > lastDivOffset - 20 && moreResults && !loading) {
         let next = currentPage + 1;
+        loading = true;
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
           if (response.ok) {
             const html = await response.text();
-            console.log(html.length, html);
-
+            loading = false;
+            
             if (!html.length) {
               moreResults = false;
 
