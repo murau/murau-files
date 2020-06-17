@@ -402,9 +402,9 @@ window.addEventListener("click", (e) => {
             let modalNewsContent = document.querySelector(".modalNewsContent");
             if (modalNewsContent && modalNewsContent.length)
               modalNewsContent.innerHTML = `
-            <div class="agradecimento"><h2><span>Obrigado,</span> ${nome.split(' ')[0]}!</h2><br />
-              O seu e-mail foi cadastrado com sucesso.<br />
-            <button class="ir-para-o-site">Ir para o site</button></div>
+<h2><span class="font-weight-light">Obrigado,</span> ${nome.split(' ')[0]}!</h2><br />
+O seu e-mail foi cadastrado com sucesso.<br />
+<button class="btn btn-primary rounded-0 btn-block text-uppercase font-weight-bold" data-dismiss="modal" aria-label="Close">Ir para o site</button></div>
             `;
             alert("Cadastro realizado com sucesso.", "success");
             localStorage.setItem("userRegistered", true);
@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   HTMLmenuNavigation += `</ul>`;
   document.querySelector("#MainMenu").innerHTML = HTMLmenuNavigation;
-  let sliderDesk = document.querySelector('.sliderDesktop');
+  /* let sliderDesk = document.querySelector('.sliderDesktop');
   let sliderMobi = document.querySelector('.sliderMobile');
   let deskBanner = sliderDesk ? sliderDesk.querySelectorAll('.box-banner') : [];
   let mobiBanner = sliderMobi ? sliderMobi.querySelectorAll('.box-banner') : [];
@@ -603,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </a>
     `;
   }
-  if (sliderMobi) sliderMobi.innerHTML = HTMLhomeMobiImages;
+  if (sliderMobi) sliderMobi.innerHTML = HTMLhomeMobiImages; */
 
   /* Animate on scroll library */
   let aosJs = document.createElement('script');
