@@ -297,7 +297,7 @@ window.addEventListener("scroll", () => {
 let anchorlinks = document.querySelectorAll('a[href^="#"]');
 for (let item of anchorlinks) {
   item.addEventListener("click", (e) => {
-    document.location.hash = "";
+    e.preventDefault();
     let hashval = item.getAttribute("href");
     if (!hashval.replace("#", "").length) return;
     let target = document.querySelector(hashval);
@@ -306,6 +306,7 @@ for (let item of anchorlinks) {
       block: "start",
     });
     history.pushState(null, null, hashval);
+    document.location.hash = "";
   });
 }
 window.addEventListener("click", (e) => {
