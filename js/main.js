@@ -512,6 +512,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let target = document.querySelector(
         evt.target.getAttribute("data-target")
       );
+      console.log(target);
       if (target) new BSN.Modal(target).show();
     });
   }
