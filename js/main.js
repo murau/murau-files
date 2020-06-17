@@ -179,7 +179,7 @@ const murau = {
       vtexjs.checkout.addToCart(items)
         .done(function (orderForm) {
           murau.updateMiniCart(orderForm.items.length);
-          new Modal(document.querySelector("#murau-mini-cart")).show();
+          new BSN.Modal(document.querySelector("#murau-mini-cart")).show();
         });
     } else {
       alert('Selecione os tamanhos desejados.');
@@ -352,7 +352,7 @@ window.addEventListener("click", (e) => {
       }])
       .done((orderForm) => {
         murau.updateMiniCart(orderForm.items.length);
-        new Modal(document.querySelector("#murau-mini-cart")).show();
+        new BSN.Modal(document.querySelector("#murau-mini-cart")).show();
       });
     return;
   }
@@ -475,7 +475,7 @@ if (zoomImages && zoomImages.length) {
 `;
   document.querySelector(".apresentacao").innerHTML = productCarouselImages;
   document.addEventListener("DOMContentLoaded", () => {
-    new Carousel(document.querySelector("#productImages"), {
+    new BSN.Carousel(document.querySelector("#productImages"), {
       interval: false,
       pause: false,
       keyboard: true,
@@ -512,12 +512,12 @@ document.addEventListener("DOMContentLoaded", () => {
       let target = document.querySelector(
         evt.target.getAttribute("data-target")
       );
-      if (target) new Modal(target).show();
+      if (target) new BSN.Modal(target).show();
     });
   }
   const tabPills = document.querySelectorAll("[data-toggle=pill]");
   for (let tabPill of tabPills) {
-    new Tab(tabPill);
+    new BSN.Tab(tabPill);
   }
   if (document.querySelector('body.produto') && !document.querySelector("body.produto .skuList"))
     document.body.classList.add("no-variations");
@@ -864,7 +864,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let modalNewsletter = document.querySelector('#modalNewsletter');
   if (!localStorage.getItem('userRegistered')) {
     if (Number(localStorage.getItem('userClosed')) >= 3) return;
-    new Modal(modalNewsletter).toggle();
+    new BSN.Modal(modalNewsletter).toggle();
   }
 
   modalNewsletter.addEventListener('hide.bs.modal', (evt) => {
