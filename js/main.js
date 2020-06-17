@@ -295,18 +295,16 @@ window.addEventListener("scroll", () => {
   }
 });
 let anchorlinks = document.querySelectorAll('a[href^="#"]');
-for (let item of anchorlinks) {
-  item.addEventListener("click", (e) => {
+for (let el of anchorlinks) {
+  el.addEventListener("click", (e) => {
     e.preventDefault();
-    let hashval = item.getAttribute("href");
+    let hashval = el.getAttribute("href");
     if (!hashval.replace("#", "").length) return;
     let target = document.querySelector(hashval);
     target.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
-    history.pushState(null, null, hashval);
-    document.location.hash = "";
   });
 }
 window.addEventListener("click", (e) => {
