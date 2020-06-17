@@ -111,6 +111,7 @@ function compareValues(key, order = "asc") {
   };
 }
 let maskName = Inputmask({
+  casing: "title",
   clearMaskOnLostFocus: true,
   regex: "[A-Za-z \u00C0-\u017F.-]*",
   showMaskOnFocus: false,
