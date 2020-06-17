@@ -6,7 +6,7 @@ const links = [{
   {
     order: 2,
     title: "Coleção",
-    url: "/roupa?PS=24&O=OrderByReleaseDateDESC",
+    url: "#",
     childs: [{
         title: "Blusas",
         url: "/roupa/blusas?PS=24&O=OrderByReleaseDateDESC",
@@ -72,7 +72,7 @@ const links = [{
   {
     order: 3,
     title: "Acessórios",
-    url: "/acessorios",
+    url: "#",
     childs: [{
         title: "Cintos",
         url: "/acessorios/Cintos",
