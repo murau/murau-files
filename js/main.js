@@ -865,7 +865,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let modalNewsletter = document.querySelector('#modalNewsletter');
   if (!localStorage.getItem('userRegistered')) {
     if (Number(localStorage.getItem('userClosed')) >= 3) return;
-    new BSN.Modal(modalNewsletter).toggle();
+    //new BSN.Modal(modalNewsletter).toggle();
   }
 
   modalNewsletter.addEventListener('hide.bs.modal', (evt) => {
