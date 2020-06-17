@@ -179,7 +179,7 @@ const murau = {
       vtexjs.checkout.addToCart(items)
         .done(function (orderForm) {
           murau.updateMiniCart(orderForm.items.length);
-          //new BSN.Modal(document.querySelector("#murau-mini-cart")).show();
+          new BSN.Modal(document.querySelector("#murau-mini-cart")).show();
         });
     } else {
       alert('Selecione os tamanhos desejados.');
@@ -352,7 +352,7 @@ window.addEventListener("click", (e) => {
       }])
       .done((orderForm) => {
         murau.updateMiniCart(orderForm.items.length);
-        //new BSN.Modal(document.querySelector("#murau-mini-cart")).show();
+        new BSN.Modal(document.querySelector("#murau-mini-cart")).show();
       });
     return;
   }
@@ -512,7 +512,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let target = document.querySelector(
         evt.target.getAttribute("data-target")
       );
-      //if (target) new BSN.Modal(target).show();
+      if (target) new BSN.Modal(target).show();
     });
   }
   const tabPills = document.querySelectorAll("[data-toggle=pill]");
