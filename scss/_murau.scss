@@ -495,6 +495,7 @@ h3.notifymetitle {
   border-bottom: 1px solid $primary;
   padding: 10px;
   outline: 0;
+  width: 100%;
 }
 
 .notifyme-form input[type="button"] {
@@ -503,6 +504,8 @@ h3.notifymetitle {
   color: $white;
   padding: 10px;
   text-transform: uppercase;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .notifyme-error {
@@ -1224,7 +1227,7 @@ body.produto .skuListPrice::before {
   display: block;
   height: 2px;
   width: 100%;
-  top: 10px;
+  top: 6px;
   left: 0;
   background-color: $red;
   box-sizing: border-box;
@@ -1237,7 +1240,7 @@ body.produto .skuListPrice {
 }
 
 body.produto .skuListPrice::before {
-  top: 8px;
+  top: 5px;
 }
 
 #toast-container.toast-bottom-center>div,
