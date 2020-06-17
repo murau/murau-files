@@ -400,8 +400,7 @@ window.addEventListener("click", (e) => {
           .then((response) => response.json())
           .then((json) => {
             let modalNewsContent = document.querySelector(".modalNewsContent");
-            if (modalNewsContent && modalNewsContent.length)
-              modalNewsContent.innerHTML = `
+            if (modalNewsContent) modalNewsContent.innerHTML = `
 <h2><span class="font-weight-light">Obrigado,</span> ${nome.split(' ')[0]}!</h2><br />
 O seu e-mail foi cadastrado com sucesso.<br />
 <button class="btn btn-primary rounded-0 btn-block text-uppercase font-weight-bold" data-dismiss="modal" aria-label="Close">Ir para o site</button></div>
