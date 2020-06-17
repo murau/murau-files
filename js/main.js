@@ -485,9 +485,6 @@ if (zoomImages && zoomImages.length) {
     });
   });
 }
-document.addEventListener("readystatechange", () => {
-  murau.tipTitle();
-});
 document
   .querySelector("#searchBox")
   .addEventListener("hidden.bs.collapse", () => {
@@ -508,7 +505,6 @@ const noty = async () => {
 };
 murau.areYouMobile();
 document.addEventListener("DOMContentLoaded", () => {
-  murau.tipTitle();
   const modals = document.querySelectorAll("[data-toggle=modal]");
   for (let modal of modals) {
     modal.addEventListener("click", (evt) => {
@@ -687,7 +683,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }).then(() => isLoading = false).catch((err) => console.log(err.message));
         currentPage++;
-        isLoadMore();
+        murau.tipTitle();
       }
     }
     window.addEventListener("scroll", () => {
@@ -875,4 +871,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let userClosedCount = Number(localStorage.getItem('userClosed')) + 1;
     localStorage.setItem('userClosed', userClosedCount);
   }, false);
+
+  /* Remove titles, add tips */
+  murau.tipTitle();
 });
