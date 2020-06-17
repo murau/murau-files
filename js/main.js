@@ -678,12 +678,12 @@ document.addEventListener("DOMContentLoaded", () => {
               htmlObj.firstElementChild.remove();
 
             resultItems.firstChild.appendChild(htmlObj.querySelector('ul'));
-
+            murau.tipTitle();
+            
             return window.dispatchEvent(new Event('murau.isLoaded'));
           }
         }).then(() => isLoading = false).catch((err) => console.log(err.message));
         currentPage++;
-        murau.tipTitle();
       }
     }
     window.addEventListener("scroll", () => {
