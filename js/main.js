@@ -180,7 +180,7 @@ const murau = {
         .done(function (orderForm) {
           murau.updateMiniCart(orderForm.items.length);
           new Modal(document.querySelector("#murau-mini-cart")).show();
-      });
+        });
     } else {
       alert('Selecione os tamanhos desejados.');
     }
@@ -398,9 +398,17 @@ window.addEventListener("click", (e) => {
             },
           })
           .then((response) => response.json())
-          .then(() => {
+          .then((json) => {
+            let modalNewsContent = document.querySelector(".modalNewsContent");
+            if (modalNewsContent && modalNewsContent.length)
+              modalNewsContent.innerHTML = `
+            <div class="agradecimento"><h2><span>Obrigado,</span> ${nome.split(' ')[0]}!</h2><br />
+              O seu e-mail foi cadastrado com sucesso.<br />
+            <button class="ir-para-o-site">Ir para o site</button></div>
+            `;
             alert("Cadastro realizado com sucesso.", "success");
             localStorage.setItem("userRegistered", true);
+            console.log(json);
             return disabled(false);
           })
           .catch((err) => {
@@ -849,4 +857,16 @@ document.addEventListener("DOMContentLoaded", () => {
           }));
       });
   }
+
+  /* Newsletter */
+  let modalNewsletter = document.querySelector('#modalNewsletter');
+  if (!localStorage.getItem('userRegistered')) {
+    if (Number(localStorage.getItem('userClosed')) >= 3) return;
+    new Modal(modalNewsletter).toggle();
+  }
+
+  modalNewsletter.addEventListener('hide.bs.modal', (evt) => {
+    let userClosedCount = Number(localStorage.getItem('userClosed')) + 1;
+    localStorage.setItem('userClosed', userClosedCount);
+  }, false);
 });
