@@ -236,8 +236,7 @@ footer i {
   font-size: 32px;
 }
 
-footer a.logo-lets,
-footer a.logo-vtex {
+footer a[class*="logo-"] {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -245,6 +244,11 @@ footer a.logo-vtex {
   font-size: 0;
   height: 50px;
   width: 100px;
+  filter: grayscale(1) sepia(1);
+}
+
+footer a[class*="logo-"]:hover {
+  filter: grayscale(0) sepia(0);
 }
 
 footer a.logo-lets {
@@ -389,7 +393,8 @@ body.produto .produto a {
   display: inline-block;
 }
 
-body.produto .similar h2::after, body.produto li.specification::after {
+body.produto .similar h2::after,
+body.produto li.specification::after {
   content: ":";
 }
 
@@ -1000,31 +1005,6 @@ body.home .prateleira h2 {
   top: 10px;
   cursor: pointer;
   z-index: $zindex-modal;
-}
-
-#modalNewsletter .agradecimento span {
-  font-family: Lobster, cursive;
-  font-weight: 400;
-}
-
-#modalNewsletter .agradecimento .ir-para-o-site {
-  margin-top: 20px;
-  padding: 15px 30px;
-  color: $white;
-  background: $black;
-  border: 0;
-}
-
-#modalNewsletter .agradecimento .ir-para-o-site:hover {
-  text-decoration: underline;
-}
-
-#modalNewsletter .back-on-phone {
-  background-image: url("https://lojamurau.vteximg.com.br/arquivos/popup.jpg");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: cover;
-  margin: -16px 0 -16px -1px;
 }
 
 [class*="prateleira"] {
