@@ -376,8 +376,12 @@ window.addEventListener("click", (e) => {
     if (!email) return alert("Preencha o campo e-mail.");
     let emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<div>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!emailRegex.test(email)) return alert("Digite um e-mail válido.");
-    let disabled = (value = true) => target.disabled = value;
-    disabled(true);
+    const disabled = (value = true) => {
+      for (let el of document.querySelectorAll(".cNewsletter")) {
+        el.disabled = value;
+      }
+    };
+    disabled();
     fetch(`/api/dataentities/NL/search?email=${email}&_fields=email`)
       .then((response) => response.json())
       .then((emailChk) => {
@@ -398,7 +402,7 @@ window.addEventListener("click", (e) => {
             },
           })
           .then((response) => response.json())
-          .then((json) => {
+          .then(() => {
             let modalNewsContent = document.querySelector(".modalNewsContent");
             if (modalNewsContent) modalNewsContent.innerHTML = `
 <h2><span class="font-weight-light">Obrigado,</span> ${nome.split(' ')[0]}!</h2>
@@ -407,7 +411,7 @@ window.addEventListener("click", (e) => {
             `;
             alert("Cadastro realizado com sucesso.", "success");
             localStorage.setItem("userRegistered", true);
-            return disabled(false);
+            return disabled();
           })
           .catch((err) => {
             console.log(err);
@@ -415,6 +419,7 @@ window.addEventListener("click", (e) => {
               "Ocorreu um erro ao registrar seu e-mail. Tente novamente mais tarde.",
               "error"
             );
+            return disabled(false);
           });
       })
       .catch((err) => {
@@ -423,8 +428,8 @@ window.addEventListener("click", (e) => {
           "Ocorreu um erro ao registrar seu e-mail. Tente novamente mais tarde.",
           "error"
         );
+        return disabled(false);
       });
-    return disabled(false);
   }
 });
 let zoomImages = document.querySelectorAll("#show ul.thumbs li a");
