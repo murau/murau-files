@@ -562,7 +562,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#MainMenu").innerHTML = HTMLmenuNavigation;
   let banner = document.querySelectorAll('.box-banner');
   for (let el of banner) {
-    el.attributes["data-aos"] = "fade-up";
+    el.setAttribute("data-aos", "fade-up");
   }
   /* let sliderDesk = document.querySelector('.sliderDesktop');
   let sliderMobi = document.querySelector('.sliderMobile');
