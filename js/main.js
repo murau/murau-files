@@ -401,9 +401,9 @@ window.addEventListener("click", (e) => {
           .then((json) => {
             let modalNewsContent = document.querySelector(".modalNewsContent");
             if (modalNewsContent) modalNewsContent.innerHTML = `
-<h2><span class="font-weight-light">Obrigado,</span> ${nome.split(' ')[0]}!</h2><br />
-O seu e-mail foi cadastrado com sucesso.<br />
-<button class="btn btn-primary rounded-0 btn-block text-uppercase font-weight-bold" data-dismiss="modal" aria-label="Close">Ir para o site</button></div>
+<h2><span class="font-weight-light">Obrigado,</span> ${nome.split(' ')[0]}!</h2>
+<div class="font-weight-light">O seu e-mail foi cadastrado com sucesso.</div>
+<button class="mt-5 btn btn-primary rounded-0 btn-block text-uppercase font-weight-bold" data-dismiss="modal" aria-label="Close">Ir para o site</button></div>
             `;
             alert("Cadastro realizado com sucesso.", "success");
             localStorage.setItem("userRegistered", true);
