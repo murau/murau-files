@@ -635,7 +635,8 @@ document.addEventListener("DOMContentLoaded", () => {
       resultItems = document.querySelector('.resultItemsWrapper [id*="ResultItems"]'),
       searchUrl = getSearchUrl(),
       currentPage = 1,
-      moreResults = true;
+      moreResults = true,
+      isLoading = false;
 
     isLoadMore = () => {
       if (!resultItems) return;
@@ -649,13 +650,12 @@ document.addEventListener("DOMContentLoaded", () => {
         lastDivOffset = lastDiv.offsetTop + lastDiv.clientHeight,
         pageOffset = window.pageYOffset + window.innerHeight;
 
-      if (pageOffset > lastDivOffset - 20 && moreResults) {
+      if (pageOffset > lastDivOffset - 20 && moreResults && !isLoading) {
         let next = currentPage + 1;
-        console.log(next);
+        isLoading = true;
         fetch(searchUrl.replace(/pagenumber\=[0-9]*/i, `PageNumber=${next}`)).then(async (response) => {
           if (response.ok) {
             let html = await response.text();
-
             if (!html.length) {
               moreResults = false;
 
@@ -666,12 +666,12 @@ document.addEventListener("DOMContentLoaded", () => {
             htmlObj.innerHTML = html;
             if (htmlObj.firstElementChild.nodeName === "META")
               htmlObj.firstElementChild.remove();
-              
+
             resultItems.firstChild.appendChild(htmlObj.querySelector('ul'));
 
             return window.dispatchEvent(new Event('murau.isLoaded'));
           }
-        }).then(() => loading = false).catch((err) => console.log(err.message));
+        }).then(() => isLoading = false).catch((err) => console.log(err.message));
         currentPage++;
         isLoadMore();
       }
