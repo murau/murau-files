@@ -1,6 +1,5 @@
 body {
   overflow-x: hidden;
-  color: $primary;
 }
 
 body * {
@@ -1473,6 +1472,15 @@ body.login {
   justify-content: space-between;
   align-items: center;
   padding: 0 !important;
+}
+
+.vtex-account>div section>main {
+  padding: 0;
+  margin: 0;
+}
+
+.vtex-account>div section>main article {
+  background: #fff;
 }
 
 @media (min-width: map-get($grid-breakpoints, "lg")) {

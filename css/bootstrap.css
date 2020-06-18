@@ -60,7 +60,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #f0eae8;
+  color: #4b2e28;
   text-align: left;
   background-color: #fff;
 }
@@ -1687,7 +1687,7 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #f0eae8;
+  color: #4b2e28;
 }
 
 .table th,
@@ -1737,7 +1737,7 @@ pre code {
 }
 
 .table-hover tbody tr:hover {
-  color: #f0eae8;
+  color: #4b2e28;
   background-color: rgba(0, 0, 0, 0.075);
 }
 
@@ -2129,7 +2129,7 @@ select.form-control:focus::-ms-value {
   margin-bottom: 0;
   font-size: 1rem;
   line-height: 1.5;
-  color: #f0eae8;
+  color: #4b2e28;
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0;
@@ -2483,7 +2483,7 @@ textarea.form-control {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #f0eae8;
+  color: #4b2e28;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -2504,7 +2504,7 @@ textarea.form-control {
 }
 
 .btn:hover {
-  color: #f0eae8;
+  color: #4b2e28;
   text-decoration: none;
 }
 
@@ -3192,7 +3192,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 1rem;
-  color: #f0eae8;
+  color: #4b2e28;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -5395,7 +5395,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .list-group-item-action:active {
-  color: #f0eae8;
+  color: #4b2e28;
   background-color: #e9ecef;
 }
 
@@ -6284,7 +6284,7 @@ a.close.disabled {
 
 .popover-body {
   padding: 0.5rem 0.75rem;
-  color: #f0eae8;
+  color: #4b2e28;
 }
 
 .carousel {
@@ -10274,7 +10274,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-body {
-  color: #f0eae8 !important;
+  color: #4b2e28 !important;
 }
 
 .text-muted {
@@ -10399,7 +10399,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   overflow-x: hidden;
-  color: #4b2e28;
 }
 
 body * {
@@ -11828,6 +11827,15 @@ body.login {
   justify-content: space-between;
   align-items: center;
   padding: 0 !important;
+}
+
+.vtex-account > div section > main {
+  padding: 0;
+  margin: 0;
+}
+
+.vtex-account > div section > main article {
+  background: #fff;
 }
 
 @media (min-width: 992px) {
