@@ -312,7 +312,7 @@ for (let el of anchorlinks) {
   el.addEventListener("click", (e) => {
     e.preventDefault();
     let hashval = el.getAttribute("href");
-    if (!hashval.replace("#", "").length) return;
+    if (!hashval.replace("#", "").length || hashval.includes('#/')) return;
     let target = document.querySelector(hashval);
     target.scrollIntoView({
       behavior: "smooth",
