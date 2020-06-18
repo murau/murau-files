@@ -1444,6 +1444,8 @@ body.login {
 .vtex-account>div section {
   flex: 0 0 100%;
   max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .vtex-account>div aside>div {
@@ -1487,7 +1489,7 @@ body.login {
   background: #fff;
 }
 
-@media (min-width: map-get($grid-breakpoints, "sm")) {
+@media (min-width: map-get($grid-breakpoints, "md")) {
   .vtex-account>div {
     flex-direction: row-reverse;
   }
