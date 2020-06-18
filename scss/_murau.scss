@@ -1487,7 +1487,7 @@ body.login {
   background: #fff;
 }
 
-@media (min-width: map-get($grid-breakpoints, "md")) {
+@media (min-width: map-get($grid-breakpoints, "sm")) {
   .vtex-account>div {
     flex-direction: row-reverse;
   }
