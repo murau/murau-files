@@ -11792,9 +11792,11 @@ body.login {
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: row-reverse;
 }
 
-.vtex-account > div aside, .vtex-account > div section {
+.vtex-account > div aside,
+.vtex-account > div section {
   flex: 0 0 100%;
   max-width: 100%;
 }
@@ -11809,10 +11811,15 @@ body.login {
 .vtex-account > div aside nav a.c-on-base {
   color: #4b2e28;
   border-color: #4b2e28;
+  border-left-width: 0;
+  border-right-width: 5px !important;
+  border-right-style: solid;
+  background-color: #f0eae8;
 }
 
 .vtex-account button {
   color: #fff;
+  border-color: #301d19 !important;
   background-color: #4b2e28 !important;
   padding: 6px 30px !important;
 }
@@ -11823,9 +11830,6 @@ body.login {
 }
 
 .vtex-account > div section header > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 !important;
 }
 
@@ -11838,7 +11842,10 @@ body.login {
   background: #fff;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
+  .vtex-account > div {
+    flex-direction: column;
+  }
   .vtex-account > div aside {
     flex: 0 0 25%;
     max-width: 25%;
@@ -11849,6 +11856,9 @@ body.login {
     max-width: 75%;
     padding: 0;
     margin: 0;
+  }
+  .vtex-account > div section header > div > div:nth-child(1) {
+    display: none;
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
