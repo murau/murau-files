@@ -11792,7 +11792,7 @@ body.login {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
 }
 
 .vtex-account > div aside,
@@ -11844,7 +11844,7 @@ body.login {
 
 @media (min-width: 768px) {
   .vtex-account > div {
-    flex-direction: column;
+    flex-direction: row-reverse;
   }
   .vtex-account > div aside {
     flex: 0 0 25%;
