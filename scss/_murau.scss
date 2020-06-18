@@ -1434,3 +1434,58 @@ body.login {
 }
 
 /* Account page */
+.vtex-account>div {
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.vtex-account>div aside, .vtex-account>div section {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.vtex-account>div aside>div {
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.vtex-account>div aside nav a.c-on-base {
+  color: $primary;
+  border-color: $primary;
+}
+
+.vtex-account button {
+  color: $white;
+  background-color: $primary !important;
+  padding: 6px 30px !important;
+}
+
+.vtex-account button>div {
+  padding: 0;
+  margin: 0;
+}
+
+.vtex-account>div section header>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 !important;
+}
+
+@media (min-width: map-get($grid-breakpoints, "lg")) {
+  .vtex-account>div aside {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0;
+  }
+  
+  .vtex-account>div section {
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding: 0;
+    margin: 0;
+  }
+}
