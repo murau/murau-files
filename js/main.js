@@ -243,7 +243,7 @@ const murau = {
   },
   areYouMobile: () => {
     let body = document.querySelector("body");
-    let header = body.querySelector("header");
+    let header = body.querySelector("body>header");
     let toggler = header.querySelector(".navbar-toggler");
     if (toggler.offsetParent) {
       body.classList.add("mobile");
@@ -277,7 +277,7 @@ vtexjs.checkout.getOrderForm().done((orderForm) => {
 });
 window.addEventListener("resize", () => murau.areYouMobile());
 window.addEventListener("scroll", () => {
-  let bodyHeader = document.querySelectorAll("body, header");
+  let bodyHeader = document.querySelectorAll("body, body>header");
   if (window.pageYOffset > 100) {
     let i = 0;
     for (let element of bodyHeader) {
@@ -310,9 +310,9 @@ window.addEventListener("scroll", () => {
 let anchorlinks = document.querySelectorAll('a[href^="#"]');
 for (let el of anchorlinks) {
   el.addEventListener("click", (e) => {
-    e.preventDefault();
     let hashval = el.getAttribute("href");
     if (!hashval.replace("#", "").length || hashval.includes('#/')) return;
+    e.preventDefault();
     let target = document.querySelector(hashval);
     target.scrollIntoView({
       behavior: "smooth",
