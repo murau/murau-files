@@ -1484,8 +1484,12 @@ table td {
   content: "\f2ed";
 }
 
-table a.inputedit:before {
+table a.inputedit.edit:before {
   content: "\f044";
+}
+
+table a.inputedit.save:before {
+  content: "\f0c7";
 }
 
 .actions a.deletethissku:before,
