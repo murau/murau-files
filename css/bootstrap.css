@@ -11858,6 +11858,11 @@ table a.inputedit {
   text-align: center;
 }
 
+.giftlistproductsv2 th:not(:first-child),
+.giftlistproductsv2 td {
+  text-align: center;
+}
+
 a.urlproduct img {
   width: 60px !important;
   height: auto;
