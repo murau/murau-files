@@ -872,12 +872,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }));
       });
   }
-
+  
   /* Newsletter */
   let modalNewsletter = document.querySelector('#modalNewsletter');
   if (!localStorage.getItem('userRegistered')) {
-    if (Number(localStorage.getItem('userClosed')) >= 3) return;
-    new BSN.Modal(modalNewsletter).toggle();
+    if (Number(localStorage.getItem('userClosed')) <= 3) new BSN.Modal(modalNewsletter).toggle();
   }
 
   modalNewsletter.addEventListener('hide.bs.modal', (evt) => {
@@ -896,5 +895,4 @@ document.addEventListener("DOMContentLoaded", () => {
     giftlistmanager.querySelector('.action-edit').remove();
     giftlistmanager.querySelector('h2').remove();
   }
-  console.log('Passou por aqui.');
 });
