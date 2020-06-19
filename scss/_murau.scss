@@ -567,6 +567,14 @@ h3.notifymetitle {
   z-index: $zindex-dropdown;
 }
 
+.glis-save.save-success {
+  background-color: $success;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
 .giftlist-insertsku-wrapper .glis-popup-link:hover,
 .giftlist-insertsku-wrapper .glis-link:hover {
   text-decoration: none;

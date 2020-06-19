@@ -10965,6 +10965,14 @@ h3.notifymetitle {
   z-index: 1000;
 }
 
+.glis-save.save-success {
+  background-color: #28a745;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
 .giftlist-insertsku-wrapper .glis-popup-link:hover,
 .giftlist-insertsku-wrapper .glis-link:hover {
   text-decoration: none;
