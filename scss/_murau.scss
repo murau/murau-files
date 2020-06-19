@@ -573,6 +573,12 @@ h3.notifymetitle {
   margin: 10px 0;
   width: 100%;
   text-align: center;
+  border-radius: 5px;
+  color: $white;
+}
+
+.glis-save.save-success a {
+  color: darken($white, 10%);
 }
 
 .giftlist-insertsku-wrapper .glis-popup-link:hover,
