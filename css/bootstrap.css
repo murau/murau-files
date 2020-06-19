@@ -11844,7 +11844,7 @@ body.login {
   background: #fff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 720px) {
   .vtex-account > div {
     flex-direction: row-reverse;
   }
