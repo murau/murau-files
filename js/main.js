@@ -916,4 +916,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let giftlistProducts = document.querySelector('table.giftlistproductsv2');
     if (giftlistProducts) giftlistProducts.classList.add('table', 'table-bordered', 'table-hover');
   }, 1000);
+  for (let el of document.querySelectorAll('.helperComplement')) {
+    el.remove();
+  }
 });
