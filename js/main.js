@@ -895,6 +895,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (giftlistmanagerTable) {
       giftlistmanagerTable.classList.add('table', 'table-bordered', 'table-hover');
       giftlistmanagerTable.querySelector('.giftlist-header-name').style.width = '60%';
+      giftlistmanagerTable.querySelector('.giftlist-header-action').style.width = '10%';
+      giftlistmanagerTable.querySelector('.giftlist-header-desired').style.width = '60%';
+      for (
+        let el of giftlistmanagerTable
+          .querySelectorAll('.giftlist-header-action, .giftlist-header-desired')
+      ) {
+        el.classList.add('text-center');
+      }
       giftlistmanagerTable.querySelector('.action-view').remove();
       giftlistmanagerTable.querySelector('.action-edit').remove();
     }
