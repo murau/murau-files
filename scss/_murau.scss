@@ -1449,6 +1449,11 @@ table td {
   margin: 0;
 }
 
+.giftlist-body-action ul.glmanager-actions li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
 .action-buy a:before {
   content: "\f290";
 }
@@ -1457,11 +1462,21 @@ table td {
   content: "\f013";
 }
 
+.actions a.deletethissku:before {
+  content: "\f2ed";
+}
+
+.actions a.inputedit:before {
+  content: "\f044";
+}
+
+.actions a.deletethissku:before,
+.actions a.inputedit:before,
 .action-buy a:before,
 .action-manage a:before {
   font-family: "Font Awesome 5 Free";
   font-weight: 600;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .action-buy a,
@@ -1471,9 +1486,17 @@ table td {
   text-decoration: none;
 }
 
-.giftlist-body-action ul.glmanager-actions li {
-  display: inline-block;
-  margin: 0 5px;
+.actions a.deletethissku {
+  font-size: 0;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.actions a.inputedit {
+  font-size: 0;
+  text-decoration: none;
 }
 
 a.urlproduct img {
