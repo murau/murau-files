@@ -903,6 +903,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       giftlistmanagerTable.querySelector('.action-view').remove();
       giftlistmanagerTable.querySelector('.action-edit').remove();
+      giftlistmanagerTable.querySelector('.action-delete').remove();
     }
     for(let el of giftlistmanager.querySelectorAll('.giftlist-body-name')) {
       let parent = el.parentElement;
