@@ -11474,10 +11474,6 @@ body.home .prateleira h2 {
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }
-  .busca [class*="prateleira"] ul li {
-    flex: 0 0 25%;
-    max-width: 25%;
-  }
   [class*="prateleira"] ul li.last:not(:first-child) {
     display: none !important;
   }
