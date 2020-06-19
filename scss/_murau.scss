@@ -1489,6 +1489,11 @@ body.login {
   background: #fff;
 }
 
+.vtext-account .w-40-ns,
+.vtext-account .w-60-ns {
+  width: 100% !important;
+}
+
 @media (min-width: 720px) {
   .vtex-account>div {
     flex-direction: row-reverse;
@@ -1509,5 +1514,13 @@ body.login {
 
   .vtex-account>div section header>div>div:nth-child(1) {
     display: none;
+  }
+
+  .vtext-account .w-40-ns {
+    width: 40% !important;
+  }
+
+  .vtext-account .w-60-ns {
+    width: 60% !important;
   }
 }

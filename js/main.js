@@ -887,4 +887,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Remove titles, add tips */
   murau.tipTitle();
+
+  /* Giftlist */
+  let giftlistmanager = document.querySelector('.giftlistmanager');
+  if (giftlistmanager) {
+    giftlistmanager.querySelector('table').classList.add('table');
+    giftlistmanager.querySelector('.action-view').remove();
+    giftlistmanager.querySelector('.action-edit').remove();
+    giftlistmanager.querySelector('h2').remove();
+  }
 });
