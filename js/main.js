@@ -704,6 +704,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  console.log('Passou por aqui. IS');
+
   /* Buy together */
   let buyTogether = document.querySelector('section.buy-together'),
     suggestionsId = [],
@@ -873,16 +875,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
   
+  console.log('Passou por aqui. BT');
+
   /* Newsletter */
   let modalNewsletter = document.querySelector('#modalNewsletter');
   if (!localStorage.getItem('userRegistered')) {
     if (Number(localStorage.getItem('userClosed')) <= 3) new BSN.Modal(modalNewsletter).toggle();
   }
+  console.log('Passou por aqui. NL1');
 
   modalNewsletter.addEventListener('hide.bs.modal', (evt) => {
     let userClosedCount = Number(localStorage.getItem('userClosed')) + 1;
     localStorage.setItem('userClosed', userClosedCount);
   }, false);
+  
+  console.log('Passou por aqui. NL2');
 
   /* Remove titles, add tips */
   murau.tipTitle();
