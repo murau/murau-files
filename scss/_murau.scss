@@ -520,10 +520,11 @@ h3.notifymetitle {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, .5);
 }
 
-#TB_windos .glis-mylist a {
-  color: $white;
+#TB_window .glis-mylist a {
+  background-color: $primary;
   display: block;
   padding: 10px;
+  color: $white;
 }
 
 #TB_ajaxContent {
@@ -531,7 +532,7 @@ h3.notifymetitle {
   width: 100% !important;
 }
 
-#TB_ajaxContent .glis-ul {
+#TB_ajaxContent u {
   list-style: none;
   padding: 0;
 }
