@@ -1466,12 +1466,12 @@ table td {
   content: "\f2ed";
 }
 
-.actions a.inputedit:before {
+table a.inputedit:before {
   content: "\f044";
 }
 
 .actions a.deletethissku:before,
-.actions a.inputedit:before,
+table a.inputedit:before,
 .action-buy a:before,
 .action-manage a:before {
   font-family: "Font Awesome 5 Free";
@@ -1494,7 +1494,7 @@ table td {
   text-decoration: none;
 }
 
-.actions a.inputedit {
+table a.inputedit {
   font-size: 0;
   text-decoration: none;
 }
