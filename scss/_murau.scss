@@ -1074,7 +1074,7 @@ body.home .prateleira h2 {
 [class*="prateleira"] ul li img {
   padding: $thumbnail-padding;
   background-color: $thumbnail-bg;
-  border: $thumbnail-border-width solid $thumbnail-border-color;
+  /* border: $thumbnail-border-width solid $thumbnail-border-color; */
   @include border-radius($thumbnail-border-radius);
   @include box-shadow($thumbnail-box-shadow);
   width: 100%;
@@ -1597,6 +1597,13 @@ a.urlproduct img {
 .vtext-account .w-40-ns,
 .vtext-account .w-60-ns {
   width: 100% !important;
+}
+
+.prateleira-search h3.product-name {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Novecento sans wide Normal";
 }
 
 @media (min-width: 720px) {
