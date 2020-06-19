@@ -511,9 +511,23 @@ h3.notifymetitle {
   color: $red;
 }
 
+#TB_overlay {
+  background-color: rgba(0, 0, 0, .8);
+}
+
 #TB_window {
   background-color: $white !important;
-  @include box-shadow($dropdown-box-shadow);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, .5);
+}
+
+#TB_window a {
+  color: $primary !important;
+}
+
+#TB_windos .giftlist-insertsku a {
+  color: $white;
+  display: block;
+  padding: 10px;
 }
 
 #TB_ajaxContent {
@@ -1397,6 +1411,10 @@ body.login {
 .ajax-content-loader,
 .welcome {
   display: none;
+}
+
+.giftlist-insertsku-wrapper .ajax-content-loader {
+  display: inline;
 }
 
 .sliderDesktop .banner,
