@@ -11854,12 +11854,9 @@ table a.inputedit {
   text-decoration: none;
 }
 
-.giftlistproductsv2 td {
-  text-align: center;
-}
-
 .giftlistproductsv2 th:not(:first-child),
-.giftlistproductsv2 td {
+.giftlistproductsv2 td,
+.giftlistproductsv2 .giftlistsku-input-wishedamt {
   text-align: center;
 }
 
