@@ -570,7 +570,7 @@ h3.notifymetitle {
 .glis-save.save-success {
   background-color: $success;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px 0 0;
   width: 100%;
   text-align: center;
   border-radius: 5px;
@@ -1103,7 +1103,7 @@ body.home .prateleira h2 {
     max-width: 25%;
   }
 
-  [class*="prateleira"] ul li.last {
+  [class*="prateleira"] ul li.last:not(:first-child) {
     display: none !important;
   }
 
