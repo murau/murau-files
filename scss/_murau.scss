@@ -1433,14 +1433,18 @@ body.login {
 }
 
 /* Giftlist manage page */
-ul.glmanager-actions {
+table th, table td {
+  vertical-align: middle !important;
+}
+
+.giftlist-body-desired, .giftlist-body-action {
+  text-align: center;
+}
+
+.giftlist-body-action ul.glmanager-actions {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-table th, table td {
-  vertical-align: middle !important;
 }
 
 /* Account page */
