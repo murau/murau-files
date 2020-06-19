@@ -10918,11 +10918,7 @@ h3.notifymetitle {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
 }
 
-#TB_window a {
-  color: #4b2e28 !important;
-}
-
-#TB_windos .giftlist-insertsku a {
+#TB_windos .glis-mylist a {
   color: #fff;
   display: block;
   padding: 10px;
