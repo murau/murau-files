@@ -904,6 +904,10 @@ document.addEventListener("DOMContentLoaded", () => {
       giftlistmanagerTable.querySelector('.action-view').remove();
       giftlistmanagerTable.querySelector('.action-edit').remove();
     }
+    for(let el of giftlistmanager.querySelectorAll('.giftlist-body-name')) {
+      let parent = el.parentElement;
+      el.querySelector('a').href = parent.querySelector('.action-manage a').href;
+    }
   }
   let giftlistRemoveProduts = document.querySelector('#giftlistremovecheckedskus');
   if (giftlistRemoveProduts) giftlistRemoveProduts.classList.add('btn', 'btn-primary');
