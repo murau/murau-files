@@ -907,4 +907,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   let giftlistProducts = document.querySelector('.giftlistproductsv2');
   if (giftlistProducts) giftlistProducts.classList.add('table', 'table-bordered', 'table-hover');
+  let giftlistRemoveProduts = document.querySelector('#giftlistremovecheckedskus');
+  if (giftlistRemoveProduts) giftlistRemoveProduts.classList.add('btn', 'btn-primary');
 });
