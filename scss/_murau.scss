@@ -1433,11 +1433,13 @@ body.login {
 }
 
 /* Giftlist manage page */
-table th, table td {
+table th,
+table td {
   vertical-align: middle !important;
 }
 
-.giftlist-body-desired, .giftlist-body-action {
+.giftlist-body-desired,
+.giftlist-body-action {
   text-align: center;
 }
 
@@ -1445,6 +1447,11 @@ table th, table td {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+a.urlproduct img {
+  width: 60px !important;
+  height: auto;
 }
 
 /* Account page */

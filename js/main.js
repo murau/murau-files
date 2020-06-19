@@ -905,4 +905,6 @@ document.addEventListener("DOMContentLoaded", () => {
       giftlistmanagerTable.querySelector('.action-edit').remove();
     }
   }
+  let giftlistProducts = document.querySelector('.giftlistproductsv2');
+  if (giftlistProducts) giftlistProducts.classList.add('table', 'table-bordered', 'table-hover');
 });
