@@ -11787,6 +11787,17 @@ body.login {
   color: inherit !important;
 }
 
+/* Giftlist manage page */
+ul.glmanager-actions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+table th, table td {
+  vertical-align: middle !important;
+}
+
 /* Account page */
 .vtex-account > div {
   padding: 0;
