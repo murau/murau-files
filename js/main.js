@@ -704,8 +704,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  console.log('Passou por aqui. IS');
-
   /* Buy together */
   let buyTogether = document.querySelector('section.buy-together'),
     suggestionsId = [],
@@ -874,22 +872,17 @@ document.addEventListener("DOMContentLoaded", () => {
           }));
       });
   }
-  
-  console.log('Passou por aqui. BT');
 
   /* Newsletter */
   let modalNewsletter = document.querySelector('#modalNewsletter');
   if (!localStorage.getItem('userRegistered')) {
     if (Number(localStorage.getItem('userClosed')) <= 3) new BSN.Modal(modalNewsletter).toggle();
   }
-  console.log('Passou por aqui. NL1');
 
   modalNewsletter.addEventListener('hide.bs.modal', (evt) => {
     let userClosedCount = Number(localStorage.getItem('userClosed')) + 1;
     localStorage.setItem('userClosed', userClosedCount);
   }, false);
-  
-  console.log('Passou por aqui. NL2');
 
   /* Remove titles, add tips */
   murau.tipTitle();
@@ -897,9 +890,13 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Giftlist */
   let giftlistmanager = document.querySelector('.giftlistmanager');
   if (giftlistmanager) {
-    giftlistmanager.querySelector('table').classList.add('table', 'table-bordered', 'table-hover');
-    giftlistmanager.querySelector('.action-view').remove();
-    giftlistmanager.querySelector('.action-edit').remove();
     giftlistmanager.querySelector('h2').remove();
+    let giftlistmanagerTable = giftlistmanager.querySelector('table');
+    if (giftlistmanagerTable) {
+      giftlistmanagerTable.classList.add('table', 'table-bordered', 'table-hover');
+      giftlistmanagerTable.querySelector('.giftlist-body-name').style.width = '60%';
+      giftlistmanagerTable.querySelector('.action-view').remove();
+      giftlistmanagerTable.querySelector('.action-edit').remove();
+    }
   }
 });
