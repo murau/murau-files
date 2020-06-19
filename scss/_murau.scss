@@ -1449,6 +1449,33 @@ table td {
   margin: 0;
 }
 
+.action-buy a:before {
+  content: "\f290";
+}
+
+.action-manage a:before {
+  content: "\f013";
+}
+
+.action-buy a:before,
+.action-manage a:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.action-buy a,
+.action-manage a {
+  display: block;
+  font-size: 0;
+  text-decoration: none;
+}
+
+.giftlist-body-action ul.glmanager-actions li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
 a.urlproduct img {
   width: 60px !important;
   height: auto;
