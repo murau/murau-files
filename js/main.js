@@ -894,7 +894,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let giftlistmanagerTable = giftlistmanager.querySelector('table');
     if (giftlistmanagerTable) {
       giftlistmanagerTable.classList.add('table', 'table-bordered', 'table-hover');
-      giftlistmanagerTable.querySelector('.giftlist-body-name').style.width = '60%';
+      giftlistmanagerTable.querySelector('.giftlist-header-name').style.width = '60%';
       giftlistmanagerTable.querySelector('.action-view').remove();
       giftlistmanagerTable.querySelector('.action-edit').remove();
     }
