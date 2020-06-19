@@ -522,6 +522,7 @@ h3.notifymetitle {
 
 #TB_window .glis-mylist a {
   background-color: $primary;
+  text-transform: uppercase;
   display: block;
   padding: 10px;
   color: $white;
@@ -532,13 +533,12 @@ h3.notifymetitle {
   width: 100% !important;
 }
 
-#TB_ajaxContent u {
+#TB_ajaxContent ul {
   list-style: none;
   padding: 0;
 }
 
 #TB_ajaxContent .glis-li {
-  background: $primary;
   margin-bottom: 5px;
   text-align: center;
   width: 100%;
