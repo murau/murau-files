@@ -1082,6 +1082,14 @@ body.home .prateleira h2 {
   @include img-fluid();
 }
 
+.prateleira-search span.product-price {
+  color: $gray-500;
+}
+
+.prateleira-search span.product-price:before {
+  content: "\2015";
+}
+
 @media (min-width: map-get($grid-breakpoints, "md")) {
   [class*="prateleira"] ul li {
     -ms-flex: 0 0 50%;

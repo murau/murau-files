@@ -11462,6 +11462,14 @@ body.home .prateleira h2 {
   height: auto;
 }
 
+.prateleira-search span.product-price {
+  color: #adb5bd;
+}
+
+.prateleira-search span.product-price:before {
+  content: "\2015";
+}
+
 @media (min-width: 768px) {
   [class*="prateleira"] ul li {
     flex: 0 0 50%;
