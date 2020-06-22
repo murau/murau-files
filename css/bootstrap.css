@@ -10949,7 +10949,7 @@ h3.notifymetitle {
 }
 
 #TB_window .glis-create-form-type {
-  display: none;
+  display: none !important;
 }
 
 #TB_window .glis-create-form-name label.create {
