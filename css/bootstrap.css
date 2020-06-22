@@ -11393,17 +11393,17 @@ body.home .prateleira h2 {
 }
 
 #murau-mini-cart .cartSkuRemove a::before {
-  content: "x";
-  text-indent: 0;
-  display: block;
-  font-size: 1rem;
-  background: #301d19;
-  text-align: center;
-  color: #fff;
-  border-radius: 50rem;
-  padding: 0px 10px 4px;
-  font-weight: 300;
+  content: "\f2ed";
+  font-size: 0.8rem;
+  font-family: "Font Awesome 5 Free";
+  color: #dc3545;
+  padding: 5px;
+  font-weight: 600;
   opacity: 0.6;
+}
+
+#murau-mini-cart .cartSkuRemove a:hover::before {
+  opacity: 1;
 }
 
 [class*="prateleira"] {
