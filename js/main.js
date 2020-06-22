@@ -721,7 +721,7 @@ document.addEventListener("DOMContentLoaded", () => {
     vtexjs.catalog.getCurrentProductWithVariations()
       .done(function (thisProduct) {
         console.log(thisProduct);
-        fetch(`/api/catalog_system/pub/products/crossselling/similars/${product.productId}`)
+        fetch(`/api/catalog_system/pub/products/crossselling/similars/${thisProduct.productId}`)
         .then(response => response.json().then(similars => {
           console.log(similars);
         })).catch((err) => {});
