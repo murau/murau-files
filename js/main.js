@@ -196,14 +196,14 @@ const murau = {
     }
     let portalmc = document.querySelector(".portal-minicart-ref");
     let dropcart = document.querySelector(".vtexsc-cart");
-    let newdropcart = document.createElement("div");
+    /* let newdropcart = document.createElement("div");
     newdropcart.setAttribute("id", "dropcart");
-    newdropcart.classList.add("col-12");
+    newdropcart.classList.add("col-12"); */
     if (qtd === 0) {
       newdropcart.innerHTML =
         "<div class='d-flex justify-content-center align-items-center h-100'><h4 class='titleDropCart'>Sua sacola está vazia.</h4></div>";
-    } else {
-      let titleDropCart = document.createElement("h4");
+    } //else {
+      /* let titleDropCart = document.createElement("h4");
       titleDropCart.classList.add(
         "titleDropCart",
         "pb-3",
@@ -212,13 +212,13 @@ const murau = {
       );
       titleDropCart.innerHTML = `<span class='badge badge-pill badge-secondary cartQtd'>${qtd}</span> Ite${
         qtd > 1 ? "ns" : "m"
-        } na sacola <i class="fa-fw fas fa-shopping-bag"></i>`;
-      if (dropcart) newdropcart.innerHTML = dropcart.cloneNode(true).innerHTML;
-      newdropcart.insertBefore(titleDropCart, newdropcart.firstChild);
-    }
-    portalmc.insertBefore(newdropcart, portalmc.firstChild);
-    portalmc.classList.add("row", "h-100");
-    let cartcheckout = document.querySelector(".cartCheckout");
+        } na sacola <i class="fa-fw fas fa-shopping-bag"></i>`; */
+      //if (dropcart) newdropcart.innerHTML = dropcart.cloneNode(true).innerHTML;
+      /* newdropcart.insertBefore(titleDropCart, newdropcart.firstChild); */
+    //}
+    //portalmc.insertBefore(newdropcart, portalmc.firstChild);
+    //portalmc.classList.add("row", "h-100");
+    /* let cartcheckout = document.querySelector(".cartCheckout");
     cartcheckout.setAttribute("href", "/checkout/#/cart");
     cartcheckout.textContent = "Finalizar compra";
     cartcheckout.classList.add(
@@ -229,8 +229,8 @@ const murau = {
       "text-light",
       "text-uppercase",
       "font-weight-light"
-    );
-    dropcart.parentNode.removeChild(dropcart);
+    ); */
+    //dropcart.parentNode.removeChild(dropcart);
   },
   tipTitle: () => {
     tippy("a[title]", {
