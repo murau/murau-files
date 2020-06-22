@@ -985,54 +985,6 @@ body.home .prateleira h2 {
   border-collapse: collapse;
 }
 
-#murau-mini-cart .modal-content thead {
-  display: none;
-}
-
-#murau-mini-cart .modal-content tr {
-  border-bottom: 1px solid $gray-200;
-  width: 100% !important;
-  display: flex;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#murau-mini-cart .modal-content td {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 100%;
-  order: 0;
-}
-
-#murau-mini-cart .modal-content td.cartSkuImage {
-  flex-basis: 20%;
-}
-
-#murau-mini-cart .modal-content td.cartSkuName {
-  flex-basis: 70%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-}
-
-#murau-mini-cart .modal-content td.cartSkuActions {
-  flex-basis: 5%;
-}
-
-#murau-mini-cart .modal-content td.cartSkuPrice {
-  flex-basis: 100%;
-  order: 1;
-  text-align: center;
-}
-
-#murau-mini-cart .modal-content td.cartSkuQuantity {
-  display: none;
-}
-
 #murau-mini-cart .modal-content img {
   max-width: 48px !important;
   height: auto;
@@ -1043,26 +995,20 @@ body.home .prateleira h2 {
   max-height: 100% !important;
 }
 
-#murau-mini-cart .modal-content td h4 a,
-#murau-mini-cart .modal-content td h4 {
-  line-height: 1;
-  font-size: 1rem;
-  color: $primary;
-  margin: 0 auto;
+#murau-mini-cart .bestPrice {
+  font-weight: 700;
 }
 
-#murau-mini-cart .modal-content .cartSkuUnitPrice {
-  line-height: 1;
-  color: $primary;
-  font-weight: bold;
+.portal-minicart-ref {
+  display: none !important;
 }
 
-#murau-mini-cart .modal-content .cartSkuRemove a {
+#murau-mini-cart .cartSkuRemove a {
   display: block !important;
   font-size: 0;
 }
 
-#murau-mini-cart .modal-content .cartSkuRemove a::before {
+#murau-mini-cart .cartSkuRemove a::before {
   content: "x";
   text-indent: 0;
   display: block;
@@ -1073,37 +1019,7 @@ body.home .prateleira h2 {
   @include border-radius(50rem);
   padding: 0px 10px 4px;
   font-weight: 300;
-}
-
-#murau-mini-cart .modal-content .cartTotal {
-  width: 100%;
-  text-align: center;
-  padding-top: 25px;
-  text-transform: lowercase;
-}
-
-#murau-mini-cart .modal-content .cartTotal::before {
-  content: "Sub-";
-  text-transform: capitalize;
-}
-
-#murau-mini-cart .modal-content .vtexsc-totalCart {
-  margin-left: 0;
-  float: left;
-  width: 100%;
-  color: $primary;
-  font-weight: bold;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-
-.modal.right .close {
-  font-size: 0.8rem;
-  text-shadow: none;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-  z-index: $zindex-modal;
+  opacity: 0.6;
 }
 
 [class*="prateleira"] {

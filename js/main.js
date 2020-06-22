@@ -197,11 +197,13 @@ const murau = {
     let murauCart = document.getElementById('murau-mini-cart');
     let modalCart = murauCart.querySelector('.modal-body');
     let minicartRef = document.querySelector('.portal-minicart-ref');
-    if (!minicartRef || qtd === 0)
-      return modalCart.innerHTML = "<div class='d-flex h-100 justify-content-center align-items-center'>A sacola está vazia.</div>";
+    let subTotal = murauCart.querySelector('.sub-total strong');
+    if (!minicartRef || qtd === 0) {
+      subTotal.innerHTML = "R$ 0,00";
+      return modalCart.innerHTML = "<div class='d-flex h-100 justify-content-center align-items-center'>Sua sacola está vazia.</div>";
+    }
     let productList = minicartRef.querySelectorAll("table.vtexsc-productList tbody tr");
     let totalCart = minicartRef.querySelector(".vtexsc-totalCart").textContent;
-    let subTotal = murauCart.querySelector('.sub-total strong');
     subTotal.innerHTML = totalCart;
     let htmlBody = '';
     for (let product of productList) {
@@ -210,7 +212,7 @@ const murau = {
       let price = product.querySelector('.cartSkuUnitPrice').innerHTML;
       let actions = product.querySelector('.cartSkuActions').innerHTML;
       htmlBody += `
-    <div class="media">
+    <div class="media mb-4">
       <img src="${image}" class="align-self-start mr-3" alt="Produto">
       <div class="media-body">
         ${name}<br />
