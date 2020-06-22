@@ -194,43 +194,31 @@ const murau = {
     for (let cartQtd of cartqtd) {
       cartQtd.textContent = qtd;
     }
-    let portalmc = document.querySelector(".portal-minicart-ref");
-    let dropcart = document.querySelector(".vtexsc-cart");
-    /* let newdropcart = document.createElement("div");
-    newdropcart.setAttribute("id", "dropcart");
-    newdropcart.classList.add("col-12"); */
-    if (qtd === 0) {
-      newdropcart.innerHTML =
-        "<div class='d-flex justify-content-center align-items-center h-100'><h4 class='titleDropCart'>Sua sacola está vazia.</h4></div>";
-    } //else {
-      /* let titleDropCart = document.createElement("h4");
-      titleDropCart.classList.add(
-        "titleDropCart",
-        "pb-3",
-        "mb-3",
-        "border-bottom"
-      );
-      titleDropCart.innerHTML = `<span class='badge badge-pill badge-secondary cartQtd'>${qtd}</span> Ite${
-        qtd > 1 ? "ns" : "m"
-        } na sacola <i class="fa-fw fas fa-shopping-bag"></i>`; */
-      //if (dropcart) newdropcart.innerHTML = dropcart.cloneNode(true).innerHTML;
-      /* newdropcart.insertBefore(titleDropCart, newdropcart.firstChild); */
-    //}
-    //portalmc.insertBefore(newdropcart, portalmc.firstChild);
-    //portalmc.classList.add("row", "h-100");
-    /* let cartcheckout = document.querySelector(".cartCheckout");
-    cartcheckout.setAttribute("href", "/checkout/#/cart");
-    cartcheckout.textContent = "Finalizar compra";
-    cartcheckout.classList.add(
-      "mt-5",
-      "btn",
-      "btn-primary",
-      "btn-block",
-      "text-light",
-      "text-uppercase",
-      "font-weight-light"
-    ); */
-    //dropcart.parentNode.removeChild(dropcart);
+    let productList = document.querySelectorAll(".portal-minicart-ref table.vtexsc-productList tbody tr");
+    let totalCart = document.querySelector(".vtexsc-totalCart").textContent;
+    let murauCart = document.getElementById('murau-mini-cart');
+    let modalCart = murauCart.querySelector('.modal-body');
+    let subTotal = murauCart.querySelector('.sub-total');
+    subTotal.innerHTML = totalCart;
+    if (qtd === 0) return modalCart.innerHTML = "<div class='d-flex h-100 justify-content-center align-items-center'>A sacola está vazia.</div>";
+    let htmlBody = '';
+    for (let product of productList) {
+      let image = product.querySelector('.cartSkuImage img').src;
+      let name = product.querySelector('.cartSkuName h4');
+      let price = product.querySelector('.cartSkuUnitPrice');
+      let actions = product.querySelector('.cartSkuActions');
+      htmlBody += `
+    <div class="media">
+      <img src="${image}" class="align-self-start mr-3" alt="Produto">
+      <div class="media-body">
+        ${name}<br />
+        ${price}
+      </div>
+      ${actions}
+    </div>
+      `;
+    }
+    modalCart.innerHTML = htmlBody;
   },
   tipTitle: () => {
     tippy("a[title]", {
