@@ -10926,6 +10926,66 @@ h3.notifymetitle {
   color: #fff;
 }
 
+#TB_window ul.glis-create-form li {
+  display: inline-block;
+}
+
+#TB_window .glis-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+#TB_window .glis-selected {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#TB_window .glis-new-title {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+#TB_window .glis-create-form-type {
+  display: none;
+}
+
+#TB_window .glis-create-form-name label.create {
+  display: none !important;
+}
+
+#TB_window .glis-create-form-name label.create:after {
+  content: ":";
+}
+
+#TB_window .glis-form-name-obr {
+  color: #dc3545;
+}
+
+#TB_window .glis-create-form-submit a {
+  display: inline-block;
+  text-transform: uppercase;
+  background: #4b2e28;
+  color: #fff;
+  padding: 8px 15px;
+}
+
+#TB_window .glis-new-info {
+  font-size: small;
+}
+
+#TB_window .glis-form-name {
+  display: inline-block;
+  padding: 6px;
+  text-transform: uppercase;
+}
+
+#TB_window .glis-create {
+  padding: 20px 0 0;
+}
+
 #TB_ajaxContent {
   padding: 20px !important;
   width: 100% !important;
