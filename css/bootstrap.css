@@ -11023,7 +11023,7 @@ h3.notifymetitle {
   position: absolute;
   right: 28px;
   top: 14px;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .glis-save.save-success {
@@ -11052,7 +11052,7 @@ h3.notifymetitle {
   border-radius: 50rem;
   content: "\f004";
   font-family: "Font Awesome 5 Free";
-  font-size: 1.8rem;
+  font-size: 1rem;
   font-weight: 400;
   opacity: 0.5;
   padding: 10px 10px 8px;
@@ -11744,6 +11744,7 @@ body.login {
 .carousel-control-next:focus {
   opacity: 0.1;
   transition: all 300ms linear;
+  display: flex;
 }
 
 .carousel-control-prev:hover,
