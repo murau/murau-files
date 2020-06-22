@@ -204,9 +204,9 @@ const murau = {
     let htmlBody = '';
     for (let product of productList) {
       let image = product.querySelector('.cartSkuImage img').src;
-      let name = product.querySelector('.cartSkuName h4');
-      let price = product.querySelector('.cartSkuUnitPrice');
-      let actions = product.querySelector('.cartSkuActions');
+      let name = product.querySelector('.cartSkuName h4').innerHTML;
+      let price = product.querySelector('.cartSkuUnitPrice').innerHTML;
+      let actions = product.querySelector('.cartSkuActions').innerHTML;
       htmlBody += `
     <div class="media">
       <img src="${image}" class="align-self-start mr-3" alt="Produto">
