@@ -198,7 +198,7 @@ const murau = {
     let totalCart = document.querySelector(".vtexsc-totalCart").textContent;
     let murauCart = document.getElementById('murau-mini-cart');
     let modalCart = murauCart.querySelector('.modal-body');
-    let subTotal = murauCart.querySelector('.sub-total');
+    let subTotal = murauCart.querySelector('.sub-total strong');
     subTotal.innerHTML = totalCart;
     if (qtd === 0) return modalCart.innerHTML = "<div class='d-flex h-100 justify-content-center align-items-center'>A sacola está vazia.</div>";
     let htmlBody = '';

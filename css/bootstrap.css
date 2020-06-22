@@ -11422,6 +11422,11 @@ body.home .prateleira h2 {
   height: auto;
 }
 
+#murau-mini-cart .modal-dialog.modal-dialog-scrollable,
+#murau-mini-cart .modal-dialog.modal-dialog-scrollable .modal-content {
+  max-height: 100% !important;
+}
+
 #murau-mini-cart .modal-content td h4 a,
 #murau-mini-cart .modal-content td h4 {
   line-height: 1;
