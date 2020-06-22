@@ -10988,6 +10988,7 @@ h3.notifymetitle {
 
 #TB_ajaxContent {
   padding: 20px !important;
+  height: auto !important;
   width: 100% !important;
 }
 
