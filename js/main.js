@@ -194,11 +194,13 @@ const murau = {
     for (let cartQtd of cartqtd) {
       cartQtd.textContent = qtd;
     }
-    if (qtd === 0) return modalCart.innerHTML = "<div class='d-flex h-100 justify-content-center align-items-center'>A sacola está vazia.</div>";
-    let productList = document.querySelectorAll(".portal-minicart-ref table.vtexsc-productList tbody tr");
-    let totalCart = document.querySelector(".vtexsc-totalCart").textContent;
     let murauCart = document.getElementById('murau-mini-cart');
     let modalCart = murauCart.querySelector('.modal-body');
+    let minicartRef = document.querySelector('.portal-minicart-ref');
+    if (!minicartRef || qtd === 0)
+      return modalCart.innerHTML = "<div class='d-flex h-100 justify-content-center align-items-center'>A sacola está vazia.</div>";
+    let productList = minicartRef.querySelectorAll("table.vtexsc-productList tbody tr");
+    let totalCart = minicartRef.querySelector(".vtexsc-totalCart").textContent;
     let subTotal = murauCart.querySelector('.sub-total strong');
     subTotal.innerHTML = totalCart;
     let htmlBody = '';
@@ -680,7 +682,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             resultItems.firstChild.appendChild(htmlObj.querySelector('ul'));
             murau.tipTitle();
-            
+
             return window.dispatchEvent(new Event('murau.isLoaded'));
           }
         }).then(() => isLoading = false).catch((err) => console.log(err.message));
@@ -893,7 +895,7 @@ document.addEventListener("DOMContentLoaded", () => {
       giftlistmanagerTable.querySelector('.action-edit').remove();
       giftlistmanagerTable.querySelector('.action-delete').remove();
     }
-    for(let el of giftlistmanager.querySelectorAll('.giftlist-body-name')) {
+    for (let el of giftlistmanager.querySelectorAll('.giftlist-body-name')) {
       let parent = el.parentElement;
       el.querySelector('a').href = parent.querySelector('.action-manage a').href;
     }
