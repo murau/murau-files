@@ -11086,6 +11086,12 @@ a#TB_closeWindowButton:before {
   right: 2px;
 }
 
+.giftlist-body-name a {
+  padding: 0 5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
 .glis-sku-default,
 .glis-flash-quantity-added {
   display: none;
