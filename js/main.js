@@ -194,13 +194,13 @@ const murau = {
     for (let cartQtd of cartqtd) {
       cartQtd.textContent = qtd;
     }
+    if (qtd === 0) return modalCart.innerHTML = "<div class='d-flex h-100 justify-content-center align-items-center'>A sacola está vazia.</div>";
     let productList = document.querySelectorAll(".portal-minicart-ref table.vtexsc-productList tbody tr");
     let totalCart = document.querySelector(".vtexsc-totalCart").textContent;
     let murauCart = document.getElementById('murau-mini-cart');
     let modalCart = murauCart.querySelector('.modal-body');
     let subTotal = murauCart.querySelector('.sub-total strong');
     subTotal.innerHTML = totalCart;
-    if (qtd === 0) return modalCart.innerHTML = "<div class='d-flex h-100 justify-content-center align-items-center'>A sacola está vazia.</div>";
     let htmlBody = '';
     for (let product of productList) {
       let image = product.querySelector('.cartSkuImage img').src;
