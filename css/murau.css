@@ -10457,36 +10457,22 @@ header a {
 }
 
 header a.navbar-brand {
-  background-image: url("../images/murau.typo.png");
-  background-repeat: no-repeat;
-  background-position: center;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  text-indent: -9999px;
   width: 120px;
   z-index: 1030;
-  background-size: contain;
 }
 
 header.fixed-top.scroll a.navbar-brand {
-  background-image: url("../images/murau.typo.png");
   width: 85px;
-  top: -16px;
   transition: all 300ms linear;
 }
 
 header a.murau-logo {
-  text-indent: -9999px;
-  overflow: hidden;
-  background-image: url("../images/icon.white.png");
-  background-size: contain;
   width: 25px;
   height: 25px;
   opacity: 1;
   z-index: 1030;
-  background-position: center;
-  background-repeat: no-repeat;
   transition: all 300ms linear;
   transform: translate(0, 0);
 }
