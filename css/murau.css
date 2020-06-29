@@ -11435,10 +11435,11 @@ body.home .prateleira h2 {
 
 [class*="prateleira"] ul li[class*="murau"] a {
   transition: all 300ms linear;
+  transform: scale(0.99);
 }
 
 [class*="prateleira"] ul li[class*="murau"] a:hover {
-  transform: scale(0.99);
+  transform: scale(1);
 }
 
 [class*="prateleira"] ul li[class*="murau"] img {
@@ -11454,19 +11455,16 @@ body.home .prateleira h2 {
 [class*="prateleira"] ul li[class*="murau"]:nth-of-type(n+1):nth-of-type(-n+2) {
   flex: 0 0 50%;
   max-width: 50%;
-  background: green;
 }
 
 [class*="prateleira"] ul li[class*="murau"]:nth-of-type(n+3):nth-of-type(-n+3) {
   flex: 0 0 100%;
   max-width: 100%;
-  background: red;
 }
 
 [class*="prateleira"] ul li[class*="murau"]:nth-of-type(n+7):nth-of-type(-n+8) {
   flex: 0 0 50%;
   max-width: 50%;
-  background: blue;
 }
 
 .prateleira-search span.product-price {
