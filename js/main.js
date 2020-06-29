@@ -726,33 +726,37 @@ document.addEventListener("DOMContentLoaded", () => {
       .done(function (product) {
 
         // Get all images
-        let allProducts = [];
+        let allProducts = {};
         fetch(`/api/catalog_system/pub/products/search?fq=productId:${product.productId}`)
           .then((response) => response.json().then((thisProduct) => {
-            thisProduct.forEach((pdt) => {
-              allProducts.push({
+            thisProduct.forEach((pdt, idx) => {
+              allProducts.add({
                 id: pdt.productId,
                 cor: pdt.Cor[0] ?? null,
                 name: pdt.productName,
-                items: pdt.items,
+                items: [],
                 description: pdt.description,
                 link: pdt.link
               });
+              let prod = allProducts.filter(prod => {
+                return pro.id === pdt.productId;
+              });
+              console.log(prod);
             });
           })).catch((_) => {});
-        fetch(`/api/catalog_system/pub/products/crossselling/similars/${product.productId}`)
+        /* fetch(`/api/catalog_system/pub/products/crossselling/similars/${product.productId}`)
           .then((response) => response.json().then((similars) => {
             similars.forEach((pdt) => {
-              allProducts.push({
+              allProducts.add({
                 id: pdt.productId,
                 cor: pdt.Cor[0] ?? null,
                 name: pdt.productName,
-                items: pdt.items,
+                items: [],
                 description: pdt.description,
                 link: pdt.link
               });
             });
-          })).catch((_) => {});
+          })).catch((_) => {}); */
         console.log(allProducts);
         // End
 
