@@ -11438,7 +11438,7 @@ body.home .prateleira h2 {
 }
 
 [class*="prateleira"] ul li[class*="murau"] a:hover {
-  transform: scale(0.8);
+  transform: scale(0.99);
 }
 
 [class*="prateleira"] ul li[class*="murau"] img {
