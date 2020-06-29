@@ -734,30 +734,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 id: pdt.productId,
                 cor: pdt.Cor[0] ?? null,
                 name: pdt.productName,
-                items: [],
+                items: pdt.items,
                 description: pdt.description,
                 link: pdt.link
               });
-              let prod = allProducts.filter(prod => {
-                return pro.id === pdt.productId;
-              });
-              console.log(prod);
             });
           })).catch((_) => {});
-        /* fetch(`/api/catalog_system/pub/products/crossselling/similars/${product.productId}`)
+        fetch(`/api/catalog_system/pub/products/crossselling/similars/${product.productId}`)
           .then((response) => response.json().then((similars) => {
             similars.forEach((pdt) => {
               allProducts.add({
                 id: pdt.productId,
                 cor: pdt.Cor[0] ?? null,
                 name: pdt.productName,
-                items: [],
+                items: pdt.items,
                 description: pdt.description,
                 link: pdt.link
               });
             });
-          })).catch((_) => {}); */
-        console.log(allProducts);
+          })).catch((_) => {});
+        console.log([...allProducts]);
         // End
 
         let activeProduct = product.skus.filter((i) => {
