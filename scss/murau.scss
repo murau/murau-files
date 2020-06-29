@@ -1102,17 +1102,17 @@ body.home .prateleira h2 {
   @include img-fluid();
 }
 
-[class*="prateleira"] ul li[class*="murau"]:nth-of-type(n+1):nth-of-type(-n+2) {
+.prateleira-search ul li[class*="murau"]:nth-of-type(n+1):nth-of-type(-n+2) {
   flex: 0 0 50%;
   max-width: 50%;
 }
 
-[class*="prateleira"] ul li[class*="murau"]:nth-of-type(n+3):nth-of-type(-n+3) {
+.prateleira-search ul li[class*="murau"]:nth-of-type(n+3):nth-of-type(-n+3) {
   flex: 0 0 100%;
   max-width: 100%;
 }
 
-[class*="prateleira"] ul li[class*="murau"]:nth-of-type(n+7):nth-of-type(-n+8) {
+.prateleira-search ul li[class*="murau"]:nth-of-type(n+7):nth-of-type(-n+8) {
   flex: 0 0 50%;
   max-width: 50%;
 }
