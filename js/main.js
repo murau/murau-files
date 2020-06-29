@@ -93,23 +93,27 @@ const links = [{
     url: "/sale",
   },
 ];
+
 function setCookie(a, b, c) {
   var d = a + "=" + escape(b) + (c ? "; duration=" + c.toGMTString() : "");
   document.cookie = d;
 }
+
 function getCookie(a) {
   var b = document.cookie,
-      c = a + "=",
-      d = b.indexOf("; " + c);
+    c = a + "=",
+    d = b.indexOf("; " + c);
   if (d == -1) {
-      if (((d = b.indexOf(c)), 0 != d)) return null;
+    if (((d = b.indexOf(c)), 0 != d)) return null;
   } else d += 2;
   var e = b.indexOf(";", d);
   return e == -1 && (e = b.length), unescape(b.substring(d + c.length, e));
 }
+
 function deleteCookie(a) {
   getCookie(a) && (document.cookie = a + "=; expires=Thu, 01-Jan-70 00:00:01 GMT");
 }
+
 function compareValues(key, order = "asc") {
   return function innerSort(a, b) {
     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
@@ -719,16 +723,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (buyTogether) {
     vtexjs.catalog.getCurrentProductWithVariations()
-      .done(function (thisProduct) {
-        console.log(thisProduct);
-        fetch(`/api/catalog_system/pub/products/crossselling/similars/${thisProduct.productId}`)
-        .then(response => response.json().then(similars => {
-          console.log(similars);
-        })).catch((err) => {});
-      });
-
-    vtexjs.catalog.getCurrentProductWithVariations()
       .done(function (product) {
+
+        // Get all images
+        let allProducts = [];
+        fetch(`/api/catalog_system/pub/products/search?fq=productId:${product.productId}`)
+          .then((response) => response.json().then((thisProduct) => {
+            console.log(thisProduct);
+          })).catch((_) => {});
+        fetch(`/api/catalog_system/pub/products/crossselling/similars/${product.productId}`)
+          .then((response) => response.json().then((similars) => {
+            console.log(similars);
+          })).catch((_) => {});
+        // End
+
         let activeProduct = product.skus.filter((i) => {
           return i.available;
         });
