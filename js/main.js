@@ -702,6 +702,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (htmlObj.firstElementChild.nodeName === "META")
               htmlObj.firstElementChild.remove();
 
+            for (let el of htmlObj.querySelectorAll('.helperComplement')) {
+              el.remove();
+            }
+
             resultItems.firstChild.appendChild(htmlObj.querySelector('ul'));
             murau.tipTitle();
 
