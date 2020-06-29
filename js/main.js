@@ -742,6 +742,7 @@ document.addEventListener("DOMContentLoaded", () => {
           })).catch((_) => {});
         fetch(`/api/catalog_system/pub/products/crossselling/similars/${product.productId}`)
           .then((response) => response.json().then((similars) => {
+            console.log(similars);
             similars.forEach((pdt) => {
               allProducts.push({
                 id: pdt.productId,
