@@ -726,10 +726,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .done(function (product) {
 
         // Get all images
-        let allProducts = {};
+        let allProducts = new Set();
         fetch(`/api/catalog_system/pub/products/search?fq=productId:${product.productId}`)
           .then((response) => response.json().then((thisProduct) => {
-            thisProduct.forEach((pdt, idx) => {
+            thisProduct.forEach((pdt) => {
               allProducts.add({
                 id: pdt.productId,
                 cor: pdt.Cor[0] ?? null,
