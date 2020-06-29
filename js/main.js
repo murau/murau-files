@@ -726,11 +726,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .done(function (product) {
 
         // Get all images
-        let allProducts = new Set();
+        let allProducts = [];
         fetch(`/api/catalog_system/pub/products/search?fq=productId:${product.productId}`)
           .then((response) => response.json().then((thisProduct) => {
             thisProduct.forEach((pdt) => {
-              allProducts.add({
+              allProducts.push({
                 id: pdt.productId,
                 cor: pdt.Cor[0] ?? null,
                 name: pdt.productName,
@@ -743,7 +743,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`/api/catalog_system/pub/products/crossselling/similars/${product.productId}`)
           .then((response) => response.json().then((similars) => {
             similars.forEach((pdt) => {
-              allProducts.add({
+              allProducts.push({
                 id: pdt.productId,
                 cor: pdt.Cor[0] ?? null,
                 name: pdt.productName,
@@ -753,7 +753,7 @@ document.addEventListener("DOMContentLoaded", () => {
               });
             });
           })).catch((_) => {});
-        console.log([...allProducts]);
+        console.log(allProducts);
         // End
 
         let activeProduct = product.skus.filter((i) => {
