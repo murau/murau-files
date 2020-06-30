@@ -83,10 +83,6 @@ section.container-fluid {
   display: block;
 }
 
-header a {
-  color: $white !important;
-}
-
 header a.navbar-brand {
   margin: 0;
   padding: 0;
@@ -178,9 +174,10 @@ header #searchBoxTop input::placeholder {
 }
 
 .shop-link .cartQtd {
+  top: 5px;
   left: 10px;
   position: absolute;
-  top: 5px;
+  transform: scale(.75);
 }
 
 #murauBackground .carousel-item {
@@ -394,7 +391,7 @@ body.produto .produto p.descricao-preco::before {
 }
 
 body.produto .produto .valor-de {
-  display: inline-block;
+  display: inline-block !important;
   font-size: 0;
 }
 
@@ -1380,7 +1377,7 @@ body.login {
 }
 
 .navbar-toggler .icon-bar {
-  background-color: $white;
+  background-color: $primary;
   display: block;
   width: 22px;
   height: 2px;
