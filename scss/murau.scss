@@ -936,6 +936,11 @@ body.home .prateleira h2 {
   font-size: 3rem;
 }
 
+.prateleira.n4colunas h3.product-name {
+  max-height: 3.5rem;
+  overflow: hidden;
+}
+
 .modal.left .modal-dialog,
 .modal.right .modal-dialog {
   position: fixed;
