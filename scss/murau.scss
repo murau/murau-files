@@ -387,6 +387,17 @@ body.produto .produto .select label.item_unavaliable {
   cursor: not-allowed;
 }
 
+body.produto .produto p.descricao-preco::before {
+  content: "De:";
+  margin-right: 5px;
+  display: inline-block;
+}
+
+body.produto .produto .valor-de {
+  display: inline-block;
+  font-size: 0;
+}
+
 body.produto .buy-button {
   background-color: $primary;
   border: 1px solid $white;
