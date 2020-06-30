@@ -969,10 +969,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   for (el of document.querySelectorAll('[href*="youtube.com/embed"]')) {
     el.onclick = (evt) => {
-      console.log(this);
       evt.preventDefault();
       basicLightbox.create(`
-        <iframe width="100%" height="100%" src="${evt.target.href}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="${this.el.href}" frameborder="0" allowfullscreen></iframe>
       `).show();
     }
   }
