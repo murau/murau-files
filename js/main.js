@@ -262,7 +262,7 @@ const murau = {
       header.classList.add("mobile");
       header.classList.remove("fixed-top");
         let menu = header.querySelector('.container-fluid.navbar-expand-lg');
-        if (typeof menu.className === "string" && menu.className.contains('bg-white')) {
+        if (menu && typeof menu.className === "string" && menu.className.includes('bg-white')) {
           menu.classList.remove('bg-white');
           menu.classList.add('bg-light');
         }
@@ -307,7 +307,7 @@ window.addEventListener("scroll", () => {
         if (i === 0) {
           element.classList.add("fixed-top");
           let menu = element.querySelector('.container-fluid.navbar-expand-lg');
-          if (typeof menu.className === "string" && menu.className.contains('bg-light')) {
+          if (menu && typeof menu.className === "string" && menu.className.includes('bg-light')) {
             menu.classList.remove('bg-light');
             menu.classList.add('bg-white');
           }
@@ -327,7 +327,7 @@ window.addEventListener("scroll", () => {
         if (i === 0) {
           element.classList.remove("fixed-top");
           let menu = element.querySelector('.container-fluid.navbar-expand-lg');
-          if (typeof menu.className === "string" && menu.className.contains('bg-white')) {
+          if (menu && typeof menu.className === "string" && menu.className.includes('bg-white')) {
             menu.classList.remove('bg-white');
             menu.classList.add('bg-light');
           }
