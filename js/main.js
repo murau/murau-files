@@ -261,6 +261,11 @@ const murau = {
       body.classList.add("mobile");
       header.classList.add("mobile");
       header.classList.remove("fixed-top");
+        let menu = header.querySelector('.container-fluid.navbar-expand-lg');
+        if (typeof menu.className === "string" && menu.className.contains('bg-white')) {
+          menu.classList.remove('bg-white');
+          menu.classList.add('bg-light');
+        }
     } else {
       body.classList.remove("mobile");
       header.classList.remove("mobile");
@@ -299,7 +304,14 @@ window.addEventListener("scroll", () => {
         typeof element.className === "string" &&
         !element.className.includes('mobile')
       ) {
-        if (i === 0) element.classList.add("fixed-top");
+        if (i === 0) {
+          element.classList.add("fixed-top");
+          let menu = element.querySelector('.container-fluid.navbar-expand-lg');
+          if (typeof menu.className === "string" && menu.className.contains('bg-light')) {
+            menu.classList.remove('bg-light');
+            menu.classList.add('bg-white');
+          }
+        }
         i++;
       }
     }
@@ -312,7 +324,14 @@ window.addEventListener("scroll", () => {
         typeof element.className === "string" &&
         !element.className.includes('mobile')
       ) {
-        element.classList.remove("fixed-top");
+        if (i === 0) {
+          element.classList.remove("fixed-top");
+          let menu = element.querySelector('.container-fluid.navbar-expand-lg');
+          if (typeof menu.className === "string" && menu.className.contains('bg-white')) {
+            menu.classList.remove('bg-white');
+            menu.classList.add('bg-light');
+          }
+        }
         i++;
       }
     }
