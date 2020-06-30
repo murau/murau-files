@@ -351,7 +351,6 @@ window.addEventListener("click", (e) => {
         }, ])
         .done((orderForm) => {
           murau.updateMiniCart(orderForm.items.length);
-          //console.log(`Item (${item.name}) removido da sacola com sucesso!`);
         });
     });
     return;
