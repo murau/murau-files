@@ -971,7 +971,7 @@ document.addEventListener("DOMContentLoaded", () => {
     el.onclick = (evt) => {
       evt.preventDefault();
       basicLightbox.create(`
-        <iframe width="100%" height="100%" src="${evt.target.parentNode.href}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="${evt.target.href}" frameborder="0" allowfullscreen></iframe>
       `).show();
     }
   }
