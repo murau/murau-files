@@ -11994,4 +11994,8 @@ a.urlproduct img {
     width: 60% !important;
   }
 }
+
+.basicLightbox {
+  z-index: 9999;
+}
 /*# sourceMappingURL=murau.css.map */
