@@ -11468,6 +11468,7 @@ body.home .prateleira h2 {
 
 .prateleira-search span.product-price {
   color: #adb5bd;
+  font-size: 1rem;
 }
 
 .prateleira-search span.product-price:before {
