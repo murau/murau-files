@@ -1,0 +1,95 @@
+[{
+        "order": 1,
+        "title": "Novidades",
+        "url": "/novidades?PS=24&O=OrderByReleaseDateDESC"
+    },
+    {
+        "order": 2,
+        "title": "Coleção",
+        "url": "#",
+        "childs": [{
+                "title": "Blusas",
+                "url": "/roupa/blusas?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Body",
+                "url": "/roupa/body?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Calça",
+                "url": "/roupa/calca?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Camisas",
+                "url": "/roupa/camisas?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Casacos",
+                "url": "/roupa/casacos?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Coletes",
+                "url": "/roupa/coletes?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Conjuntos",
+                "url": "/roupa/conjuntos?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Cropped",
+                "url": "/roupa/Cropped?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Jaquetas",
+                "url": "/roupa/Jaquetas?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Macacão",
+                "url": "/roupa/macacao?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Saias",
+                "url": "/roupa/saias?PS=24&O=OrderByReleaseDateDESCC"
+            },
+            {
+                "title": "Shorts",
+                "url": "/roupa/shorts?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Short-saia",
+                "url": "/roupa/short-saia?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "T-Shirt",
+                "url": "/roupa/T-Shirt?PS=24&O=OrderByReleaseDateDESC"
+            },
+            {
+                "title": "Vestidos",
+                "url": "/roupa/vestidos?PS=24&O=OrderByReleaseDateDESC"
+            }
+        ]
+    },
+    {
+        "order": 3,
+        "title": "Acessórios",
+        "url": "#",
+        "childs": [{
+                "title": "Cintos",
+                "url": "/acessorios/Cintos"
+            },
+            {
+                "title": "Colares",
+                "url": "/acessorios/Colares"
+            },
+            {
+                "title": "Bolsas",
+                "url": "/acessorios/Bolsas"
+            }
+        ]
+    },
+    {
+        "order": 4,
+        "title": "Sale",
+        "url": "/sale"
+    }
+]
