@@ -11779,7 +11779,7 @@ body.login {
 }
 
 .no-variations .link-guia {
-  display: none;
+  display: none !important;
 }
 
 .svg-top-control {
