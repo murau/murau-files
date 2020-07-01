@@ -1091,11 +1091,11 @@ body.home .prateleira h2 {
 }
 
 [class*="prateleira"] ul li[class*="murau"] img {
-  padding: $thumbnail-padding;
+  /* padding: $thumbnail-padding;
   background-color: $thumbnail-bg;
-  /* border: $thumbnail-border-width solid $thumbnail-border-color; */
+  border: $thumbnail-border-width solid $thumbnail-border-color;
   @include border-radius($thumbnail-border-radius);
-  @include box-shadow($thumbnail-box-shadow);
+  @include box-shadow($thumbnail-box-shadow); */
   width: 100%;
   // Keep them at most 100% wide
   @include img-fluid();

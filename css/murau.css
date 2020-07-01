@@ -11442,10 +11442,11 @@ body.home .prateleira h2 {
 }
 
 [class*="prateleira"] ul li[class*="murau"] img {
-  padding: 0.25rem;
-  background-color: #fff;
-  /* border: $thumbnail-border-width solid $thumbnail-border-color; */
-  border-radius: 0.25rem;
+  /* padding: $thumbnail-padding;
+  background-color: $thumbnail-bg;
+  border: $thumbnail-border-width solid $thumbnail-border-color;
+  @include border-radius($thumbnail-border-radius);
+  @include box-shadow($thumbnail-box-shadow); */
   width: 100%;
   max-width: 100%;
   height: auto;
