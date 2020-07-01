@@ -10436,8 +10436,9 @@ section.container-fluid, section.container-sm, section.container-md, section.con
 
 #made-with-love h2 {
   font-family: "Satisfy", cursive;
-  font-size: 3rem;
   text-align: center;
+  font-size: 2.5rem;
+  white-space: nowrap;
 }
 
 #made-with-love h2::before,
@@ -10445,8 +10446,7 @@ section.container-fluid, section.container-sm, section.container-md, section.con
   content: "-";
 }
 
-.sliderDesktop img,
-.sliderMobile img {
+.box-banner img {
   width: 100vw;
   height: auto;
   display: block;
