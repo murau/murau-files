@@ -667,7 +667,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .done(function (product) {
 
         // Get all images
-        let allProducts = [];
+        /* let allProducts = [];
         fetch(`/api/catalog_system/pub/products/search?fq=productId:${product.productId}`)
           .then((response) => response.json().then((thisProduct) => {
             thisProduct.forEach((pdt) => {
@@ -695,7 +695,7 @@ document.addEventListener("DOMContentLoaded", () => {
               });
             });
           })).catch((_) => {});
-        console.log(allProducts);
+        console.log(allProducts); */
         // End
 
         let activeProduct = product.skus.filter((i) => {
@@ -760,7 +760,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   display: inline-block;
                                   width: 200px;
                                   height: 200px;
-                                  background-size: contain;
+                                  background-size: cover;
                                   background-position: center;">
                                   </div>
                                   <div class="display-5">${product.name}</div>
@@ -797,7 +797,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="display-5">${suggestion.productName}</div>
                                   <div class="productPrice">
                                       <p class="d-flex flex-column justify-align-center align-items-center">
-                                        <s class="text-nowrap text-muted d-block">${variations.skus[0].listPriceFormated}</s>
+                                        <s class="text-nowrap text-muted d-none">${variations.skus[0].listPriceFormated}</s>
                                         <em class="text-nowrap d-block">Por: <strong>${variations.skus[0].bestPriceFormated}</strong></em>
                                       </p>
                                   </div>
