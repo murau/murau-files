@@ -766,7 +766,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <div class="display-5">${product.name}</div>
                                   <div class="productPrice">
                                       <p class="d-flex flex-column justify-align-center align-items-center">
-                                          <s class="text-nowrap text-muted d-block">${activeProduct[0].listPriceFormated}</s>
+                                          <s class="text-nowrap text-muted d-none">${activeProduct[0].listPriceFormated}</s>
                                           <em class="text-nowrap d-block">Por: <strong>${activeProduct[0].bestPriceFormated}</strong></em>
                                       </p>
                                   </div>
