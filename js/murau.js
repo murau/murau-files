@@ -832,7 +832,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     })}
                                   </h3>
                               </em>
-                              <span class="font-weight-light">
+                              <span class="font-weight-light d-none">
                                   ou apenas <strong>${variations.skus[0].installments}x</strong> de <strong>
                                   ${(murau
                                       .parseValues(variations.skus[0].installmentsValue)
