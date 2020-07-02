@@ -784,7 +784,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <span class="display-1 w-100 text-center">+</span>
                               </div>
                               <div class="col-md-5 d-flex flex-column justify-align-center align-items-center item2">
-                                  <div class="mb-5" style="
+                                  <div class="mb-2" style="
                                     background-image: url(${variations.skus[0].image});
                                     width: 200px;
                                     height: 200px;
