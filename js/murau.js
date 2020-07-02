@@ -751,10 +751,10 @@ document.addEventListener("DOMContentLoaded", () => {
                       buyTogether.innerHTML = `
                       <h2 style="font-family: 'Satisfy',cursive; font-size: 2.5rem; margin-top: 30px;">Aproveite e compre junto</h2>
                       <div class="row w-100" id="var${suggestion.productId}">
-                      <div class="col-8">
+                      <div class="col-md-8">
                           <div class="row">
-                              <div class="col-5 d-flex flex-column justify-align-center align-items-center item1">
-                                  <div style="
+                              <div class="col-md-5 d-flex flex-column justify-align-center align-items-center item1">
+                                  <div class="mb-2" style="
                                   background-image: url(${activeProduct[0].image});
                                   position: relative;
                                   display: inline-block;
@@ -780,11 +780,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                     </label>
                                   </div>
                               </div>
-                              <div class="col-1 d-flex justify-align-center align-items-center">
-                                <span class="display-1">+</span>
+                              <div class="col-md-1 d-flex justify-align-center align-items-center">
+                                <span class="display-1 w-100 text-center">+</span>
                               </div>
-                              <div class="col-5 d-flex flex-column justify-align-center align-items-center item2">
-                                  <div style="
+                              <div class="col-md-5 d-flex flex-column justify-align-center align-items-center item2">
+                                  <div class="mb-5" style="
                                     background-image: url(${variations.skus[0].image});
                                     width: 200px;
                                     height: 200px;
@@ -811,12 +811,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                     </label>
                                   </div>
                               </div>
-                              <div class="col-1 d-flex justify-align-center align-items-center">
-                                <span class="display-1">=</span>
+                              <div class="col-md-1 d-flex justify-align-center align-items-center">
+                                <span class="display-1 w-100 text-center">=</span>
                               </div>
                           </div>
                       </div>
-                      <div class="col-4 d-flex justify-content-center align-items-center flex-column box-compre">
+                      <div class="col-md-4 d-flex justify-content-center align-items-center flex-column box-compre">
                           <p class="d-flex flex-column justify-align-center align-items-center m-0">
                               <em>
                                   Compre os 2 por <h3 class="font-weight-bold">
