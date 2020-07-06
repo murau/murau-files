@@ -913,4 +913,7 @@ document.addEventListener("DOMContentLoaded", () => {
       `).show();
     }
   }
+  if (document.querySelector('.titulo-sessao') && document.querySelectorAll('.bread-crumb ul li') && document.querySelectorAll('.bread-crumb ul li').length < 2) {
+    document.querySelector('.titulo-sessao').innerHTML = document.title;
+  }
 });
