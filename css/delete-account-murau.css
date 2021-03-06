@@ -1,0 +1,188 @@
+.e-delete {
+  background: #f7f7f7;
+  bottom: 30%;
+  box-shadow: 0px 0px 10px #00000029;
+  height: 250px;
+  left: 25%;
+  position: fixed;
+  right: 25%;
+  top: 30%;
+  width: 750px;
+  z-index: 9999;
+}
+@media (max-width: 767px) {
+  .e-delete {
+    height: auto;
+    left: 5%;
+    right: 5%;
+    width: auto;
+  }
+}
+.e-delete__content {
+  height: 100%;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.e-delete__content__header {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+@media (max-width: 767px) {
+  .e-delete__content__header {
+    right: 10px;
+    top: 10px;
+  }
+}
+.e-delete__content__info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 0px;
+}
+@media (max-width: 767px) {
+  .e-delete__content__info {
+    padding: 25px 0px;
+  }
+}
+.e-delete__content__form form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 25px 0px;
+}
+@media (max-width: 767px) {
+  .e-delete__content__form form {
+    padding: 20px 0px;
+  }
+}
+.e-delete__content__form form input {
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  color: #777777;
+  font-size: 14px;
+  height: 40px;
+  margin-top: 30px;
+  padding: 12px;
+  width: 500px;
+}
+@media (max-width: 767px) {
+  .e-delete__content__form form input {
+    width: 280px;
+  }
+}
+.e-delete__content__confirm {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 45px 0px;
+}
+@media (max-width: 767px) {
+  .e-delete__content__confirm {
+    padding: 70px 0px;
+  }
+}
+.e-delete__content__confirm p {
+  font-size: 40px;
+  line-height: 70px;
+}
+@media (max-width: 767px) {
+  .e-delete__content__confirm p {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+.e-delete__content__confirm button {
+  margin-top: 60px;
+}
+@media (max-width: 767px) {
+  .e-delete__content__confirm button {
+    margin-top: 40px;
+  }
+}
+.e-delete__content__button {
+  display: block;
+}
+.e-delete__content__button button:last-child {
+  background: #eceeef;
+  height: 58px;
+  margin-right: 0;
+}
+.e-delete__title {
+  color: #777777;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 19px;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .e-delete__title {
+    line-height: 24px;
+  }
+}
+.e-delete__text {
+  color: #777777;
+  font-size: 16px;
+  line-height: 16px;
+}
+@media (max-width: 767px) {
+  .e-delete__text {
+    line-height: 20px;
+  }
+}
+.e-delete__button {
+  background: #fff;
+  border: 1px solid #777777 !important;
+  border-radius: 6px;
+  color: #777777;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 16px 12px !important;
+  opacity: 1;
+  text-align: center;
+  text-shadow: initial;
+  width: 150px;
+}
+@media (max-width: 767px) {
+  .e-delete__button {
+    font-size: 14px;
+    width: 130px;
+  }
+}
+
+.remove-account {
+  background: #e4e4e4;
+  border: 1px solid #e4e4e4;
+  color: #777777;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 0;
+  text-align: center;
+  width: 95%;
+}
+@media (max-width: 767px) {
+  .remove-account {
+    width: 100%;
+  }
+}
+.remove-account + button {
+  display: none;
+}
+
+.e-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}

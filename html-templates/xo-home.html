@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+<head>
+    <vtex:contentPlaceHolder id="SEO" />
+    <vtex:template id="xo-head" />
+</head>
+<body>
+    <vtex:template id="xo-flat-header" />
+    <div class="sliderDesktop d-none d-md-flex flex-column">
+        <vtex:contentPlaceHolder id="Slider Desktop" />
+    </div>
+    <div class="sliderMobile d-md-none flex-column">
+        <vtex:contentPlaceHolder id="Slider Mobile" />
+    </div>
+    <section class="container-fluid">
+       <!-- <div class="row p-5 text-primary d-none d-md-flex bg-light">
+            <div class="col-md-4 p-2">
+                <span class="display-5 text-uppercase d-block">Até 6x sem juros</span>
+                <small>No cartão de crédito</small>
+            </div>
+            <div class="col-md-4 p-2">
+                <span class="display-5 text-uppercase d-block">Frete grátis</span>
+                <small>Para toda região sudeste / ou em compras acima de R$ 500,00</small>
+            </div>
+            <div class="col-md-4 p-2">
+                <span class="display-5 text-uppercase d-block">10% OFF na primeira compra</span>
+                <small>Cadastrando-se no <a href="#newsletter" class="text-secondary font-weight-bold">newsletter</a></small>
+            </div>
+        </div>-->
+        <div class="row pt-2 pb-4 px-4 made-with-love text-secondary" id="made-with-love">
+            <div class="col-12">
+                <h2 class="title">Made with love</h2>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div style="padding-top: 100%;position: relative;" class="row">
+                    <a href="/roupa/blusas" class="position-absolute d-block w-100 h-100" style="background-image: url('/arquivos/ids/168894/1.png'); background-position: center;">
+                        <div class="d-flex justify-content-center align-items-center h-100">Blusas</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div style="padding-top: 100%;position: relative;" class="row">
+                    <a href="/roupa/calca" class="position-absolute d-block w-100 h-100" style="background-image: url('/arquivos/ids/168893/1.png'); background-position: center;">
+                        <div class="d-flex justify-content-center align-items-center h-100">Calças</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div style="padding-top: 100%;position: relative;" class="row">
+                    <a href="/roupa/vestidos" class="position-absolute d-block w-100 h-100" style="background-image: url('/arquivos/ids/168891/1.png'); background-position: center;">
+                        <div class="d-flex justify-content-center align-items-center h-100">Vestidos</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3">
+                <div style="padding-top: 100%;position: relative;" class="row">
+                    <a href="/acessorios" class="position-absolute d-block w-100 h-100" style="background-image: url('/arquivos/ids/168892/1.png'); background-position: center;">
+                        <div class="d-flex justify-content-center align-items-center h-100">Acessórios</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row bg-primary text-light">
+            <vtex:contentPlaceHolder id="Conteúdo extra" />
+        </div>
+    </section>
+    <vtex:template id="xo-footer" />
+</body>
+
+</html>
