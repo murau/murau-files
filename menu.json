@@ -101,4 +101,17 @@
         "url": "/sale"
 
     }
+    
+    {
+        "order": 5,
+        "title": "Coleções",
+        "url": "/novidades"
+        "childs": [
+                {
+                "title": "Origens",
+                "url": "/Busca?fq=H:189&O=OrderByReleaseDateDESC"
+                }
+       ]
+
+    }
 ]
