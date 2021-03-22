@@ -105,7 +105,7 @@
     {
         "order": 5,
         "title": "Coleções anteriores",
-        "url": "/novidades"
+        "url": "/novidades",
         "childs": [
                 {
                 "title": "Origens",
