@@ -66,16 +66,17 @@ section.container-fluid {
 }
 
 #made-with-love h2 {
-  font-family: "Satisfy", cursive;
+  font-family: "Novecento sans wide Normal";
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   white-space: nowrap;
 }
-
+/*
 #made-with-love h2::before,
 #made-with-love h2::after {
   content: "-";
 }
+*/
 
 .box-banner img {
   width: 100vw;
