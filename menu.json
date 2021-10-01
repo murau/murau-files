@@ -1,6 +1,6 @@
 [{
         "order": 1,
-        "title": "Novidade",
+        "title": "Novidades",
         "url": "/novidades?PS=24&O=OrderByReleaseDateDESC"
     },
     {
@@ -99,12 +99,6 @@
         "order": 4,
         "title": "Sale",
         "url": "/sale"
-
-    },
-    {
-        "order": 5,
-        "title": "Outubro Rosa",
-        "url": "/Outubro"
 
     }
 ]
