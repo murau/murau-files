@@ -100,5 +100,11 @@
         "title": "Sale",
         "url": "/sale"
 
+    },
+    {
+        "order": 5,
+        "title": "Outubro Rosa",
+        "url": "/Outubro"
+
     }
 ]
