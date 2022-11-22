@@ -92,7 +92,11 @@
             {
                 "title": "Pulseiras",
                 "url": "/acessorios/Pulseiras"
-            }                 
+            } 
+            {
+                "title": "Lenços",
+                "url": "/acessorios/lenco"
+            }
         ]
     },
     {
