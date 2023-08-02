@@ -12,11 +12,11 @@
                 "url": "/roupa/blusas?PS=24&O=OrderByReleaseDateDESC"
             },
             {
-                "title": "Body",
+                "title": "Bodys",
                 "url": "/roupa/body?PS=24&O=OrderByReleaseDateDESC"
             },
             {
-                "title": "Calça",
+                "title": "Calças",
                 "url": "/roupa/calca?PS=24&O=OrderByReleaseDateDESC"
             },
             {
@@ -36,7 +36,7 @@
                 "url": "/roupa/conjuntos?PS=24&O=OrderByReleaseDateDESC"
             },
             {
-                "title": "Cropped",
+                "title": "Croppeds",
                 "url": "/roupa/Cropped?PS=24&O=OrderByReleaseDateDESC"
             },
             {
@@ -44,7 +44,7 @@
                 "url": "/roupa/Jaquetas?PS=24&O=OrderByReleaseDateDESC"
             },
             {
-                "title": "Macacão",
+                "title": "Macacões",
                 "url": "/roupa/macacao?PS=24&O=OrderByReleaseDateDESC"
             },
             {
@@ -56,11 +56,11 @@
                 "url": "/roupa/shorts?PS=24&O=OrderByReleaseDateDESC"
             },
             {
-                "title": "Short-saia",
+                "title": "Short-saias",
                 "url": "/roupa/short-saia?PS=24&O=OrderByReleaseDateDESC"
             },
             {
-                "title": "T-Shirt",
+                "title": "T-Shirts",
                 "url": "/roupa/T-Shirt?PS=24&O=OrderByReleaseDateDESC"
             },
             {
