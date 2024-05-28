@@ -106,7 +106,7 @@
     {
         "order": 4,
         "title": "Sale",
-        "url": "/sale"
+        "url": "/sale?PS=24&O=OrderByReleaseDateDESC"
 
     }
 ]
