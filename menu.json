@@ -79,27 +79,27 @@
         "url": "#",
         "childs": [{
                 "title": "Cintos",
-                "url": "/acessorios/Cintos"
+                "url": "/acessorios/Cintos?PS=24&O=OrderByReleaseDateDESC"
             },
             {
                 "title": "Colares",
-                "url": "/acessorios/Colares"
+                "url": "/acessorios/Colares?PS=24&O=OrderByReleaseDateDESC"
             },
             {
                 "title": "Bolsas",
-                "url": "/acessorios/Bolsas"
+                "url": "/acessorios/Bolsas?PS=24&O=OrderByReleaseDateDESC"
             },
             {
                 "title": "Pulseiras",
-                "url": "/acessorios/Pulseiras"
+                "url": "/acessorios/Pulseiras?PS=24&O=OrderByReleaseDateDESC"
             }, 
             {
                 "title": "Lenços",
-                "url": "/acessorios/lenco"
+                "url": "/acessorios/lenco?PS=24&O=OrderByReleaseDateDESC"
             },
             {
                 "title": "Essências",
-                "url": "/acessorios/essencias"
+                "url": "/acessorios/essencias?PS=24&O=OrderByReleaseDateDESC"
             }
         ]
     },
